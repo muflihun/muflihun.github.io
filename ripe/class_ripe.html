@@ -61,7 +61,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_ripe-members.html">List of all members</a>  </div>
@@ -70,119 +70,135 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="class_ripe.html" title="The Ripe class contains wrapper functions for OpenSSL that are memory-leak safe. User does not need t...">Ripe</a> class contains wrapper functions for OpenSSL that are memory-leak safe. User does not need to have OpenSSL installed in order to use pre-compiled <a class="el" href="class_ripe.html" title="The Ripe class contains wrapper functions for OpenSSL that are memory-leak safe. User does not need t...">Ripe</a> library.  
+<p>The RipeHelpers class contains wrapper functions for <a class="el" href="class_ripe.html" title="The RipeHelpers class contains wrapper functions for Ripe class. Please refer to it&#39;s documentation f...">Ripe</a> class. Please refer to it's documentation for details.  
  <a href="class_ripe.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_ripe_8h_source.html">Ripe.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:ab2dbee93f39f68de1f9f1186a8afca07"><td class="memTemplParams" colspan="2"><a id="ab2dbee93f39f68de1f9f1186a8afca07"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab2dbee93f39f68de1f9f1186a8afca07"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_ripe.html#ab2dbee93f39f68de1f9f1186a8afca07">RipeArray</a> = std::unique_ptr&lt; T, std::default_delete&lt; T[]&gt; &gt;</td></tr>
-<tr class="memdesc:ab2dbee93f39f68de1f9f1186a8afca07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safe array using unique_ptr for ripe. <br /></td></tr>
-<tr class="separator:ab2dbee93f39f68de1f9f1186a8afca07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b82b8ee6c745c13d2e732ffa2655707"><td class="memTemplParams" colspan="2"><a id="a1b82b8ee6c745c13d2e732ffa2655707"></a>
-template&lt;typename T , typename T_Free &gt; </td></tr>
-<tr class="memitem:a1b82b8ee6c745c13d2e732ffa2655707"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_ripe.html#a1b82b8ee6c745c13d2e732ffa2655707">RipeCPtr</a> = std::unique_ptr&lt; T, T_Free &gt;</td></tr>
-<tr class="memdesc:a1b82b8ee6c745c13d2e732ffa2655707"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safe C-pointer for ripe with custom free function. <br /></td></tr>
-<tr class="separator:a1b82b8ee6c745c13d2e732ffa2655707"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a645b9db194ac19579b23de05f7e9a66e"><td class="memItemLeft" align="right" valign="top"><a id="a645b9db194ac19579b23de05f7e9a66e"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a645b9db194ac19579b23de05f7e9a66e">KeyPair</a> = std::pair&lt; std::string, std::string &gt;</td></tr>
-<tr class="memdesc:a645b9db194ac19579b23de05f7e9a66e"><td class="mdescLeft">&#160;</td><td class="mdescRight">RSA Key pair. <br /></td></tr>
-<tr class="separator:a645b9db194ac19579b23de05f7e9a66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ripe_1_1_key_pair.html">KeyPair</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RSA Key pair.  <a href="struct_ripe_1_1_key_pair.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ab7442ce620f9fa4ce2feaaffa0af29c6"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ab7442ce620f9fa4ce2feaaffa0af29c6">encryptRSA</a> (byte *data, int dataLength, byte *key, byte *destination) noexcept</td></tr>
-<tr class="memdesc:ab7442ce620f9fa4ce2feaaffa0af29c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">encryptRSA Encrypts data of length = dataLength using RSA key and puts it in destination  <a href="#ab7442ce620f9fa4ce2feaaffa0af29c6">More...</a><br /></td></tr>
-<tr class="separator:ab7442ce620f9fa4ce2feaaffa0af29c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb66fca7a2ce655169c35feba2ca96a7"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#acb66fca7a2ce655169c35feba2ca96a7">decryptRSA</a> (byte *encryptedData, int dataLength, byte *key, byte *destination) noexcept</td></tr>
-<tr class="memdesc:acb66fca7a2ce655169c35feba2ca96a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">decryptRSA Decrypts encryptedData of length dataLength with RSA key and puts result in destination  <a href="#acb66fca7a2ce655169c35feba2ca96a7">More...</a><br /></td></tr>
-<tr class="separator:acb66fca7a2ce655169c35feba2ca96a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f6fc6a29b37ec58670a7991ed0fb63c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a9f6fc6a29b37ec58670a7991ed0fb63c">decryptRSA</a> (byte *encryptedData, int dataLength, const char *key, byte *destination) noexcept</td></tr>
-<tr class="memdesc:a9f6fc6a29b37ec58670a7991ed0fb63c"><td class="mdescLeft">&#160;</td><td class="mdescRight">decryptRSA helper method  <a href="#a9f6fc6a29b37ec58670a7991ed0fb63c">More...</a><br /></td></tr>
-<tr class="separator:a9f6fc6a29b37ec58670a7991ed0fb63c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a724ecccf58135bfcc94c1a28d7f5a7c1"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a724ecccf58135bfcc94c1a28d7f5a7c1">encryptStringRSA</a> (const std::string &amp;data, const char *key, byte *destination) noexcept</td></tr>
-<tr class="memdesc:a724ecccf58135bfcc94c1a28d7f5a7c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">encryptStringRSA helper method  <a href="#a724ecccf58135bfcc94c1a28d7f5a7c1">More...</a><br /></td></tr>
-<tr class="separator:a724ecccf58135bfcc94c1a28d7f5a7c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3461794f89fd844b2838a5d91b85a01d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a3461794f89fd844b2838a5d91b85a01d">encryptCStringRSA</a> (const char *data, int length, const char *key, byte *destination) noexcept</td></tr>
-<tr class="memdesc:a3461794f89fd844b2838a5d91b85a01d"><td class="mdescLeft">&#160;</td><td class="mdescRight">encryptCStringRSA helper method  <a href="#a3461794f89fd844b2838a5d91b85a01d">More...</a><br /></td></tr>
-<tr class="separator:a3461794f89fd844b2838a5d91b85a01d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf29bc5cf870a7e96078c35a9c79785c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#acf29bc5cf870a7e96078c35a9c79785c">writeRSAKeyPair</a> (const char *publicOutputFile, const char *privateOutputFile, unsigned int length=2048, unsigned long exponent=RIPE_RSA_3) noexcept</td></tr>
-<tr class="memdesc:acf29bc5cf870a7e96078c35a9c79785c"><td class="mdescLeft">&#160;</td><td class="mdescRight">writeRSAKeyPair Writes RSA key pair and saves private key to privateOutputFile (file path) and public key to publicOutputFile  <a href="#acf29bc5cf870a7e96078c35a9c79785c">More...</a><br /></td></tr>
-<tr class="separator:acf29bc5cf870a7e96078c35a9c79785c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3e7b415c10b74e27cc03cd9b45e4361"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_ripe.html#a645b9db194ac19579b23de05f7e9a66e">KeyPair</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#af3e7b415c10b74e27cc03cd9b45e4361">generateRSAKeyPair</a> (unsigned int length=2048, unsigned long exponent=RIPE_RSA_3) noexcept</td></tr>
-<tr class="memdesc:af3e7b415c10b74e27cc03cd9b45e4361"><td class="mdescLeft">&#160;</td><td class="mdescRight">generateRSAKeyPair Generate key pair and returns KeyPair, where KeyPair.first is private key and KeyPair.second is public key  <a href="#af3e7b415c10b74e27cc03cd9b45e4361">More...</a><br /></td></tr>
-<tr class="separator:af3e7b415c10b74e27cc03cd9b45e4361"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4895e8a2a2beeac4ef80f4542af608d3"><td class="memItemLeft" align="right" valign="top"><a id="a4895e8a2a2beeac4ef80f4542af608d3"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a4895e8a2a2beeac4ef80f4542af608d3">convertDecryptedRSAToString</a> (byte *decryptedData, int dataLength) noexcept</td></tr>
-<tr class="memdesc:a4895e8a2a2beeac4ef80f4542af608d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">convertDecryptedRSAToString Helper method to treat decryptedData as string adding nul-terminator at the end of dataLength <br /></td></tr>
-<tr class="separator:a4895e8a2a2beeac4ef80f4542af608d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92bc1b7897d731083c052b135fc7a910"><td class="memItemLeft" align="right" valign="top"><a id="a92bc1b7897d731083c052b135fc7a910"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a92bc1b7897d731083c052b135fc7a910">printLastError</a> (const char *name=&quot;Error: &quot;) noexcept</td></tr>
-<tr class="memdesc:a92bc1b7897d731083c052b135fc7a910"><td class="mdescLeft">&#160;</td><td class="mdescRight">printLastError Print last RSA error <br /></td></tr>
-<tr class="separator:a92bc1b7897d731083c052b135fc7a910"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5432bda0e7b50d46159c6b2496488ac"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#aa5432bda0e7b50d46159c6b2496488ac">prepareData</a> (const char *data, std::size_t length, const char *key, int keySize, const char *clientId=&quot;&quot;) noexcept</td></tr>
-<tr class="memdesc:aa5432bda0e7b50d46159c6b2496488ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">prepareData Helper method to encrypt data with symmetric key and convert it in to tranferable data.  <a href="#aa5432bda0e7b50d46159c6b2496488ac">More...</a><br /></td></tr>
-<tr class="separator:aa5432bda0e7b50d46159c6b2496488ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fc4051bdbf24ac6ed2f7b985b1c6477"><td class="memItemLeft" align="right" valign="top"><a id="a4fc4051bdbf24ac6ed2f7b985b1c6477"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a4fc4051bdbf24ac6ed2f7b985b1c6477">encryptAES</a> (const char *data, const byte *key, std::size_t keySize, std::vector&lt; byte &gt; &amp;iv)</td></tr>
+<tr class="memdesc:a4fc4051bdbf24ac6ed2f7b985b1c6477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypts data of length with symmetric key of size = keySize with specified initialization vector. <br /></td></tr>
+<tr class="separator:a4fc4051bdbf24ac6ed2f7b985b1c6477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca374ac864754120146fa10d7809f602"><td class="memItemLeft" align="right" valign="top"><a id="aca374ac864754120146fa10d7809f602"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#aca374ac864754120146fa10d7809f602">decryptAES</a> (const std::string &amp;data, const byte *key, std::size_t keySize, std::vector&lt; byte &gt; &amp;iv)</td></tr>
+<tr class="memdesc:aca374ac864754120146fa10d7809f602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypts data of specified length with specified key and initialization vector. <br /></td></tr>
+<tr class="separator:aca374ac864754120146fa10d7809f602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf3c0c52df3c81807f631c0e27819a73"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#adf3c0c52df3c81807f631c0e27819a73">generateNewKey</a> (int length)</td></tr>
+<tr class="memdesc:adf3c0c52df3c81807f631c0e27819a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate random AES key.  <a href="#adf3c0c52df3c81807f631c0e27819a73">More...</a><br /></td></tr>
+<tr class="separator:adf3c0c52df3c81807f631c0e27819a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab45ead4289722cd52588c6686716ba89"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ab45ead4289722cd52588c6686716ba89">encryptAES</a> (std::string &amp;data, const std::string &amp;hexKey, const std::string &amp;clientId, const std::string &amp;outputFile)</td></tr>
+<tr class="memdesc:ab45ead4289722cd52588c6686716ba89"><td class="mdescLeft">&#160;</td><td class="mdescRight">encryptAES Encrypts data with provided symmetric key  <a href="#ab45ead4289722cd52588c6686716ba89">More...</a><br /></td></tr>
+<tr class="separator:ab45ead4289722cd52588c6686716ba89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f029c2c83267d4d6035444883d06e02"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a0f029c2c83267d4d6035444883d06e02">encryptAES</a> (const std::string &amp;buffer, const std::string &amp;hexKey, std::vector&lt; byte &gt; &amp;iv)</td></tr>
+<tr class="memdesc:a0f029c2c83267d4d6035444883d06e02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function that takes hex key.  <a href="#a0f029c2c83267d4d6035444883d06e02">More...</a><br /></td></tr>
+<tr class="separator:a0f029c2c83267d4d6035444883d06e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8ee15e7f6f88007a0066c4da4195dc8"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ad8ee15e7f6f88007a0066c4da4195dc8">decryptAES</a> (std::string &amp;data, const std::string &amp;hexKey, std::string &amp;iv, bool isBase64=false)</td></tr>
+<tr class="memdesc:ad8ee15e7f6f88007a0066c4da4195dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">decryptAES Decrypts data using specified symmetric key.  <a href="#ad8ee15e7f6f88007a0066c4da4195dc8">More...</a><br /></td></tr>
+<tr class="separator:ad8ee15e7f6f88007a0066c4da4195dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac07c9d0a5ab1d57d139710edea5e6944"><td class="memItemLeft" align="right" valign="top"><a id="ac07c9d0a5ab1d57d139710edea5e6944"></a>
+static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ac07c9d0a5ab1d57d139710edea5e6944">expectedAESCipherLength</a> (std::size_t plainDataSize) noexcept</td></tr>
+<tr class="memdesc:ac07c9d0a5ab1d57d139710edea5e6944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exceptect size of AES cipher when plainDataSize size data is encrypted. <br /></td></tr>
+<tr class="separator:ac07c9d0a5ab1d57d139710edea5e6944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a365a67a40ae457c56f3fca734bd45697"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a365a67a40ae457c56f3fca734bd45697">normalizeIV</a> (std::string &amp;iv) noexcept</td></tr>
+<tr class="memdesc:a365a67a40ae457c56f3fca734bd45697"><td class="mdescLeft">&#160;</td><td class="mdescRight">normalizeIV If IV with no space is provided e.g,  <a href="#a365a67a40ae457c56f3fca734bd45697">More...</a><br /></td></tr>
+<tr class="separator:a365a67a40ae457c56f3fca734bd45697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86a3fa0c806b62f191dd9c92b2544da4"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a86a3fa0c806b62f191dd9c92b2544da4">encryptRSA</a> (const std::string &amp;data, const std::string &amp;publicKeyPEM)</td></tr>
+<tr class="memdesc:a86a3fa0c806b62f191dd9c92b2544da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypts data of length = dataLength using RSA key and puts it in destination.  <a href="#a86a3fa0c806b62f191dd9c92b2544da4">More...</a><br /></td></tr>
+<tr class="separator:a86a3fa0c806b62f191dd9c92b2544da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad953ef353a93d95774991c100d03288b"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ad953ef353a93d95774991c100d03288b">decryptRSA</a> (const std::string &amp;data, const std::string &amp;privateKeyPEM, const std::string &amp;secret=&quot;&quot;)</td></tr>
+<tr class="memdesc:ad953ef353a93d95774991c100d03288b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypts encryptedData of length dataLength with RSA key and puts result in destination.  <a href="#ad953ef353a93d95774991c100d03288b">More...</a><br /></td></tr>
+<tr class="separator:ad953ef353a93d95774991c100d03288b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a704a0f41f62e8aaa0e94607c1545ead9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_ripe_1_1_key_pair.html">KeyPair</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a704a0f41f62e8aaa0e94607c1545ead9">generateRSAKeyPair</a> (unsigned int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>)</td></tr>
+<tr class="memdesc:a704a0f41f62e8aaa0e94607c1545ead9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate key pair and returns <a class="el" href="struct_ripe_1_1_key_pair.html" title="RSA Key pair. ">KeyPair</a>.  <a href="#a704a0f41f62e8aaa0e94607c1545ead9">More...</a><br /></td></tr>
+<tr class="separator:a704a0f41f62e8aaa0e94607c1545ead9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3eac579bde315831aef62ebafaf394c6"><td class="memItemLeft" align="right" valign="top"><a id="a3eac579bde315831aef62ebafaf394c6"></a>
 static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a3eac579bde315831aef62ebafaf394c6">maxRSABlockSize</a> (std::size_t keySize)</td></tr>
 <tr class="memdesc:a3eac579bde315831aef62ebafaf394c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">maxRSABlockSize Maximum size of RSA block with specified key size <br /></td></tr>
 <tr class="separator:a3eac579bde315831aef62ebafaf394c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e8e0bd6f27bdc26b9eeb4df665dc08f"><td class="memItemLeft" align="right" valign="top"><a id="a1e8e0bd6f27bdc26b9eeb4df665dc08f"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a1e8e0bd6f27bdc26b9eeb4df665dc08f">base64Encode</a> (const byte *input, std::size_t length) noexcept</td></tr>
-<tr class="memdesc:a1e8e0bd6f27bdc26b9eeb4df665dc08f"><td class="mdescLeft">&#160;</td><td class="mdescRight">base64Encode Encode input of length to base64 encoding <br /></td></tr>
-<tr class="separator:a1e8e0bd6f27bdc26b9eeb4df665dc08f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bd89e5b4ea52c116be317ab85b4e55a"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a8bd89e5b4ea52c116be317ab85b4e55a">base64Encode</a> (const std::string &amp;binaryData) noexcept</td></tr>
-<tr class="memdesc:a8bd89e5b4ea52c116be317ab85b4e55a"><td class="mdescLeft">&#160;</td><td class="mdescRight">base64Encode Helper method  <a href="#a8bd89e5b4ea52c116be317ab85b4e55a">More...</a><br /></td></tr>
-<tr class="separator:a8bd89e5b4ea52c116be317ab85b4e55a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e563cb0f7151d2eeaa5e9b7e7aeb116"><td class="memItemLeft" align="right" valign="top"><a id="a2e563cb0f7151d2eeaa5e9b7e7aeb116"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a2e563cb0f7151d2eeaa5e9b7e7aeb116">base64Decode</a> (const std::string &amp;base64Encoded) noexcept</td></tr>
-<tr class="memdesc:a2e563cb0f7151d2eeaa5e9b7e7aeb116"><td class="mdescLeft">&#160;</td><td class="mdescRight">base64Decode Decode encoded base64 <br /></td></tr>
-<tr class="separator:a2e563cb0f7151d2eeaa5e9b7e7aeb116"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1db123c0fa2530b3f461a328c5ca7a3"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#af1db123c0fa2530b3f461a328c5ca7a3">expectedBase64Length</a> (unsigned int n) noexcept</td></tr>
-<tr class="memdesc:af1db123c0fa2530b3f461a328c5ca7a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">expectedBase64Length Returns expected base64 length  <a href="#af1db123c0fa2530b3f461a328c5ca7a3">More...</a><br /></td></tr>
-<tr class="separator:af1db123c0fa2530b3f461a328c5ca7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a778db75a26bcff23afd87801e537b064"><td class="memItemLeft" align="right" valign="top"><a id="a778db75a26bcff23afd87801e537b064"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a778db75a26bcff23afd87801e537b064">encryptAES</a> (const char *data, std::size_t length, const char *key, std::size_t keySize, std::vector&lt; byte &gt; &amp;iv) noexcept</td></tr>
-<tr class="memdesc:a778db75a26bcff23afd87801e537b064"><td class="mdescLeft">&#160;</td><td class="mdescRight">encryptAES Encrypts data of length with symmetric key of size = keySize with specified initialization vector <br /></td></tr>
-<tr class="separator:a778db75a26bcff23afd87801e537b064"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f22ad7a371df3241875724f32892492"><td class="memItemLeft" align="right" valign="top"><a id="a7f22ad7a371df3241875724f32892492"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a7f22ad7a371df3241875724f32892492">decryptAES</a> (const char *data, std::size_t length, const char *key, std::size_t keySize, std::vector&lt; byte &gt; &amp;iv) noexcept</td></tr>
-<tr class="memdesc:a7f22ad7a371df3241875724f32892492"><td class="mdescLeft">&#160;</td><td class="mdescRight">decryptAES Decrypts data of specified length with specified key and initialization vector <br /></td></tr>
-<tr class="separator:a7f22ad7a371df3241875724f32892492"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10f1d6c13188f6b96581155d213698eb"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a10f1d6c13188f6b96581155d213698eb">decryptAES</a> (const char *buffer, std::size_t length, const char *key, std::size_t keySize, byte *iv) noexcept</td></tr>
-<tr class="memdesc:a10f1d6c13188f6b96581155d213698eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">decryptAES Helper method  <a href="#a10f1d6c13188f6b96581155d213698eb">More...</a><br /></td></tr>
-<tr class="separator:a10f1d6c13188f6b96581155d213698eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a365a67a40ae457c56f3fca734bd45697"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a365a67a40ae457c56f3fca734bd45697">normalizeIV</a> (std::string &amp;iv) noexcept</td></tr>
-<tr class="memdesc:a365a67a40ae457c56f3fca734bd45697"><td class="mdescLeft">&#160;</td><td class="mdescRight">normalizeIV If IV with no space is provided e.g,  <a href="#a365a67a40ae457c56f3fca734bd45697">More...</a><br /></td></tr>
-<tr class="separator:a365a67a40ae457c56f3fca734bd45697"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6ac599f4e68f97b1d1304149c411148"><td class="memItemLeft" align="right" valign="top"><a id="af6ac599f4e68f97b1d1304149c411148"></a>
-static std::vector&lt; byte &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#af6ac599f4e68f97b1d1304149c411148">ivToVector</a> (byte *iv) noexcept</td></tr>
-<tr class="memdesc:af6ac599f4e68f97b1d1304149c411148"><td class="mdescLeft">&#160;</td><td class="mdescRight">ivToVector Converts plain (unsigned char*) IV to std::vector&lt;byte&gt; <br /></td></tr>
-<tr class="separator:af6ac599f4e68f97b1d1304149c411148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f7c908b43b1005c8a68a80ef37cb4d"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a44f7c908b43b1005c8a68a80ef37cb4d">encryptRSA</a> (std::string &amp;data, const std::string &amp;key, const std::string &amp;outputFile, int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>)</td></tr>
+<tr class="memdesc:a44f7c908b43b1005c8a68a80ef37cb4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">encryptRSA Encrypts using RSA key  <a href="#a44f7c908b43b1005c8a68a80ef37cb4d">More...</a><br /></td></tr>
+<tr class="separator:a44f7c908b43b1005c8a68a80ef37cb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd267e5444eb203b8d35a6cc4a8b8412"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#acd267e5444eb203b8d35a6cc4a8b8412">decryptRSA</a> (std::string &amp;data, const std::string &amp;key, bool isBase64, int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>, const std::string &amp;secret=&quot;&quot;)</td></tr>
+<tr class="memdesc:acd267e5444eb203b8d35a6cc4a8b8412"><td class="mdescLeft">&#160;</td><td class="mdescRight">decryptRSA Decrypts using RSA key  <a href="#acd267e5444eb203b8d35a6cc4a8b8412">More...</a><br /></td></tr>
+<tr class="separator:acd267e5444eb203b8d35a6cc4a8b8412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3fcb8adfcd970811da2e138efaab21f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ae3fcb8adfcd970811da2e138efaab21f">writeRSAKeyPair</a> (const std::string &amp;publicFile, const std::string &amp;privateFile, int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>)</td></tr>
+<tr class="memdesc:ae3fcb8adfcd970811da2e138efaab21f"><td class="mdescLeft">&#160;</td><td class="mdescRight">writeRSAKeyPair Writes RSA key pair to public and private file paths.  <a href="#ae3fcb8adfcd970811da2e138efaab21f">More...</a><br /></td></tr>
+<tr class="separator:ae3fcb8adfcd970811da2e138efaab21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2625c9619dd50613458fedb672aa1ea"><td class="memItemLeft" align="right" valign="top"><a id="ad2625c9619dd50613458fedb672aa1ea"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ad2625c9619dd50613458fedb672aa1ea">generateRSAKeyPairBase64</a> (int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>)</td></tr>
+<tr class="memdesc:ad2625c9619dd50613458fedb672aa1ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">generateRSAKeyPair Generates RSA key pair and returns colon seperated base64 where first part is private key and second part is public key. <br /></td></tr>
+<tr class="separator:ad2625c9619dd50613458fedb672aa1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba9d3236442619910fc876d53461049"><td class="memItemLeft" align="right" valign="top"><a id="afba9d3236442619910fc876d53461049"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#afba9d3236442619910fc876d53461049">base64Encode</a> (const byte *input, std::size_t length)</td></tr>
+<tr class="memdesc:afba9d3236442619910fc876d53461049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encodes input of length to base64 encoding. <br /></td></tr>
+<tr class="separator:afba9d3236442619910fc876d53461049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadac58f6af172236243e68127a95559b"><td class="memItemLeft" align="right" valign="top"><a id="aadac58f6af172236243e68127a95559b"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#aadac58f6af172236243e68127a95559b">base64Decode</a> (const std::string &amp;base64Encoded)</td></tr>
+<tr class="memdesc:aadac58f6af172236243e68127a95559b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodes encoded base64. <br /></td></tr>
+<tr class="separator:aadac58f6af172236243e68127a95559b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a307685dad8585e3a4c5eec35e23d233d"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a307685dad8585e3a4c5eec35e23d233d">base64Encode</a> (const std::string &amp;binaryData)</td></tr>
+<tr class="memdesc:a307685dad8585e3a4c5eec35e23d233d"><td class="mdescLeft">&#160;</td><td class="mdescRight">base64Encode Helper method  <a href="#a307685dad8585e3a4c5eec35e23d233d">More...</a><br /></td></tr>
+<tr class="separator:a307685dad8585e3a4c5eec35e23d233d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52452e571f69c181a027c66c787394b8"><td class="memItemLeft" align="right" valign="top">static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a52452e571f69c181a027c66c787394b8">expectedBase64Length</a> (std::size_t n) noexcept</td></tr>
+<tr class="memdesc:a52452e571f69c181a027c66c787394b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">expectedBase64Length Returns expected base64 length  <a href="#a52452e571f69c181a027c66c787394b8">More...</a><br /></td></tr>
+<tr class="separator:a52452e571f69c181a027c66c787394b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50de68bb115e0a93a4188208c7b96b9e"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a50de68bb115e0a93a4188208c7b96b9e">prepareData</a> (const char *data, const std::string &amp;hexKey, const char *clientId=&quot;&quot;)</td></tr>
+<tr class="memdesc:a50de68bb115e0a93a4188208c7b96b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">prepareData Helper method to encrypt data with symmetric key and convert it in to tranferable data.  <a href="#a50de68bb115e0a93a4188208c7b96b9e">More...</a><br /></td></tr>
+<tr class="separator:a50de68bb115e0a93a4188208c7b96b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ebcdc63877239a9c50d0ffe099348f6"><td class="memItemLeft" align="right" valign="top">static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a7ebcdc63877239a9c50d0ffe099348f6">expectedDataSize</a> (std::size_t plainDataSize, std::size_t clientIdSize=16) noexcept</td></tr>
+<tr class="memdesc:a7ebcdc63877239a9c50d0ffe099348f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates expected data size. Assumed IV size = 32.  <a href="#a7ebcdc63877239a9c50d0ffe099348f6">More...</a><br /></td></tr>
+<tr class="separator:a7ebcdc63877239a9c50d0ffe099348f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1128e6af683d16457ed0aaa56252886b"><td class="memItemLeft" align="right" valign="top"><a id="a1128e6af683d16457ed0aaa56252886b"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a1128e6af683d16457ed0aaa56252886b">stringToHex</a> (const std::string &amp;str) noexcept</td></tr>
+<tr class="memdesc:a1128e6af683d16457ed0aaa56252886b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper functino to convert string to hexdecimal e.g, khn = 6b686e. <br /></td></tr>
+<tr class="separator:a1128e6af683d16457ed0aaa56252886b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a93589688ea98bdc612135c44706c78"><td class="memItemLeft" align="right" valign="top"><a id="a7a93589688ea98bdc612135c44706c78"></a>
+static const byte *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a7a93589688ea98bdc612135c44706c78">hexToByte</a> (const std::string &amp;hex)</td></tr>
+<tr class="memdesc:a7a93589688ea98bdc612135c44706c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to convert hexadecimal input to byte array e.g, 6b686e = (byte*)khn. <br /></td></tr>
+<tr class="separator:a7a93589688ea98bdc612135c44706c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a889ea0049d61b6e960baa6602e53f1a1"><td class="memItemLeft" align="right" valign="top"><a id="a889ea0049d61b6e960baa6602e53f1a1"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>vecToString</b> (const std::vector&lt; byte &gt; &amp;iv) noexcept</td></tr>
+<tr class="separator:a889ea0049d61b6e960baa6602e53f1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbc29fc67778b6826b6d98db2b701bf0"><td class="memItemLeft" align="right" valign="top"><a id="afbc29fc67778b6826b6d98db2b701bf0"></a>
+static std::vector&lt; byte &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#afbc29fc67778b6826b6d98db2b701bf0">byteToVec</a> (const byte *iv) noexcept</td></tr>
+<tr class="memdesc:afbc29fc67778b6826b6d98db2b701bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ivToVector Converts plain (unsigned char*) IV to std::vector&lt;byte&gt; <br /></td></tr>
+<tr class="separator:afbc29fc67778b6826b6d98db2b701bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add40f72264af8364f274c7867132b642"><td class="memItemLeft" align="right" valign="top"><a id="add40f72264af8364f274c7867132b642"></a>
 static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#add40f72264af8364f274c7867132b642">version</a> () noexcept</td></tr>
-<tr class="memdesc:add40f72264af8364f274c7867132b642"><td class="mdescLeft">&#160;</td><td class="mdescRight">version Version of <a class="el" href="class_ripe.html" title="The Ripe class contains wrapper functions for OpenSSL that are memory-leak safe. User does not need t...">Ripe</a> library <br /></td></tr>
+<tr class="memdesc:add40f72264af8364f274c7867132b642"><td class="mdescLeft">&#160;</td><td class="mdescRight">version Version of <a class="el" href="class_ripe.html" title="The RipeHelpers class contains wrapper functions for Ripe class. Please refer to it&#39;s documentation f...">Ripe</a> library <br /></td></tr>
 <tr class="separator:add40f72264af8364f274c7867132b642"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
+<tr class="memitem:a4a308ba3a1690c67c1f2fa7712af0877"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a4a308ba3a1690c67c1f2fa7712af0877">DATA_DELIMITER</a></td></tr>
+<tr class="memdesc:a4a308ba3a1690c67c1f2fa7712af0877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data delimiter for prepared data.  <a href="#a4a308ba3a1690c67c1f2fa7712af0877">More...</a><br /></td></tr>
+<tr class="separator:a4a308ba3a1690c67c1f2fa7712af0877"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21897920b75094bfafa94d652f0dc843"><td class="memItemLeft" align="right" valign="top"><a id="a21897920b75094bfafa94d652f0dc843"></a>
 static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a21897920b75094bfafa94d652f0dc843">BITS_PER_BYTE</a></td></tr>
-<tr class="memdesc:a21897920b75094bfafa94d652f0dc843"><td class="mdescLeft">&#160;</td><td class="mdescRight">BITS_PER_BYTE constant value for bits per bytes (8) <br /></td></tr>
+<tr class="memdesc:a21897920b75094bfafa94d652f0dc843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant value for bits per bytes (8) <br /></td></tr>
 <tr class="separator:a21897920b75094bfafa94d652f0dc843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66f6f6e124c8df4b5c40d74f24f2eed2"><td class="memItemLeft" align="right" valign="top"><a id="a66f6f6e124c8df4b5c40d74f24f2eed2"></a>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a></td></tr>
+<tr class="memdesc:a66f6f6e124c8df4b5c40d74f24f2eed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant value default rsa length. <br /></td></tr>
+<tr class="separator:a66f6f6e124c8df4b5c40d74f24f2eed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a395dad955517d6608ce11ef81d24accb"><td class="memItemLeft" align="right" valign="top"><a id="a395dad955517d6608ce11ef81d24accb"></a>
 static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a395dad955517d6608ce11ef81d24accb">AES_BSIZE</a></td></tr>
-<tr class="memdesc:a395dad955517d6608ce11ef81d24accb"><td class="mdescLeft">&#160;</td><td class="mdescRight">AES_BSIZE constant value for AES block size. <br /></td></tr>
+<tr class="memdesc:a395dad955517d6608ce11ef81d24accb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant value for AES block size. <br /></td></tr>
 <tr class="separator:a395dad955517d6608ce11ef81d24accb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="class_ripe.html" title="The Ripe class contains wrapper functions for OpenSSL that are memory-leak safe. User does not need t...">Ripe</a> class contains wrapper functions for OpenSSL that are memory-leak safe. User does not need to have OpenSSL installed in order to use pre-compiled <a class="el" href="class_ripe.html" title="The Ripe class contains wrapper functions for OpenSSL that are memory-leak safe. User does not need t...">Ripe</a> library. </p>
+<div class="textblock"><p>The RipeHelpers class contains wrapper functions for <a class="el" href="class_ripe.html" title="The RipeHelpers class contains wrapper functions for Ripe class. Please refer to it&#39;s documentation f...">Ripe</a> class. Please refer to it's documentation for details. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8bd89e5b4ea52c116be317ab85b4e55a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bd89e5b4ea52c116be317ab85b4e55a">&#9670;&nbsp;</a></span>base64Encode()</h2>
+<a id="a307685dad8585e3a4c5eec35e23d233d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a307685dad8585e3a4c5eec35e23d233d">&#9670;&nbsp;</a></span>base64Encode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,18 +216,18 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>base64Encode Helper method </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ripe.html#a1e8e0bd6f27bdc26b9eeb4df665dc08f" title="base64Encode Encode input of length to base64 encoding ">base64Encode(const byte* input, std::size_t length)</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ripe.html#afba9d3236442619910fc876d53461049" title="Encodes input of length to base64 encoding. ">base64Encode(const byte* input, std::size_t length)</a> </dd></dl>
 
 </div>
 </div>
-<a id="a10f1d6c13188f6b96581155d213698eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10f1d6c13188f6b96581155d213698eb">&#9670;&nbsp;</a></span>decryptAES()</h2>
+<a id="ad8ee15e7f6f88007a0066c4da4195dc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8ee15e7f6f88007a0066c4da4195dc8">&#9670;&nbsp;</a></span>decryptAES()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,31 +238,239 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
         <tr>
           <td class="memname">static std::string Ripe::decryptAES </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>length</em>, </td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>hexKey</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>iv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isBase64</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>decryptAES Decrypts data using specified symmetric key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isBase64</td><td>If true, first base64 decoding is done on data and then decryption is processed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad953ef353a93d95774991c100d03288b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad953ef353a93d95774991c100d03288b">&#9670;&nbsp;</a></span>decryptRSA() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string Ripe::decryptRSA </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>privateKeyPEM</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>secret</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decrypts encryptedData of length dataLength with RSA key and puts result in destination. </p>
+<dl class="section return"><dt>Returns</dt><dd>The size of the recovered plaintext. On error -1 is returned. use printLastError(const char* name) to see the error details </dd></dl>
+
+</div>
+</div>
+<a id="acd267e5444eb203b8d35a6cc4a8b8412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd267e5444eb203b8d35a6cc4a8b8412">&#9670;&nbsp;</a></span>decryptRSA() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string Ripe::decryptRSA </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>keySize</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isBase64</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">byte *&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em> = <code><a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>secret</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>decryptRSA Decrypts using RSA key </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isBase64</td><td>If true, first base64 decoding is done on data and then decryption is processed </td></tr>
+    <tr><td class="paramname">length</td><td>Size of encryption (RSA key size) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab45ead4289722cd52588c6686716ba89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab45ead4289722cd52588c6686716ba89">&#9670;&nbsp;</a></span>encryptAES() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string Ripe::encryptAES </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>hexKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>clientId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>outputFile</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>encryptAES Encrypts data with provided symmetric key </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outputFile</td><td>Optional, if provided instead of printing it to console data is saved to file and IV is printed on console </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0f029c2c83267d4d6035444883d06e02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f029c2c83267d4d6035444883d06e02">&#9670;&nbsp;</a></span>encryptAES() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string Ripe::encryptAES </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>hexKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; byte &gt; &amp;&#160;</td>
           <td class="paramname"><em>iv</em>&#160;</td>
         </tr>
         <tr>
@@ -257,18 +481,18 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>decryptAES Helper method </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ripe.html#a7f22ad7a371df3241875724f32892492" title="decryptAES Decrypts data of specified length with specified key and initialization vector ...">decryptAES(const char* data, std::size_t length, const char* key, std::size_t keySize, std::vector&lt;byte&gt;&amp; iv)</a> </dd></dl>
+<p>Helper function that takes hex key. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ripe.html#ab45ead4289722cd52588c6686716ba89" title="encryptAES Encrypts data with provided symmetric key ">encryptAES(std::string&amp; data, const std::string&amp; hexKey, const std::string&amp; clientId, const std::string&amp; outputFile)</a> </dd></dl>
 
 </div>
 </div>
-<a id="acb66fca7a2ce655169c35feba2ca96a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb66fca7a2ce655169c35feba2ca96a7">&#9670;&nbsp;</a></span>decryptRSA() <span class="overload">[1/2]</span></h2>
+<a id="a86a3fa0c806b62f191dd9c92b2544da4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86a3fa0c806b62f191dd9c92b2544da4">&#9670;&nbsp;</a></span>encryptRSA() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,211 +501,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static int Ripe::decryptRSA </td>
-          <td>(</td>
-          <td class="paramtype">byte *&#160;</td>
-          <td class="paramname"><em>encryptedData</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dataLength</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">byte *&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">byte *&#160;</td>
-          <td class="paramname"><em>destination</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>decryptRSA Decrypts encryptedData of length dataLength with RSA key and puts result in destination </p>
-<dl class="section return"><dt>Returns</dt><dd>The size of the recovered plaintext. On error -1 is returned. use <a class="el" href="class_ripe.html#a92bc1b7897d731083c052b135fc7a910" title="printLastError Print last RSA error ">printLastError(const char* name)</a> to see the error details </dd></dl>
-
-</div>
-</div>
-<a id="a9f6fc6a29b37ec58670a7991ed0fb63c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f6fc6a29b37ec58670a7991ed0fb63c">&#9670;&nbsp;</a></span>decryptRSA() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static int Ripe::decryptRSA </td>
-          <td>(</td>
-          <td class="paramtype">byte *&#160;</td>
-          <td class="paramname"><em>encryptedData</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dataLength</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">byte *&#160;</td>
-          <td class="paramname"><em>destination</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>decryptRSA helper method </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ripe.html#acb66fca7a2ce655169c35feba2ca96a7" title="decryptRSA Decrypts encryptedData of length dataLength with RSA key and puts result in destination ...">decryptRSA(byte* encryptedData, int dataLength, byte* key, byte* destination)</a> </dd></dl>
-
-</div>
-</div>
-<a id="a3461794f89fd844b2838a5d91b85a01d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3461794f89fd844b2838a5d91b85a01d">&#9670;&nbsp;</a></span>encryptCStringRSA()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static int Ripe::encryptCStringRSA </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>length</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">byte *&#160;</td>
-          <td class="paramname"><em>destination</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>encryptCStringRSA helper method </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ripe.html#ab7442ce620f9fa4ce2feaaffa0af29c6" title="encryptRSA Encrypts data of length = dataLength using RSA key and puts it in destination ...">encryptRSA(byte* data, int dataLength, byte* key, byte* destination)</a> </dd></dl>
-
-</div>
-</div>
-<a id="ab7442ce620f9fa4ce2feaaffa0af29c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7442ce620f9fa4ce2feaaffa0af29c6">&#9670;&nbsp;</a></span>encryptRSA()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static int Ripe::encryptRSA </td>
-          <td>(</td>
-          <td class="paramtype">byte *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dataLength</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">byte *&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">byte *&#160;</td>
-          <td class="paramname"><em>destination</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>encryptRSA Encrypts data of length = dataLength using RSA key and puts it in destination </p>
-<dl class="section return"><dt>Returns</dt><dd>The size of the encrypted data. On error -1 is returned. use <a class="el" href="class_ripe.html#a92bc1b7897d731083c052b135fc7a910" title="printLastError Print last RSA error ">printLastError(const char*)</a> to see the error details </dd></dl>
-
-</div>
-</div>
-<a id="a724ecccf58135bfcc94c1a28d7f5a7c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a724ecccf58135bfcc94c1a28d7f5a7c1">&#9670;&nbsp;</a></span>encryptStringRSA()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static int Ripe::encryptStringRSA </td>
+          <td class="memname">static std::string Ripe::encryptRSA </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>data</em>, </td>
@@ -489,14 +509,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">byte *&#160;</td>
-          <td class="paramname"><em>destination</em>&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>publicKeyPEM</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -506,18 +520,18 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>encryptStringRSA helper method </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ripe.html#ab7442ce620f9fa4ce2feaaffa0af29c6" title="encryptRSA Encrypts data of length = dataLength using RSA key and puts it in destination ...">encryptRSA(byte* data, int dataLength, byte* key, byte* destination)</a> </dd></dl>
+<p>Encrypts data of length = dataLength using RSA key and puts it in destination. </p>
+<dl class="section return"><dt>Returns</dt><dd>The size of the encrypted data. On error -1 is returned. use printLastError(const char*) to see the error details </dd></dl>
 
 </div>
 </div>
-<a id="af1db123c0fa2530b3f461a328c5ca7a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1db123c0fa2530b3f461a328c5ca7a3">&#9670;&nbsp;</a></span>expectedBase64Length()</h2>
+<a id="a44f7c908b43b1005c8a68a80ef37cb4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f7c908b43b1005c8a68a80ef37cb4d">&#9670;&nbsp;</a></span>encryptRSA() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -526,9 +540,66 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static unsigned int Ripe::expectedBase64Length </td>
+          <td class="memname">static std::string Ripe::encryptRSA </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>outputFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em> = <code><a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>encryptRSA Encrypts using RSA key </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outputFile</td><td>Optional, if provided instead of printing it to console data is saved to file </td></tr>
+    <tr><td class="paramname">length</td><td>Size of encryption (RSA key size) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a52452e571f69c181a027c66c787394b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52452e571f69c181a027c66c787394b8">&#9670;&nbsp;</a></span>expectedBase64Length()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::size_t Ripe::expectedBase64Length </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
           <td></td>
         </tr>
@@ -550,8 +621,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 
 </div>
 </div>
-<a id="af3e7b415c10b74e27cc03cd9b45e4361"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3e7b415c10b74e27cc03cd9b45e4361">&#9670;&nbsp;</a></span>generateRSAKeyPair()</h2>
+<a id="a7ebcdc63877239a9c50d0ffe099348f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ebcdc63877239a9c50d0ffe099348f6">&#9670;&nbsp;</a></span>expectedDataSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -560,16 +631,16 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="class_ripe.html#a645b9db194ac19579b23de05f7e9a66e">KeyPair</a> Ripe::generateRSAKeyPair </td>
+          <td class="memname">static std::size_t Ripe::expectedDataSize </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>length</em> = <code>2048</code>, </td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>plainDataSize</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned long&#160;</td>
-          <td class="paramname"><em>exponent</em> = <code>RIPE_RSA_3</code>&#160;</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>clientIdSize</em> = <code>16</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -579,13 +650,79 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>generateRSAKeyPair Generate key pair and returns KeyPair, where KeyPair.first is private key and KeyPair.second is public key </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ripe.html#acf29bc5cf870a7e96078c35a9c79785c" title="writeRSAKeyPair Writes RSA key pair and saves private key to privateOutputFile (file path) and public...">writeRSAKeyPair(const char* publicOutputFile, const char* privateOutputFile, unsigned int length, unsigned long exponent)</a> </dd></dl>
+<p>Calculates expected data size. Assumed IV size = 32. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ripe.html#a50de68bb115e0a93a4188208c7b96b9e" title="prepareData Helper method to encrypt data with symmetric key and convert it in to tranferable data...">prepareData(const char*, const std::string&amp;, const char*)</a> </dd></dl>
+
+</div>
+</div>
+<a id="adf3c0c52df3c81807f631c0e27819a73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf3c0c52df3c81807f631c0e27819a73">&#9670;&nbsp;</a></span>generateNewKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string Ripe::generateNewKey </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generate random AES key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>Length of key, must be 16, 24 or 32 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Hexadecimal value of key </dd></dl>
+
+</div>
+</div>
+<a id="a704a0f41f62e8aaa0e94607c1545ead9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a704a0f41f62e8aaa0e94607c1545ead9">&#9670;&nbsp;</a></span>generateRSAKeyPair()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_ripe_1_1_key_pair.html">KeyPair</a> Ripe::generateRSAKeyPair </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>length</em> = <code><a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generate key pair and returns <a class="el" href="struct_ripe_1_1_key_pair.html" title="RSA Key pair. ">KeyPair</a>. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_ripe_1_1_key_pair.html" title="RSA Key pair. ">KeyPair</a> </dd>
+<dd>
+writeRSAKeyPair(const char* publicOutputFile, const char* privateOutputFile, unsigned int length) </dd></dl>
 
 </div>
 </div>
@@ -617,8 +754,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <pre>67e56fee50e22a8c2ba05c0fb2932bfa:</pre><p> normalized IV is </p><pre>67 e5 6f ee 50 e2 2a 8c 2b a0 5c 0f b2 93 2b fa:</pre> 
 </div>
 </div>
-<a id="aa5432bda0e7b50d46159c6b2496488ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5432bda0e7b50d46159c6b2496488ac">&#9670;&nbsp;</a></span>prepareData()</h2>
+<a id="a50de68bb115e0a93a4188208c7b96b9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50de68bb115e0a93a4188208c7b96b9e">&#9670;&nbsp;</a></span>prepareData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -635,20 +772,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>length</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>keySize</em>, </td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>hexKey</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -664,7 +789,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -676,12 +801,12 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Base64 format of encrypted data with format: <pre>[IV]:[&lt;Client_ID&gt;:]:[Base64 Data]</pre> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Base64 format of encrypted data with format: <pre>[LENGTH]:[IV]:[&lt;Client_ID&gt;:]:[Base64 Data]</pre> </dd></dl>
 
 </div>
 </div>
-<a id="acf29bc5cf870a7e96078c35a9c79785c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf29bc5cf870a7e96078c35a9c79785c">&#9670;&nbsp;</a></span>writeRSAKeyPair()</h2>
+<a id="ae3fcb8adfcd970811da2e138efaab21f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3fcb8adfcd970811da2e138efaab21f">&#9670;&nbsp;</a></span>writeRSAKeyPair()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -692,26 +817,20 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
         <tr>
           <td class="memname">static bool Ripe::writeRSAKeyPair </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>publicOutputFile</em>, </td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>publicFile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>privateOutputFile</em>, </td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>privateFile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>length</em> = <code>2048</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned long&#160;</td>
-          <td class="paramname"><em>exponent</em> = <code>RIPE_RSA_3</code>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em> = <code><a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -721,18 +840,44 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>writeRSAKeyPair Writes RSA key pair and saves private key to privateOutputFile (file path) and public key to publicOutputFile </p>
+<p>writeRSAKeyPair Writes RSA key pair to public and private file paths. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">length</td><td>Length of the key (defaults to 256-bit [2048]) </td></tr>
+    <tr><td class="paramname">length</td><td>RSA key size </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4a308ba3a1690c67c1f2fa7712af0877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a308ba3a1690c67c1f2fa7712af0877">&#9670;&nbsp;</a></span>DATA_DELIMITER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char Ripe::DATA_DELIMITER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Data delimiter for prepared data. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ripe.html#a50de68bb115e0a93a4188208c7b96b9e" title="prepareData Helper method to encrypt data with symmetric key and convert it in to tranferable data...">prepareData(const char*, const std::string&amp;, const char*)</a> </dd></dl>
 
 </div>
 </div>

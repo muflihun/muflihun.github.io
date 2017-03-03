@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ivtovector',['ivToVector',['../class_ripe.html#af6ac599f4e68f97b1d1304149c411148',1,'Ripe']]]
+  ['maxrsablocksize',['maxRSABlockSize',['../class_ripe.html#a3eac579bde315831aef62ebafaf394c6',1,'Ripe']]]
 ];
