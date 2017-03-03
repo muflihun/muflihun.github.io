@@ -70,6 +70,7 @@ $(function() {
 </div>
 <p><a class="el" href="class_ripe.html" title="The Ripe class is core of Ripe library and contains all the required cryptography API supported by Ri...">Ripe</a> is a 256-bit security tool. It consists of command-line tool and C++ API for cryptography.</p>
 <p><a class="el" href="class_ripe.html" title="The Ripe class is core of Ripe library and contains all the required cryptography API supported by Ri...">Ripe</a> contains encryption API for two major cryptography methods, RSA and AES (Rijndael). Also contains Base64 encoding/decoding API and some helper functions to make data transferable (called <code>prepareData</code>). Binaries do not depend on third-party tools or libraries but development will require cryptography libraries installed in system in order to compile.</p>
+<p><a class="el" href="class_ripe.html" title="The Ripe class is core of Ripe library and contains all the required cryptography API supported by Ri...">Ripe</a> is fully compatible with OpenSSL. See <a href="/openssl-compatibility.sh">openssl-compatibility.sh</a></p>
 <p><a href="https://travis-ci.org/muflihun/ripe"></a> (<code>develop</code>)</p>
 <p><a href="https://travis-ci.org/muflihun/ripe"></a> (<code>master</code>)</p>
 <p><a href="https://github.com/muflihun/ripe/releases/latest"></a></p>
@@ -113,10 +114,11 @@ $(function() {
 </table>
 <h2>Getting Started</h2>
 <h3>Minimum Requirements</h3>
+<p>These are the requirements to build <a class="el" href="class_ripe.html" title="The Ripe class is core of Ripe library and contains all the required cryptography API supported by Ri...">Ripe</a> binaries. When you use it in your C++ application, you can do so without following dependencies, including older version of C++.</p>
 <ul>
 <li>C++11</li>
 <li><a href="https://github.com/muflihun/easyloggingpp">Easylogging++ v9.94.1</a></li>
-<li>Crypto++ with Pem Pack v5.6.5</li>
+<li><a href="https://www.cryptopp.com/">Crypto++ v5.6.5</a> (with Pem Pack)</li>
 <li><a href="https://cmake.org/">CMake Toolchains</a> 2.8.12</li>
 </ul>
 <h3>Get Code</h3>
@@ -124,9 +126,11 @@ $(function() {
 <div class="fragment"><div class="line">git clone git@github.com:muflihun/ripe.git</div></div><!-- fragment --><h3>Build</h3>
 <p>Residue uses the CMake toolchains to create makefiles. Steps to build <a class="el" href="class_ripe.html" title="The Ripe class is core of Ripe library and contains all the required cryptography API supported by Ri...">Ripe</a>:</p>
 <div class="fragment"><div class="line">mkdir build</div><div class="line">cd build</div><div class="line">cmake ..</div><div class="line">cmake -Dtest=ON ..</div><div class="line">make</div></div><!-- fragment --><p>Please consider running unit test before you move on</p>
-<div class="fragment"><div class="line">make test</div></div><!-- fragment --><p>The compilation process creates executable <code>ripe</code> in build directory. You can install it in system-wide directory using:</p>
+<div class="fragment"><div class="line">make test</div></div><!-- fragment --><p>The compilation process creates executable (<code>ripe</code>) as well as shared libraries in build directory. You can install it in system-wide directory using:</p>
 <div class="fragment"><div class="line">make install</div></div><!-- fragment --><p>If the default path (<code>/usr/local</code>) is not where you want things installed, then set the <code>CMAKE_INSTALL_PREFIX</code> option when running cmake. e.g,</p>
-<div class="fragment"><div class="line">cmake .. -DCMAKE_INSTALL_PREFIX=/usr/bin</div></div><!-- fragment --><h2>Examples</h2>
+<div class="fragment"><div class="line">cmake .. -DCMAKE_INSTALL_PREFIX=/usr/bin</div></div><!-- fragment --><h3>If build fails...</h3>
+<p>Make sure you have read <a href="#minimum-requirements">minimum requirements</a>. You can install required Crypto++ (with Pem Pack) using following commands</p>
+<div class="fragment"><div class="line">wget -O cryptocpp.tar.gz https://github.com/weidai11/cryptopp/archive/CRYPTOPP_5_6_5.tar.gz</div><div class="line">tar xf cryptocpp.tar.gz</div><div class="line">cd cryptopp-CRYPTOPP_5_6_5</div><div class="line">wget -O pem_pack.zip https://raw.githubusercontent.com/muflihun/muflihun.github.io/master/downloads/Pem-pack.zip</div><div class="line">unzip pem_pack.zip</div><div class="line">cmake .</div><div class="line">make</div><div class="line">sudo make install</div></div><!-- fragment --><h2>Examples</h2>
 <h3>Encryption (AES)</h3>
 <p>Following command will encrypt <code>sample.json</code> file to be ready to send to the server.</p>
 <p><code>echo "plain text" | ripe -e --key B1C8BFB9DA2D4FB054FE73047AE700BC</code></p>
