@@ -98,9 +98,11 @@ $(function() {
 <tr>
 <td><code>--iv</code> </td><td>Initializaion vector for decription </td></tr>
 <tr>
-<td><code>--rsa</code> </td><td>Use RSA encryption/decryption (Must use <code>--in-key</code> with it) </td></tr>
+<td><code>--rsa</code> </td><td>Use RSA encryption/decryption </td></tr>
 <tr>
 <td><code>--base64</code> </td><td>Tells ripe the data needs to be decoded before decryption (this can be used for decoding base64) </td></tr>
+<tr>
+<td><code>--hex</code> </td><td>Tells ripe the data is hex string </td></tr>
 <tr>
 <td><code>--clean</code> </td><td>(Only applicable when <code>--base64</code> data provided) Tells ripe to clean the data before processing </td></tr>
 <tr>
@@ -110,7 +112,7 @@ $(function() {
 <tr>
 <td><code>--length</code> </td><td>Specify key length </td></tr>
 <tr>
-<td><code>--secret</code> </td><td>Secret key to decrypted encrypted private key </td></tr>
+<td><code>--secret</code> </td><td>Secret key for encrypted private key (RSA only) </td></tr>
 </table>
 <h2>Getting Started</h2>
 <h3>Minimum Requirements</h3>
@@ -128,8 +130,13 @@ $(function() {
 <div class="fragment"><div class="line">mkdir build</div><div class="line">cd build</div><div class="line">cmake ..</div><div class="line">cmake -Dtest=ON ..</div><div class="line">make</div></div><!-- fragment --><p>Please consider running unit test before you move on</p>
 <div class="fragment"><div class="line">make test</div></div><!-- fragment --><p>The compilation process creates executable (<code>ripe</code>) as well as shared libraries in build directory. You can install it in system-wide directory using:</p>
 <div class="fragment"><div class="line">make install</div></div><!-- fragment --><p>If the default path (<code>/usr/local</code>) is not where you want things installed, then set the <code>CMAKE_INSTALL_PREFIX</code> option when running cmake. e.g,</p>
-<div class="fragment"><div class="line">cmake .. -DCMAKE_INSTALL_PREFIX=/usr/bin</div></div><!-- fragment --><h3>If build fails...</h3>
-<p>Make sure you have read <a href="#minimum-requirements">minimum requirements</a>. You can install required Crypto++ (with Pem Pack) using following commands</p>
+<div class="fragment"><div class="line">cmake .. -DCMAKE_INSTALL_PREFIX=/usr/bin</div></div><!-- fragment --><h3>Static Linking</h3>
+<p>By default ripe builds as shared library, you can pass <code>build_static_lib</code> option in cmake to build static library.</p>
+<p>For example</p>
+<div class="fragment"><div class="line">cmake -Dbuild_static_lib=ON ..</div><div class="line">make</div></div><!-- fragment --><h3>Windows</h3>
+<p>You can do <code>cmake -Ddll_export=ON ...</code> to export symbols and <code>cmake -Ddll=ON ...</code> to import if needed</p>
+<h3>If build fails...</h3>
+<p>Make sure you have read <a href="#minimum-requirements">minimum requirements</a>. You can install required Crypto++ [v5.6.5] (with Pem Pack) using following commands</p>
 <div class="fragment"><div class="line">wget -O cryptocpp.tar.gz https://github.com/weidai11/cryptopp/archive/CRYPTOPP_5_6_5.tar.gz</div><div class="line">tar xf cryptocpp.tar.gz</div><div class="line">cd cryptopp-CRYPTOPP_5_6_5</div><div class="line">wget -O pem_pack.zip https://raw.githubusercontent.com/muflihun/muflihun.github.io/master/downloads/Pem-pack.zip</div><div class="line">unzip pem_pack.zip</div><div class="line">cmake .</div><div class="line">make</div><div class="line">sudo make install</div></div><!-- fragment --><h2>Examples</h2>
 <h3>Encryption (AES)</h3>
 <p>Following command will encrypt <code>sample.json</code> file to be ready to send to the server.</p>
@@ -168,7 +175,11 @@ $(function() {
 <p>You can use following commands to encode raw data to base64 encoding</p>
 <div class="fragment"><div class="line">echo &#39;plain text&#39; | ripe -e --base64</div></div><!-- fragment --><h3>Base64 Decoding</h3>
 <p>In order to decode you may use <code>-d</code> option instead</p>
-<div class="fragment"><div class="line">echo &#39;cGxhaW4gdGV4dAo=&#39; | ripe -d --base64</div></div><!-- fragment --><h2>Licence</h2>
+<div class="fragment"><div class="line">echo &#39;cGxhaW4gdGV4dAo=&#39; | ripe -d --base64</div></div><!-- fragment --><h3>Hex Encoding</h3>
+<p>You can use following to encode data to hex encoded string</p>
+<div class="fragment"><div class="line">echo &#39;plain text&#39; | ripe -e --hex</div></div><!-- fragment --><h3>Hex Decoding</h3>
+<p>Decoding hex can be done using <code>-d</code> option</p>
+<div class="fragment"><div class="line">echo 706c61696e2074657874 | ripe -d --hex</div></div><!-- fragment --><h2>Licence</h2>
 <div class="fragment"><div class="line">The MIT License (MIT)</div><div class="line"></div><div class="line">Copyright (c) 2017 Muflihun Labs</div><div class="line"></div><div class="line">http://github.com/muflihun/</div><div class="line">http://muflihun.com</div><div class="line"></div><div class="line">Permission is hereby granted, free of charge, to any person obtaining a copy of</div><div class="line">this software and associated documentation files (the &quot;Software&quot;), to deal in</div><div class="line">the Software without restriction, including without limitation the rights to</div><div class="line">use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of</div><div class="line">the Software, and to permit persons to whom the Software is furnished to do so,</div><div class="line">subject to the following conditions:</div><div class="line"></div><div class="line">The above copyright notice and this permission notice shall be included in all</div><div class="line">copies or substantial portions of the Software.</div><div class="line"></div><div class="line">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</div><div class="line">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS</div><div class="line">FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR</div><div class="line">COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER</div><div class="line">IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</div><div class="line">CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</div></div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

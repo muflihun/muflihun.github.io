@@ -100,16 +100,16 @@ static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <tr class="memitem:a0f029c2c83267d4d6035444883d06e02"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a0f029c2c83267d4d6035444883d06e02">encryptAES</a> (const std::string &amp;buffer, const std::string &amp;hexKey, std::vector&lt; byte &gt; &amp;iv)</td></tr>
 <tr class="memdesc:a0f029c2c83267d4d6035444883d06e02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function that takes hex key.  <a href="#a0f029c2c83267d4d6035444883d06e02">More...</a><br /></td></tr>
 <tr class="separator:a0f029c2c83267d4d6035444883d06e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8ee15e7f6f88007a0066c4da4195dc8"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ad8ee15e7f6f88007a0066c4da4195dc8">decryptAES</a> (std::string &amp;data, const std::string &amp;hexKey, std::string &amp;iv, bool isBase64=false)</td></tr>
-<tr class="memdesc:ad8ee15e7f6f88007a0066c4da4195dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">decryptAES Decrypts data using specified symmetric key.  <a href="#ad8ee15e7f6f88007a0066c4da4195dc8">More...</a><br /></td></tr>
-<tr class="separator:ad8ee15e7f6f88007a0066c4da4195dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57907b7a33b7951c2253a1599896667a"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a57907b7a33b7951c2253a1599896667a">decryptAES</a> (std::string &amp;data, const std::string &amp;hexKey, std::string &amp;iv, bool isBase64=false, bool isHex=false)</td></tr>
+<tr class="memdesc:a57907b7a33b7951c2253a1599896667a"><td class="mdescLeft">&#160;</td><td class="mdescRight">decryptAES Decrypts data using specified symmetric key.  <a href="#a57907b7a33b7951c2253a1599896667a">More...</a><br /></td></tr>
+<tr class="separator:a57907b7a33b7951c2253a1599896667a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac07c9d0a5ab1d57d139710edea5e6944"><td class="memItemLeft" align="right" valign="top"><a id="ac07c9d0a5ab1d57d139710edea5e6944"></a>
 static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ac07c9d0a5ab1d57d139710edea5e6944">expectedAESCipherLength</a> (std::size_t plainDataSize) noexcept</td></tr>
 <tr class="memdesc:ac07c9d0a5ab1d57d139710edea5e6944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exceptect size of AES cipher when plainDataSize size data is encrypted. <br /></td></tr>
 <tr class="separator:ac07c9d0a5ab1d57d139710edea5e6944"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a365a67a40ae457c56f3fca734bd45697"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a365a67a40ae457c56f3fca734bd45697">normalizeIV</a> (std::string &amp;iv) noexcept</td></tr>
-<tr class="memdesc:a365a67a40ae457c56f3fca734bd45697"><td class="mdescLeft">&#160;</td><td class="mdescRight">normalizeIV If IV with no space is provided e.g,  <a href="#a365a67a40ae457c56f3fca734bd45697">More...</a><br /></td></tr>
-<tr class="separator:a365a67a40ae457c56f3fca734bd45697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab72b551ca90a4b4642889e263cc3c13b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ab72b551ca90a4b4642889e263cc3c13b">normalizeHex</a> (std::string &amp;iv) noexcept</td></tr>
+<tr class="memdesc:ab72b551ca90a4b4642889e263cc3c13b"><td class="mdescLeft">&#160;</td><td class="mdescRight">normalizeIV If IV with no space is provided e.g,  <a href="#ab72b551ca90a4b4642889e263cc3c13b">More...</a><br /></td></tr>
+<tr class="separator:ab72b551ca90a4b4642889e263cc3c13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86a3fa0c806b62f191dd9c92b2544da4"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a86a3fa0c806b62f191dd9c92b2544da4">encryptRSA</a> (const std::string &amp;data, const std::string &amp;publicKeyPEM)</td></tr>
 <tr class="memdesc:a86a3fa0c806b62f191dd9c92b2544da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypts data of length = dataLength using RSA key and puts it in destination.  <a href="#a86a3fa0c806b62f191dd9c92b2544da4">More...</a><br /></td></tr>
 <tr class="separator:a86a3fa0c806b62f191dd9c92b2544da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,16 +136,13 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class=
 static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ad2625c9619dd50613458fedb672aa1ea">generateRSAKeyPairBase64</a> (int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>)</td></tr>
 <tr class="memdesc:ad2625c9619dd50613458fedb672aa1ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">generateRSAKeyPair Generates RSA key pair and returns colon seperated base64 where first part is private key and second part is public key. <br /></td></tr>
 <tr class="separator:ad2625c9619dd50613458fedb672aa1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afba9d3236442619910fc876d53461049"><td class="memItemLeft" align="right" valign="top"><a id="afba9d3236442619910fc876d53461049"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#afba9d3236442619910fc876d53461049">base64Encode</a> (const byte *input, std::size_t length)</td></tr>
-<tr class="memdesc:afba9d3236442619910fc876d53461049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encodes input of length to base64 encoding. <br /></td></tr>
-<tr class="separator:afba9d3236442619910fc876d53461049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadac58f6af172236243e68127a95559b"><td class="memItemLeft" align="right" valign="top"><a id="aadac58f6af172236243e68127a95559b"></a>
 static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#aadac58f6af172236243e68127a95559b">base64Decode</a> (const std::string &amp;base64Encoded)</td></tr>
 <tr class="memdesc:aadac58f6af172236243e68127a95559b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodes encoded base64. <br /></td></tr>
 <tr class="separator:aadac58f6af172236243e68127a95559b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a307685dad8585e3a4c5eec35e23d233d"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a307685dad8585e3a4c5eec35e23d233d">base64Encode</a> (const std::string &amp;binaryData)</td></tr>
-<tr class="memdesc:a307685dad8585e3a4c5eec35e23d233d"><td class="mdescLeft">&#160;</td><td class="mdescRight">base64Encode Helper method  <a href="#a307685dad8585e3a4c5eec35e23d233d">More...</a><br /></td></tr>
+<tr class="memitem:a307685dad8585e3a4c5eec35e23d233d"><td class="memItemLeft" align="right" valign="top"><a id="a307685dad8585e3a4c5eec35e23d233d"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a307685dad8585e3a4c5eec35e23d233d">base64Encode</a> (const std::string &amp;binaryData)</td></tr>
+<tr class="memdesc:a307685dad8585e3a4c5eec35e23d233d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encodes input of length to base64 encoding. <br /></td></tr>
 <tr class="separator:a307685dad8585e3a4c5eec35e23d233d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52452e571f69c181a027c66c787394b8"><td class="memItemLeft" align="right" valign="top">static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a52452e571f69c181a027c66c787394b8">expectedBase64Length</a> (std::size_t n) noexcept</td></tr>
 <tr class="memdesc:a52452e571f69c181a027c66c787394b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">expectedBase64Length Returns expected base64 length  <a href="#a52452e571f69c181a027c66c787394b8">More...</a><br /></td></tr>
@@ -156,16 +153,17 @@ static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <tr class="memitem:a7ebcdc63877239a9c50d0ffe099348f6"><td class="memItemLeft" align="right" valign="top">static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a7ebcdc63877239a9c50d0ffe099348f6">expectedDataSize</a> (std::size_t plainDataSize, std::size_t clientIdSize=16) noexcept</td></tr>
 <tr class="memdesc:a7ebcdc63877239a9c50d0ffe099348f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates expected data size. Assumed IV size = 32.  <a href="#a7ebcdc63877239a9c50d0ffe099348f6">More...</a><br /></td></tr>
 <tr class="separator:a7ebcdc63877239a9c50d0ffe099348f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1128e6af683d16457ed0aaa56252886b"><td class="memItemLeft" align="right" valign="top"><a id="a1128e6af683d16457ed0aaa56252886b"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a1128e6af683d16457ed0aaa56252886b">stringToHex</a> (const std::string &amp;str) noexcept</td></tr>
-<tr class="memdesc:a1128e6af683d16457ed0aaa56252886b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper functino to convert string to hexdecimal e.g, khn = 6b686e. <br /></td></tr>
-<tr class="separator:a1128e6af683d16457ed0aaa56252886b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a93589688ea98bdc612135c44706c78"><td class="memItemLeft" align="right" valign="top"><a id="a7a93589688ea98bdc612135c44706c78"></a>
-static const byte *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a7a93589688ea98bdc612135c44706c78">hexToByte</a> (const std::string &amp;hex)</td></tr>
-<tr class="memdesc:a7a93589688ea98bdc612135c44706c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to convert hexadecimal input to byte array e.g, 6b686e = (byte*)khn. <br /></td></tr>
-<tr class="separator:a7a93589688ea98bdc612135c44706c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a303778523016b58ada78a364933c83ef"><td class="memItemLeft" align="right" valign="top"><a id="a303778523016b58ada78a364933c83ef"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a303778523016b58ada78a364933c83ef">stringToHex</a> (const std::string &amp;raw) noexcept</td></tr>
+<tr class="memdesc:a303778523016b58ada78a364933c83ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to convert string to hexdecimal e.g, khn = 6b686e. <br /></td></tr>
+<tr class="separator:a303778523016b58ada78a364933c83ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34cc0d9d63a485889a57f87c63e20213"><td class="memItemLeft" align="right" valign="top"><a id="a34cc0d9d63a485889a57f87c63e20213"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a34cc0d9d63a485889a57f87c63e20213">hexToString</a> (const std::string &amp;hex)</td></tr>
+<tr class="memdesc:a34cc0d9d63a485889a57f87c63e20213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to convert hexadecimal input to raw data. <br /></td></tr>
+<tr class="separator:a34cc0d9d63a485889a57f87c63e20213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a889ea0049d61b6e960baa6602e53f1a1"><td class="memItemLeft" align="right" valign="top"><a id="a889ea0049d61b6e960baa6602e53f1a1"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>vecToString</b> (const std::vector&lt; byte &gt; &amp;iv) noexcept</td></tr>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a889ea0049d61b6e960baa6602e53f1a1">vecToString</a> (const std::vector&lt; byte &gt; &amp;iv) noexcept</td></tr>
+<tr class="memdesc:a889ea0049d61b6e960baa6602e53f1a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts vector of byte to raw string. <br /></td></tr>
 <tr class="separator:a889ea0049d61b6e960baa6602e53f1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbc29fc67778b6826b6d98db2b701bf0"><td class="memItemLeft" align="right" valign="top"><a id="afbc29fc67778b6826b6d98db2b701bf0"></a>
 static std::vector&lt; byte &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#afbc29fc67778b6826b6d98db2b701bf0">byteToVec</a> (const byte *iv) noexcept</td></tr>
@@ -197,37 +195,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_ripe.html" title="The Ripe class is core of Ripe library and contains all the required cryptography API supported by Ri...">Ripe</a> class is core of <a class="el" href="class_ripe.html" title="The Ripe class is core of Ripe library and contains all the required cryptography API supported by Ri...">Ripe</a> library and contains all the required cryptography API supported by <a class="el" href="class_ripe.html" title="The Ripe class is core of Ripe library and contains all the required cryptography API supported by Ri...">Ripe</a>. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a307685dad8585e3a4c5eec35e23d233d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a307685dad8585e3a4c5eec35e23d233d">&#9670;&nbsp;</a></span>base64Encode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static std::string Ripe::base64Encode </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>binaryData</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>base64Encode Helper method </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ripe.html#afba9d3236442619910fc876d53461049" title="Encodes input of length to base64 encoding. ">base64Encode(const byte*, std::size_t)</a> </dd></dl>
-
-</div>
-</div>
-<a id="ad8ee15e7f6f88007a0066c4da4195dc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8ee15e7f6f88007a0066c4da4195dc8">&#9670;&nbsp;</a></span>decryptAES()</h2>
+<a id="a57907b7a33b7951c2253a1599896667a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57907b7a33b7951c2253a1599896667a">&#9670;&nbsp;</a></span>decryptAES()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -257,7 +226,13 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isBase64</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>isBase64</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isHex</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -276,6 +251,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">isBase64</td><td>If true, first base64 decoding is done on data and then decryption is processed </td></tr>
+    <tr><td class="paramname">isHex</td><td>If true, hex string is decoded. If base64 is true, base64 decoding is done before hex decoding </td></tr>
   </table>
   </dd>
 </dl>
@@ -724,8 +700,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 
 </div>
 </div>
-<a id="a365a67a40ae457c56f3fca734bd45697"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a365a67a40ae457c56f3fca734bd45697">&#9670;&nbsp;</a></span>normalizeIV()</h2>
+<a id="ab72b551ca90a4b4642889e263cc3c13b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab72b551ca90a4b4642889e263cc3c13b">&#9670;&nbsp;</a></span>normalizeHex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -734,7 +710,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool Ripe::normalizeIV </td>
+          <td class="memname">static bool Ripe::normalizeHex </td>
           <td>(</td>
           <td class="paramtype">std::string &amp;&#160;</td>
           <td class="paramname"><em>iv</em></td><td>)</td>

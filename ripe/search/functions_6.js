@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalizeiv',['normalizeIV',['../class_ripe.html#a365a67a40ae457c56f3fca734bd45697',1,'Ripe']]]
+  ['normalizehex',['normalizeHex',['../class_ripe.html#ab72b551ca90a4b4642889e263cc3c13b',1,'Ripe']]]
 ];
