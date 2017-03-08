@@ -100,6 +100,8 @@ $(function() {
 <tr>
 <td><code>--rsa</code> </td><td>Use RSA encryption/decryption </td></tr>
 <tr>
+<td><code>--raw</code> </td><td>Raw output for rsa encrypted data </td></tr>
+<tr>
 <td><code>--base64</code> </td><td>Tells ripe the data needs to be decoded before decryption (this can be used for decoding base64) </td></tr>
 <tr>
 <td><code>--hex</code> </td><td>Tells ripe the data is hex string </td></tr>
@@ -116,7 +118,7 @@ $(function() {
 </table>
 <h2>Getting Started</h2>
 <h3>Minimum Requirements</h3>
-<p>These are the requirements to build <a class="el" href="class_ripe.html" title="The Ripe class is core of Ripe library and contains all the required cryptography API supported by Ri...">Ripe</a> binaries. When you use it in your C++ application, you can do so without following dependencies, including older version of C++.</p>
+<p>These are the requirements to build <a class="el" href="class_ripe.html" title="The Ripe class is core of Ripe library and contains all the required cryptography API supported by Ri...">Ripe</a> binaries. When you use it in your C++ application, you can do so without following dependencies, including older version of C++ as long as you the machine has dynamic library for <code>libstdc++</code>.</p>
 <ul>
 <li>C++11</li>
 <li><a href="https://github.com/muflihun/easyloggingpp">Easylogging++ v9.94.1</a></li>
@@ -136,8 +138,10 @@ $(function() {
 <div class="fragment"><div class="line">cmake -Dbuild_static_lib=ON ..</div><div class="line">make</div></div><!-- fragment --><h3>Windows</h3>
 <p>You can do <code>cmake -Ddll_export=ON ...</code> to export symbols and <code>cmake -Ddll=ON ...</code> to import if needed</p>
 <h3>If build fails...</h3>
-<p>Make sure you have read <a href="#minimum-requirements">minimum requirements</a>. You can install required Crypto++ [v5.6.5] (with Pem Pack) using following commands</p>
-<div class="fragment"><div class="line">wget -O cryptocpp.tar.gz https://github.com/weidai11/cryptopp/archive/CRYPTOPP_5_6_5.tar.gz</div><div class="line">tar xf cryptocpp.tar.gz</div><div class="line">cd cryptopp-CRYPTOPP_5_6_5</div><div class="line">wget -O pem_pack.zip https://raw.githubusercontent.com/muflihun/muflihun.github.io/master/downloads/Pem-pack.zip</div><div class="line">unzip pem_pack.zip</div><div class="line">cmake .</div><div class="line">make</div><div class="line">sudo make install</div></div><!-- fragment --><h2>Examples</h2>
+<p>Make sure you have read <a href="#minimum-requirements">minimum requirements</a>. You can install required Crypto++ v5.6.5 (with Pem Pack) using following commands</p>
+<div class="fragment"><div class="line">wget -O cryptocpp.tar.gz https://github.com/weidai11/cryptopp/archive/CRYPTOPP_5_6_5.tar.gz</div><div class="line">tar xf cryptocpp.tar.gz</div><div class="line">cd cryptopp-CRYPTOPP_5_6_5</div><div class="line">wget -O pem_pack.zip https://raw.githubusercontent.com/muflihun/muflihun.github.io/master/downloads/Pem-pack.zip</div><div class="line">unzip pem_pack.zip</div><div class="line">cmake .</div><div class="line">make</div><div class="line">make install</div></div><!-- fragment --><p>and Easylogging++ using</p>
+<div class="fragment"><div class="line">wget -O easylogging++.zip https://github.com/muflihun/easyloggingpp/archive/master.zip</div><div class="line">unzip easylogging++.zip</div><div class="line">cd easyloggingpp-master/</div><div class="line">cmake -Dtest=ON .</div><div class="line">make</div><div class="line">./easyloggingpp-unit-tests</div><div class="line">make install</div></div><!-- fragment --><p>If <code>make install</code> fails because of permission try to run it as super-user <code>sudo make install</code></p>
+<h2>Examples</h2>
 <h3>Encryption (AES)</h3>
 <p>Following command will encrypt <code>sample.json</code> file to be ready to send to the server.</p>
 <p><code>echo "plain text" | ripe -e --key B1C8BFB9DA2D4FB054FE73047AE700BC</code></p>
@@ -161,9 +165,9 @@ $(function() {
 <div class="fragment"><div class="line">ripe -g --rsa</div></div><!-- fragment --><p>This will give you two base64 strings with <code>:</code> as separator. First encoded text is base64 of newly generated private key and second being newly generated corresponding public key.</p>
 <h3>Encryption (RSA)</h3>
 <p>You can encrypt the data using public key and decrypt with a private key</p>
-<div class="fragment"><div class="line">echo &#39;plain text&#39; | ripe -e --rsa --in-key public.pem</div></div><!-- fragment --><p>(You can also use <code>--out /tmp/output.enc</code> to save it to <code>/tmp/output.enc</code> file</p>
-<h3>Decryption (RSA)</h3>
-<div class="fragment"><div class="line">ripe -d --rsa --in-key private.pem --in /tmp/output.enc --base64</div></div><!-- fragment --><p>Please note, decryption (RSA) is unstable at the moment, you may use following alternative command until it's fixed</p>
+<div class="fragment"><div class="line">echo &#39;plain text&#39; | ripe -e --rsa --in-key public.pem</div></div><!-- fragment --><p>You can also use <code>--out /tmp/output.enc</code> to save it to <code>/tmp/output.enc</code> file</p>
+<p>You can also add <code>--raw</code> option to output raw data instead of base64 encoded</p>
+<p>### Decryption (RSA) </p><div class="fragment"><div class="line">ripe -d --rsa --in-key private.pem --in /tmp/output.enc --base64</div></div><!-- fragment --><p>Please note, decryption (RSA) is unstable at the moment, you may use following alternative command until it's fixed</p>
 <div class="fragment"><div class="line">cat /tmp/output.enc | openssl rsautl -decrypt -inkey private.pem --base64</div></div><!-- fragment --><h4>Encrypted Keys</h4>
 <p>If you have an RSA key that is encrypted with pass phrase, let's say </p><div class="fragment"><div class="line">openssl genrsa -des3 -out private.pem 2048</div></div><!-- fragment --><p>extract public key: <code>openssl rsa -in private.pem -outform PEM -pubout -out public.pem</code></p>
 <p>You can use <code>--secret</code> to decrypt it</p>

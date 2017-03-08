@@ -123,12 +123,12 @@ static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="
 static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a3eac579bde315831aef62ebafaf394c6">maxRSABlockSize</a> (std::size_t keySize)</td></tr>
 <tr class="memdesc:a3eac579bde315831aef62ebafaf394c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">maxRSABlockSize Maximum size of RSA block with specified key size <br /></td></tr>
 <tr class="separator:a3eac579bde315831aef62ebafaf394c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44f7c908b43b1005c8a68a80ef37cb4d"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a44f7c908b43b1005c8a68a80ef37cb4d">encryptRSA</a> (std::string &amp;data, const std::string &amp;key, const std::string &amp;outputFile, int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>)</td></tr>
-<tr class="memdesc:a44f7c908b43b1005c8a68a80ef37cb4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">encryptRSA Encrypts using RSA key  <a href="#a44f7c908b43b1005c8a68a80ef37cb4d">More...</a><br /></td></tr>
-<tr class="separator:a44f7c908b43b1005c8a68a80ef37cb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd267e5444eb203b8d35a6cc4a8b8412"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#acd267e5444eb203b8d35a6cc4a8b8412">decryptRSA</a> (std::string &amp;data, const std::string &amp;key, bool isBase64, int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>, const std::string &amp;secret=&quot;&quot;)</td></tr>
-<tr class="memdesc:acd267e5444eb203b8d35a6cc4a8b8412"><td class="mdescLeft">&#160;</td><td class="mdescRight">decryptRSA Decrypts using RSA key  <a href="#acd267e5444eb203b8d35a6cc4a8b8412">More...</a><br /></td></tr>
-<tr class="separator:acd267e5444eb203b8d35a6cc4a8b8412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa56e5665c2857e377bc6c92ede57d6aa"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#aa56e5665c2857e377bc6c92ede57d6aa">encryptRSA</a> (std::string &amp;data, const std::string &amp;key, const std::string &amp;outputFile, bool isRaw=false)</td></tr>
+<tr class="memdesc:aa56e5665c2857e377bc6c92ede57d6aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">encryptRSA Encrypts using RSA key  <a href="#aa56e5665c2857e377bc6c92ede57d6aa">More...</a><br /></td></tr>
+<tr class="separator:aa56e5665c2857e377bc6c92ede57d6aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc2a834d7a596ccd9050a7b8067f81ce"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#afc2a834d7a596ccd9050a7b8067f81ce">decryptRSA</a> (std::string &amp;data, const std::string &amp;key, bool isBase64, bool isHex=false, const std::string &amp;secret=&quot;&quot;)</td></tr>
+<tr class="memdesc:afc2a834d7a596ccd9050a7b8067f81ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">decryptRSA Decrypts using RSA key  <a href="#afc2a834d7a596ccd9050a7b8067f81ce">More...</a><br /></td></tr>
+<tr class="separator:afc2a834d7a596ccd9050a7b8067f81ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3fcb8adfcd970811da2e138efaab21f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ae3fcb8adfcd970811da2e138efaab21f">writeRSAKeyPair</a> (const std::string &amp;publicFile, const std::string &amp;privateFile, int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>)</td></tr>
 <tr class="memdesc:ae3fcb8adfcd970811da2e138efaab21f"><td class="mdescLeft">&#160;</td><td class="mdescRight">writeRSAKeyPair Writes RSA key pair to public and private file paths.  <a href="#ae3fcb8adfcd970811da2e138efaab21f">More...</a><br /></td></tr>
 <tr class="separator:ae3fcb8adfcd970811da2e138efaab21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -303,8 +303,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 
 </div>
 </div>
-<a id="acd267e5444eb203b8d35a6cc4a8b8412"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd267e5444eb203b8d35a6cc4a8b8412">&#9670;&nbsp;</a></span>decryptRSA() <span class="overload">[2/2]</span></h2>
+<a id="afc2a834d7a596ccd9050a7b8067f81ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc2a834d7a596ccd9050a7b8067f81ce">&#9670;&nbsp;</a></span>decryptRSA() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -333,8 +333,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>length</em> = <code><a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a></code>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isHex</em> = <code>false</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -358,8 +358,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>decryptRSA Decrypts using RSA key </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">isHex</td><td>If true, hex string is decoded. If base64 is true, base64 decoding is done before hex decoding </td></tr>
     <tr><td class="paramname">isBase64</td><td>If true, first base64 decoding is done on data and then decryption is processed </td></tr>
-    <tr><td class="paramname">length</td><td>Size of encryption (RSA key size) </td></tr>
   </table>
   </dd>
 </dl>
@@ -506,8 +506,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 
 </div>
 </div>
-<a id="a44f7c908b43b1005c8a68a80ef37cb4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44f7c908b43b1005c8a68a80ef37cb4d">&#9670;&nbsp;</a></span>encryptRSA() <span class="overload">[2/2]</span></h2>
+<a id="aa56e5665c2857e377bc6c92ede57d6aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa56e5665c2857e377bc6c92ede57d6aa">&#9670;&nbsp;</a></span>encryptRSA() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -536,8 +536,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>length</em> = <code><a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a></code>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isRaw</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -556,7 +556,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">outputFile</td><td>Optional, if provided instead of printing it to console data is saved to file </td></tr>
-    <tr><td class="paramname">length</td><td>Size of encryption (RSA key size) </td></tr>
+    <tr><td class="paramname">isRaw</td><td>Outputs raw data </td></tr>
   </table>
   </dd>
 </dl>
