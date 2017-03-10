@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maxrsablocksize',['maxRSABlockSize',['../class_ripe.html#a3eac579bde315831aef62ebafaf394c6',1,'Ripe']]]
+  ['keypair',['KeyPair',['../struct_ripe_1_1_key_pair.html',1,'Ripe']]]
 ];
