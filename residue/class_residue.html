@@ -87,6 +87,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aabbb3cbb846a693205cdca9f5ddbd00a"><td class="memItemLeft" align="right" valign="top"><a id="aabbb3cbb846a693205cdca9f5ddbd00a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Residue</b> (<a class="el" href="class_residue.html">Residue</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:aabbb3cbb846a693205cdca9f5ddbd00a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa158a3895a49b5e492b893d01c41d242"><td class="memItemLeft" align="right" valign="top"><a id="aa158a3895a49b5e492b893d01c41d242"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Residue</b> (const <a class="el" href="class_residue.html">Residue</a> &amp;)=delete</td></tr>
 <tr class="separator:aa158a3895a49b5e492b893d01c41d242"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -96,9 +99,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a7602b8de71b5215a132ab8a059ed4a01"><td class="memItemLeft" align="right" valign="top"><a id="a7602b8de71b5215a132ab8a059ed4a01"></a>
-static <a class="el" href="class_residue.html">Residue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>instance</b> ()</td></tr>
-<tr class="separator:a7602b8de71b5215a132ab8a059ed4a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55e6890db940083cbe5579006d4c0cb9"><td class="memItemLeft" align="right" valign="top"><a id="a55e6890db940083cbe5579006d4c0cb9"></a>
+static <a class="el" href="class_residue.html">Residue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a55e6890db940083cbe5579006d4c0cb9">instance</a> () noexcept</td></tr>
+<tr class="memdesc:a55e6890db940083cbe5579006d4c0cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singleton instance. <br /></td></tr>
+<tr class="separator:a55e6890db940083cbe5579006d4c0cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6fca8105141d2d5dd9447bab04d377f"><td class="memItemLeft" align="right" valign="top"><a id="ad6fca8105141d2d5dd9447bab04d377f"></a>
 static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ad6fca8105141d2d5dd9447bab04d377f">version</a> () noexcept</td></tr>
 <tr class="memdesc:ad6fca8105141d2d5dd9447bab04d377f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version of <a class="el" href="class_residue.html" title="The Residue class provides helper methods to connect and interact to residue server seamlessly...">Residue</a> library. <br /></td></tr>
@@ -107,21 +111,28 @@ static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="
 static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a4e6f9382fe3cb3ad672e1ca0b94023b5">info</a> () noexcept</td></tr>
 <tr class="memdesc:a4e6f9382fe3cb3ad672e1ca0b94023b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version of <a class="el" href="class_residue.html" title="The Residue class provides helper methods to connect and interact to residue server seamlessly...">Residue</a> library and dependencies. <br /></td></tr>
 <tr class="separator:a4e6f9382fe3cb3ad672e1ca0b94023b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84e246e6d2aa693f1f1af4aaaa4395c2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a84e246e6d2aa693f1f1af4aaaa4395c2">connect</a> (const std::string &amp;host, int port, <a class="el" href="class_residue.html#a530e1b470fef98379231c8a631ea2645">AccessCodeMap</a> *accessCodeMap) noexcept</td></tr>
-<tr class="memdesc:a84e246e6d2aa693f1f1af4aaaa4395c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to residue on specified host.  <a href="#a84e246e6d2aa693f1f1af4aaaa4395c2">More...</a><br /></td></tr>
-<tr class="separator:a84e246e6d2aa693f1f1af4aaaa4395c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae79afe89b20616b739b85080a81c9716"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ae79afe89b20616b739b85080a81c9716">connect</a> (int port, <a class="el" href="class_residue.html#a530e1b470fef98379231c8a631ea2645">AccessCodeMap</a> *accessCodeMap) noexcept</td></tr>
-<tr class="memdesc:ae79afe89b20616b739b85080a81c9716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to residue on localhost.  <a href="#ae79afe89b20616b739b85080a81c9716">More...</a><br /></td></tr>
-<tr class="separator:ae79afe89b20616b739b85080a81c9716"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a8688b0ca9236db1f0361c99d2ca1da"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a6a8688b0ca9236db1f0361c99d2ca1da">connect</a> (<a class="el" href="class_residue.html#a530e1b470fef98379231c8a631ea2645">AccessCodeMap</a> *accessCodeMap) noexcept</td></tr>
-<tr class="memdesc:a6a8688b0ca9236db1f0361c99d2ca1da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to residue on localhost using default port.  <a href="#a6a8688b0ca9236db1f0361c99d2ca1da">More...</a><br /></td></tr>
-<tr class="separator:a6a8688b0ca9236db1f0361c99d2ca1da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac02dab4d14e56e1b95c240ce92410dd1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ac02dab4d14e56e1b95c240ce92410dd1">connect</a> () noexcept</td></tr>
-<tr class="memdesc:ac02dab4d14e56e1b95c240ce92410dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to residue on localhost using default port and previously provided access code map This is more useful when you have client ID so you won't have varying client IDs.  <a href="#ac02dab4d14e56e1b95c240ce92410dd1">More...</a><br /></td></tr>
-<tr class="separator:ac02dab4d14e56e1b95c240ce92410dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62825d1a0fb086b3c323c1f63892ad74"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a62825d1a0fb086b3c323c1f63892ad74">connect</a> (const std::string &amp;host, int port, <a class="el" href="class_residue.html#a530e1b470fef98379231c8a631ea2645">AccessCodeMap</a> *accessCodeMap)</td></tr>
+<tr class="memdesc:a62825d1a0fb086b3c323c1f63892ad74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to residue on specified host.  <a href="#a62825d1a0fb086b3c323c1f63892ad74">More...</a><br /></td></tr>
+<tr class="separator:a62825d1a0fb086b3c323c1f63892ad74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a017672dcdf9dd58e3bb9d9e25f7173d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a017672dcdf9dd58e3bb9d9e25f7173d5">connect</a> (int port, <a class="el" href="class_residue.html#a530e1b470fef98379231c8a631ea2645">AccessCodeMap</a> *accessCodeMap)</td></tr>
+<tr class="memdesc:a017672dcdf9dd58e3bb9d9e25f7173d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to residue on localhost.  <a href="#a017672dcdf9dd58e3bb9d9e25f7173d5">More...</a><br /></td></tr>
+<tr class="separator:a017672dcdf9dd58e3bb9d9e25f7173d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefd5f85b7e3df187f86483ffe4cdcd1b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#aefd5f85b7e3df187f86483ffe4cdcd1b">connect</a> (<a class="el" href="class_residue.html#a530e1b470fef98379231c8a631ea2645">AccessCodeMap</a> *accessCodeMap)</td></tr>
+<tr class="memdesc:aefd5f85b7e3df187f86483ffe4cdcd1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to residue on localhost using default port.  <a href="#aefd5f85b7e3df187f86483ffe4cdcd1b">More...</a><br /></td></tr>
+<tr class="separator:aefd5f85b7e3df187f86483ffe4cdcd1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade47304dd7f55b019fdb50a546be278e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ade47304dd7f55b019fdb50a546be278e">connect</a> ()</td></tr>
+<tr class="memdesc:ade47304dd7f55b019fdb50a546be278e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to residue on localhost using default port and previously provided access code map. This is more useful when you have client ID so you won't have varying client IDs.  <a href="#ade47304dd7f55b019fdb50a546be278e">More...</a><br /></td></tr>
+<tr class="separator:ade47304dd7f55b019fdb50a546be278e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a383054f620ebb33351eb6b47a76afb79"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a383054f620ebb33351eb6b47a76afb79">connected</a> () noexcept</td></tr>
 <tr class="memdesc:a383054f620ebb33351eb6b47a76afb79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check connection to the server.  <a href="#a383054f620ebb33351eb6b47a76afb79">More...</a><br /></td></tr>
 <tr class="separator:a383054f620ebb33351eb6b47a76afb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd3853e36a30eeac55330b12503e128e"><td class="memItemLeft" align="right" valign="top"><a id="abd3853e36a30eeac55330b12503e128e"></a>
+static const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#abd3853e36a30eeac55330b12503e128e">clientId</a> () noexcept</td></tr>
+<tr class="memdesc:abd3853e36a30eeac55330b12503e128e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns current client ID. Returns empty if not connected. <br /></td></tr>
+<tr class="separator:abd3853e36a30eeac55330b12503e128e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a083fd31f46cb74adb5dd765ba460d0a9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a083fd31f46cb74adb5dd765ba460d0a9">connecting</a> () noexcept</td></tr>
+<tr class="memdesc:a083fd31f46cb74adb5dd765ba460d0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check connection to the server.  <a href="#a083fd31f46cb74adb5dd765ba460d0a9">More...</a><br /></td></tr>
+<tr class="separator:a083fd31f46cb74adb5dd765ba460d0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1a642f4428bb02e82a52bcbcab9df3f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ab1a642f4428bb02e82a52bcbcab9df3f">disconnect</a> () noexcept</td></tr>
 <tr class="memdesc:ab1a642f4428bb02e82a52bcbcab9df3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely disconnects from the server. This will also call <a class="el" href="class_residue.html#aa3f2e619424aece74ecd6586c0539eb0" title="Wait to dispatch all the log requests to the server. ">wait()</a>  <a href="#ab1a642f4428bb02e82a52bcbcab9df3f">More...</a><br /></td></tr>
 <tr class="separator:ab1a642f4428bb02e82a52bcbcab9df3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,23 +144,40 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a41082b8432a1c22a2087887777f09011">setApplicationId</a> (const std::string &amp;id) noexcept</td></tr>
 <tr class="memdesc:a41082b8432a1c22a2087887777f09011"><td class="mdescLeft">&#160;</td><td class="mdescRight">Application ID is what gets passed on to the server for app format specifier. <br /></td></tr>
 <tr class="separator:a41082b8432a1c22a2087887777f09011"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bc1c73a82d964ec40600cb72f99645f"><td class="memItemLeft" align="right" valign="top"><a id="a3bc1c73a82d964ec40600cb72f99645f"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a3bc1c73a82d964ec40600cb72f99645f">enableBulkDispatch</a> () noexcept</td></tr>
-<tr class="memdesc:a3bc1c73a82d964ec40600cb72f99645f"><td class="mdescLeft">&#160;</td><td class="mdescRight">enableBulkDispatch turns on bulk dispatch. MAKE SURE SERVER SUPPORTS BULK LOG REQUESTS <br /></td></tr>
+<tr class="memitem:a3bc1c73a82d964ec40600cb72f99645f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a3bc1c73a82d964ec40600cb72f99645f">enableBulkDispatch</a> () noexcept</td></tr>
+<tr class="memdesc:a3bc1c73a82d964ec40600cb72f99645f"><td class="mdescLeft">&#160;</td><td class="mdescRight">enableBulkDispatch turns on bulk dispatch.  <a href="#a3bc1c73a82d964ec40600cb72f99645f">More...</a><br /></td></tr>
 <tr class="separator:a3bc1c73a82d964ec40600cb72f99645f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affc470c515fabf8b9bcc7a63965a57dc"><td class="memItemLeft" align="right" valign="top"><a id="affc470c515fabf8b9bcc7a63965a57dc"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#affc470c515fabf8b9bcc7a63965a57dc">disableBulkDispatch</a> () noexcept</td></tr>
 <tr class="memdesc:affc470c515fabf8b9bcc7a63965a57dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">disableBulkDispatch turns off bulk dispatch. <br /></td></tr>
 <tr class="separator:affc470c515fabf8b9bcc7a63965a57dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9327141f313dbc26636dff96802a8f13"><td class="memItemLeft" align="right" valign="top"><a id="a9327141f313dbc26636dff96802a8f13"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a9327141f313dbc26636dff96802a8f13">enableUtc</a> () noexcept</td></tr>
+<tr class="memdesc:a9327141f313dbc26636dff96802a8f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send UTC time to the server. By default local time is sent. <br /></td></tr>
+<tr class="separator:a9327141f313dbc26636dff96802a8f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc949f1c8b0530d79b11f60c31bfe5b0"><td class="memItemLeft" align="right" valign="top"><a id="acc949f1c8b0530d79b11f60c31bfe5b0"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#acc949f1c8b0530d79b11f60c31bfe5b0">disableUtc</a> () noexcept</td></tr>
+<tr class="memdesc:acc949f1c8b0530d79b11f60c31bfe5b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Local time to the server. By default local time is sent. <br /></td></tr>
+<tr class="separator:acc949f1c8b0530d79b11f60c31bfe5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6952d570eeb50e5a4098ad615e797684"><td class="memItemLeft" align="right" valign="top"><a id="a6952d570eeb50e5a4098ad615e797684"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a6952d570eeb50e5a4098ad615e797684">setTimeOffset</a> (int offset) noexcept</td></tr>
+<tr class="memdesc:a6952d570eeb50e5a4098ad615e797684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset in seconds for log time. By default no offset. <br /></td></tr>
+<tr class="separator:a6952d570eeb50e5a4098ad615e797684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c6d59a5076991c70a0e71b0abd9935d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a4c6d59a5076991c70a0e71b0abd9935d">setBulkSize</a> (std::size_t bulkSize) noexcept</td></tr>
 <tr class="memdesc:a4c6d59a5076991c70a0e71b0abd9935d"><td class="mdescLeft">&#160;</td><td class="mdescRight">setBulkSize number of log messages to be bulked together  <a href="#a4c6d59a5076991c70a0e71b0abd9935d">More...</a><br /></td></tr>
 <tr class="separator:a4c6d59a5076991c70a0e71b0abd9935d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88e5119e6aefe923adbbf03cd965cb51"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a88e5119e6aefe923adbbf03cd965cb51">setParams</a> (const std::string &amp;clientId, const std::string &amp;privateKey) noexcept</td></tr>
-<tr class="memdesc:a88e5119e6aefe923adbbf03cd965cb51"><td class="mdescLeft">&#160;</td><td class="mdescRight">If server knows you already you can let us know and we will use this identity. YOU NEED TO CONNECT AFTER THIS.  <a href="#a88e5119e6aefe923adbbf03cd965cb51">More...</a><br /></td></tr>
-<tr class="separator:a88e5119e6aefe923adbbf03cd965cb51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5579e7935c56178d04082e49109fc71a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a5579e7935c56178d04082e49109fc71a">setKeySize</a> (std::size_t keySize)</td></tr>
+<tr class="memdesc:a5579e7935c56178d04082e49109fc71a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of RSA key when connecting.  <a href="#a5579e7935c56178d04082e49109fc71a">More...</a><br /></td></tr>
+<tr class="separator:a5579e7935c56178d04082e49109fc71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ac5ff439daacd08053ab41e4af21233"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a7ac5ff439daacd08053ab41e4af21233">setKnownClient</a> (const std::string &amp;<a class="el" href="class_residue.html#abd3853e36a30eeac55330b12503e128e">clientId</a>, const std::string &amp;privateKey)</td></tr>
+<tr class="memdesc:a7ac5ff439daacd08053ab41e4af21233"><td class="mdescLeft">&#160;</td><td class="mdescRight">If server knows you already you can let us know and we will use this identity.  <a href="#a7ac5ff439daacd08053ab41e4af21233">More...</a><br /></td></tr>
+<tr class="separator:a7ac5ff439daacd08053ab41e4af21233"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
+<tr class="memitem:a6623a209cec1ab12c2b4a6a9fdda6446"><td class="memItemLeft" align="right" valign="top">static const std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a6623a209cec1ab12c2b4a6a9fdda6446">DEFAULT_KEY_SIZE</a></td></tr>
+<tr class="memdesc:a6623a209cec1ab12c2b4a6a9fdda6446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default key size for RSA.  <a href="#a6623a209cec1ab12c2b4a6a9fdda6446">More...</a><br /></td></tr>
+<tr class="separator:a6623a209cec1ab12c2b4a6a9fdda6446"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae42ec88dc891703a274c4876fa3e520f"><td class="memItemLeft" align="right" valign="top"><a id="ae42ec88dc891703a274c4876fa3e520f"></a>
 static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ae42ec88dc891703a274c4876fa3e520f">DEFAULT_PORT</a></td></tr>
 <tr class="memdesc:ae42ec88dc891703a274c4876fa3e520f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default port 8777 of residue. <br /></td></tr>
@@ -168,8 +196,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_residue.html" title="The Residue class provides helper methods to connect and interact to residue server seamlessly...">Residue</a> class provides helper methods to connect and interact to residue server seamlessly. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a84e246e6d2aa693f1f1af4aaaa4395c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84e246e6d2aa693f1f1af4aaaa4395c2">&#9670;&nbsp;</a></span>connect() <span class="overload">[1/4]</span></h2>
+<a id="a62825d1a0fb086b3c323c1f63892ad74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62825d1a0fb086b3c323c1f63892ad74">&#9670;&nbsp;</a></span>connect() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,7 +231,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -217,11 +245,17 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">exception</td><td>When connection fails </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="ae79afe89b20616b739b85080a81c9716"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae79afe89b20616b739b85080a81c9716">&#9670;&nbsp;</a></span>connect() <span class="overload">[2/4]</span></h2>
+<a id="a017672dcdf9dd58e3bb9d9e25f7173d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a017672dcdf9dd58e3bb9d9e25f7173d5">&#9670;&nbsp;</a></span>connect() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,18 +283,24 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Connect to residue on localhost. </p>
 <dl class="section see"><dt>See also</dt><dd>connect(const std::string&amp;, int, std::map&lt;std::string, std::string&gt;*) </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">exception</td><td>When connection fails </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a6a8688b0ca9236db1f0361c99d2ca1da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a8688b0ca9236db1f0361c99d2ca1da">&#9670;&nbsp;</a></span>connect() <span class="overload">[3/4]</span></h2>
+<a id="aefd5f85b7e3df187f86483ffe4cdcd1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefd5f85b7e3df187f86483ffe4cdcd1b">&#9670;&nbsp;</a></span>connect() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -278,18 +318,24 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Connect to residue on localhost using default port. </p>
 <dl class="section see"><dt>See also</dt><dd>connect(const std::string&amp;, int, std::map&lt;std::string, std::string&gt;*) </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">exception</td><td>When connection fails </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="ac02dab4d14e56e1b95c240ce92410dd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac02dab4d14e56e1b95c240ce92410dd1">&#9670;&nbsp;</a></span>connect() <span class="overload">[4/4]</span></h2>
+<a id="ade47304dd7f55b019fdb50a546be278e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade47304dd7f55b019fdb50a546be278e">&#9670;&nbsp;</a></span>connect() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,15 +352,21 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Connect to residue on localhost using default port and previously provided access code map This is more useful when you have client ID so you won't have varying client IDs. </p>
+<p>Connect to residue on localhost using default port and previously provided access code map. This is more useful when you have client ID so you won't have varying client IDs. </p>
 <dl class="section see"><dt>See also</dt><dd>connect(const std::string&amp;, int, std::map&lt;std::string, std::string&gt;*) </dd>
 <dd>
-<a class="el" href="class_residue.html#a88e5119e6aefe923adbbf03cd965cb51" title="If server knows you already you can let us know and we will use this identity. YOU NEED TO CONNECT AF...">setParams(const std::string&amp;, const std::string&amp;)</a> </dd></dl>
+setParams(const std::string&amp;, const std::string&amp;) </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">exception</td><td>When connection fails </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -346,6 +398,34 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
 
 </div>
 </div>
+<a id="a083fd31f46cb74adb5dd765ba460d0a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a083fd31f46cb74adb5dd765ba460d0a9">&#9670;&nbsp;</a></span>connecting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool Residue::connecting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check connection to the server. </p>
+<dl class="section return"><dt>Returns</dt><dd>Whether connection to the server is in progress </dd></dl>
+
+</div>
+</div>
 <a id="ab1a642f4428bb02e82a52bcbcab9df3f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1a642f4428bb02e82a52bcbcab9df3f">&#9670;&nbsp;</a></span>disconnect()</h2>
 
@@ -374,6 +454,34 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
 
 </div>
 </div>
+<a id="a3bc1c73a82d964ec40600cb72f99645f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bc1c73a82d964ec40600cb72f99645f">&#9670;&nbsp;</a></span>enableBulkDispatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Residue::enableBulkDispatch </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>enableBulkDispatch turns on bulk dispatch. </p>
+<dl class="section note"><dt>Note</dt><dd>MAKE SURE SERVER SUPPORTS BULK LOG REQUESTS </dd></dl>
+
+</div>
+</div>
 <a id="a4c6d59a5076991c70a0e71b0abd9935d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4c6d59a5076991c70a0e71b0abd9935d">&#9670;&nbsp;</a></span>setBulkSize()</h2>
 
@@ -399,12 +507,12 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
 </div><div class="memdoc">
 
 <p>setBulkSize number of log messages to be bulked together </p>
-<dl class="section note"><dt>Note</dt><dd>This depends on what server accepts. Please contact your log server hosting to get this number. Failing to select correct number can fail. In any case 2-5 is a good number as 2048 bytes payload can handle this much however it depends on average size of your log messages </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This depends on what server accepts. The configuration value on the server is <code>max_items_in_bulk</code>. Please contact your log server hosting to get this number. Failing to select correct number can fail. </dd></dl>
 
 </div>
 </div>
-<a id="a88e5119e6aefe923adbbf03cd965cb51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88e5119e6aefe923adbbf03cd965cb51">&#9670;&nbsp;</a></span>setParams()</h2>
+<a id="a5579e7935c56178d04082e49109fc71a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5579e7935c56178d04082e49109fc71a">&#9670;&nbsp;</a></span>setKeySize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -413,7 +521,53 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void Residue::setParams </td>
+          <td class="memname">static void Residue::setKeySize </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>keySize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Size of RSA key when connecting. </p>
+<p>RSA key is generated on the fly when client is unknown to the server.</p>
+<p>You can choose to speed up connection process by understanding 3 following points and acting accordingly;</p><ul>
+<li>Default value is 256-bit key (2048) which takes ~150ms to generate the key, if you increase it to 512-bit (4096) it takes ~3s to generate this key. This means connection will be 2850 ms slow but is more secure. This situation is useful for big applications that can take this long, e.g, gui application</li>
+<li>Having pre-defined key helps speed up connection process by saving overhead of key generation with each connection.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keySize</td><td>Size of key in bytes (2048 (256-bit key), ...) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_residue.html#a7ac5ff439daacd08053ab41e4af21233" title="If server knows you already you can let us know and we will use this identity. ">setKnownClient</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>if size is not one of 2048, 4096 or 8192 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7ac5ff439daacd08053ab41e4af21233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ac5ff439daacd08053ab41e4af21233">&#9670;&nbsp;</a></span>setKnownClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Residue::setKnownClient </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>clientId</em>, </td>
@@ -432,12 +586,13 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>If server knows you already you can let us know and we will use this identity. YOU NEED TO CONNECT AFTER THIS. </p>
+<p>If server knows you already you can let us know and we will use this identity. </p>
+<dl class="section note"><dt>Note</dt><dd>YOU NEED TO RUN CONNECT() AFTER THIS </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">clientId</td><td>what server knows you as </td></tr>
@@ -445,6 +600,39 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_residue.html#a62825d1a0fb086b3c323c1f63892ad74" title="Connect to residue on specified host. ">connect</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>if you specified client ID but private key is null </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a6623a209cec1ab12c2b4a6a9fdda6446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6623a209cec1ab12c2b4a6a9fdda6446">&#9670;&nbsp;</a></span>DEFAULT_KEY_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::size_t Residue::DEFAULT_KEY_SIZE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default key size for RSA. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_residue.html#a5579e7935c56178d04082e49109fc71a" title="Size of RSA key when connecting. ">setKeySize</a> </dd></dl>
 
 </div>
 </div>
