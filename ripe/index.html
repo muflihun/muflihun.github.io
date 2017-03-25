@@ -99,6 +99,8 @@ $(function() {
 <tr>
 <td><code>--rsa</code> </td><td>Use RSA encryption/decryption </td></tr>
 <tr>
+<td><code>--zlib</code> </td><td>ZLib compression/decompression </td></tr>
+<tr>
 <td><code>--raw</code> </td><td>Raw output for rsa encrypted data </td></tr>
 <tr>
 <td><code>--base64</code> </td><td>Tells ripe the data needs to be decoded before decryption (this can be used for decoding base64) </td></tr>
@@ -182,7 +184,13 @@ $(function() {
 <p>You can use following to encode data to hex encoded string</p>
 <div class="fragment"><div class="line">echo &#39;plain text&#39; | ripe -e --hex</div></div><!-- fragment --><h3>Hex Decoding</h3>
 <p>Decoding hex can be done using <code>-d</code> option</p>
-<div class="fragment"><div class="line">echo 706c61696e2074657874 | ripe -d --hex</div></div><!-- fragment --><h2>Licence</h2>
+<div class="fragment"><div class="line">echo 706c61696e2074657874 | ripe -d --hex</div></div><!-- fragment --><h3>ZLib Compression</h3>
+<p>Compression using zlib can be done using <code>-e</code> option</p>
+<div class="fragment"><div class="line">echo abcd | ripe -e --zlib</div></div><!-- fragment --><p>You can provide <code>--base64</code> to see base64 output e.g,</p>
+<div class="fragment"><div class="line">echo abcd | ripe -e --zlib --base64</div></div><!-- fragment --><p>Same with <code>--hex</code> (or both <code>--base64</code> and <code>--hex</code> - in this case you will get base64 encoding of hex output)</p>
+<h3>ZLib Decompression</h3>
+<p>Decompression using zlib can be done using <code>-d</code> option</p>
+<div class="fragment"><div class="line">echo eNpLTEpOAQAD2AGL | ripe -d --zlib --base64</div></div><!-- fragment --><h2>Licence</h2>
 <div class="fragment"><div class="line">The MIT License (MIT)</div><div class="line"></div><div class="line">Copyright (c) 2017 Muflihun Labs</div><div class="line"></div><div class="line">http://github.com/muflihun/</div><div class="line">http://muflihun.com</div><div class="line"></div><div class="line">Permission is hereby granted, free of charge, to any person obtaining a copy of</div><div class="line">this software and associated documentation files (the &quot;Software&quot;), to deal in</div><div class="line">the Software without restriction, including without limitation the rights to</div><div class="line">use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of</div><div class="line">the Software, and to permit persons to whom the Software is furnished to do so,</div><div class="line">subject to the following conditions:</div><div class="line"></div><div class="line">The above copyright notice and this permission notice shall be included in all</div><div class="line">copies or substantial portions of the Software.</div><div class="line"></div><div class="line">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</div><div class="line">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS</div><div class="line">FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR</div><div class="line">COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER</div><div class="line">IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</div><div class="line">CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</div></div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

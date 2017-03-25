@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isbase64',['isBase64',['../class_ripe.html#a683905d4617a12bcab67ecb67ea9fd8e',1,'Ripe']]]
+  ['hextostring',['hexToString',['../class_ripe.html#a34cc0d9d63a485889a57f87c63e20213',1,'Ripe']]]
 ];

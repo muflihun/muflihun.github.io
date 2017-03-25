@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['normalizehex',['normalizeHex',['../class_ripe.html#ab72b551ca90a4b4642889e263cc3c13b',1,'Ripe']]]
+  ['maxrsablocksize',['maxRSABlockSize',['../class_ripe.html#a3eac579bde315831aef62ebafaf394c6',1,'Ripe']]],
+  ['minrsakeysize',['minRSAKeySize',['../class_ripe.html#a6098f0c0ff7055593b6a8e7497e8a5fb',1,'Ripe']]]
 ];

@@ -120,8 +120,12 @@ static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <tr class="separator:a704a0f41f62e8aaa0e94607c1545ead9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3eac579bde315831aef62ebafaf394c6"><td class="memItemLeft" align="right" valign="top"><a id="a3eac579bde315831aef62ebafaf394c6"></a>
 static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a3eac579bde315831aef62ebafaf394c6">maxRSABlockSize</a> (std::size_t keySize)</td></tr>
-<tr class="memdesc:a3eac579bde315831aef62ebafaf394c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">maxRSABlockSize Maximum size of RSA block with specified key size <br /></td></tr>
+<tr class="memdesc:a3eac579bde315831aef62ebafaf394c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum size of RSA block with specified key size. <br /></td></tr>
 <tr class="separator:a3eac579bde315831aef62ebafaf394c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6098f0c0ff7055593b6a8e7497e8a5fb"><td class="memItemLeft" align="right" valign="top"><a id="a6098f0c0ff7055593b6a8e7497e8a5fb"></a>
+static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a6098f0c0ff7055593b6a8e7497e8a5fb">minRSAKeySize</a> (std::size_t dataSize)</td></tr>
+<tr class="memdesc:a6098f0c0ff7055593b6a8e7497e8a5fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum size of RSA key to encrypt data of dataSize size. <br /></td></tr>
+<tr class="separator:a6098f0c0ff7055593b6a8e7497e8a5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa56e5665c2857e377bc6c92ede57d6aa"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#aa56e5665c2857e377bc6c92ede57d6aa">encryptRSA</a> (std::string &amp;data, const std::string &amp;key, const std::string &amp;outputFile, bool isRaw=false)</td></tr>
 <tr class="memdesc:aa56e5665c2857e377bc6c92ede57d6aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">encryptRSA Encrypts using RSA key  <a href="#aa56e5665c2857e377bc6c92ede57d6aa">More...</a><br /></td></tr>
 <tr class="separator:aa56e5665c2857e377bc6c92ede57d6aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,6 +154,15 @@ static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="
 static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a683905d4617a12bcab67ecb67ea9fd8e">isBase64</a> (const std::string &amp;data) noexcept</td></tr>
 <tr class="memdesc:a683905d4617a12bcab67ecb67ea9fd8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds whether data is base64 encoded. This is done by finding non-base64 character. So it is not necessary a valid base64 encoding. <br /></td></tr>
 <tr class="separator:a683905d4617a12bcab67ecb67ea9fd8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26934d9dd1918369e47afd50bd0a252c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a26934d9dd1918369e47afd50bd0a252c">compressFile</a> (const std::string &amp;gzFilename, const std::string &amp;inputFile) noexcept</td></tr>
+<tr class="memdesc:a26934d9dd1918369e47afd50bd0a252c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compress input file (path) and create new file.  <a href="#a26934d9dd1918369e47afd50bd0a252c">More...</a><br /></td></tr>
+<tr class="separator:a26934d9dd1918369e47afd50bd0a252c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae45b08e64e1d5afd92f8784767d4839a"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ae45b08e64e1d5afd92f8784767d4839a">compressString</a> (const std::string &amp;str)</td></tr>
+<tr class="memdesc:ae45b08e64e1d5afd92f8784767d4839a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compresses string using zlib (inflate)  <a href="#ae45b08e64e1d5afd92f8784767d4839a">More...</a><br /></td></tr>
+<tr class="separator:ae45b08e64e1d5afd92f8784767d4839a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada999a540ab2c83f5dff7c64809b9db8"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ada999a540ab2c83f5dff7c64809b9db8">decompressString</a> (const std::string &amp;str)</td></tr>
+<tr class="memdesc:ada999a540ab2c83f5dff7c64809b9db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decompresses string using zlib (deflate)  <a href="#ada999a540ab2c83f5dff7c64809b9db8">More...</a><br /></td></tr>
+<tr class="separator:ada999a540ab2c83f5dff7c64809b9db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50de68bb115e0a93a4188208c7b96b9e"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a50de68bb115e0a93a4188208c7b96b9e">prepareData</a> (const char *data, const std::string &amp;hexKey, const char *clientId=&quot;&quot;)</td></tr>
 <tr class="memdesc:a50de68bb115e0a93a4188208c7b96b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">prepareData Helper method to encrypt data with symmetric key and convert it in to tranferable data.  <a href="#a50de68bb115e0a93a4188208c7b96b9e">More...</a><br /></td></tr>
 <tr class="separator:a50de68bb115e0a93a4188208c7b96b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,12 +215,133 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <tr class="memdesc:a395dad955517d6608ce11ef81d24accb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant value for AES block size. <br /></td></tr>
 <tr class="separator:a395dad955517d6608ce11ef81d24accb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a485490a265e49dcc44d7a73a66f25f5e"><td class="memItemLeft" align="right" valign="top"><a id="a485490a265e49dcc44d7a73a66f25f5e"></a>
-static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>BASE64_CHARS</b></td></tr>
+static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a485490a265e49dcc44d7a73a66f25f5e">BASE64_CHARS</a></td></tr>
+<tr class="memdesc:a485490a265e49dcc44d7a73a66f25f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible base64 characters. <br /></td></tr>
 <tr class="separator:a485490a265e49dcc44d7a73a66f25f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa56a411047627c9a0fbfc4cf6fc83c5d"><td class="memItemLeft" align="right" valign="top"><a id="aa56a411047627c9a0fbfc4cf6fc83c5d"></a>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#aa56a411047627c9a0fbfc4cf6fc83c5d">ZLIB_BUFFER_SIZE</a></td></tr>
+<tr class="memdesc:aa56a411047627c9a0fbfc4cf6fc83c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer size for zlib. <br /></td></tr>
+<tr class="separator:aa56a411047627c9a0fbfc4cf6fc83c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_ripe.html" title="The Ripe class is core of Ripe library and contains all the required cryptography API supported by Ri...">Ripe</a> class is core of <a class="el" href="class_ripe.html" title="The Ripe class is core of Ripe library and contains all the required cryptography API supported by Ri...">Ripe</a> library and contains all the required cryptography API supported by <a class="el" href="class_ripe.html" title="The Ripe class is core of Ripe library and contains all the required cryptography API supported by Ri...">Ripe</a>. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a26934d9dd1918369e47afd50bd0a252c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26934d9dd1918369e47afd50bd0a252c">&#9670;&nbsp;</a></span>compressFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool Ripe::compressFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>gzFilename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>inputFile</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compress input file (path) and create new file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gzFilename</td><td>Output file path </td></tr>
+    <tr><td class="paramname">inputFile</td><td>Input file path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if successful, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="ae45b08e64e1d5afd92f8784767d4839a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae45b08e64e1d5afd92f8784767d4839a">&#9670;&nbsp;</a></span>compressString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string Ripe::compressString </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compresses string using zlib (inflate) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Input plain text </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Raw output (binary) </dd></dl>
+
+</div>
+</div>
+<a id="ada999a540ab2c83f5dff7c64809b9db8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada999a540ab2c83f5dff7c64809b9db8">&#9670;&nbsp;</a></span>decompressString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string Ripe::decompressString </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decompresses string using zlib (deflate) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Raw input </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Plain output </dd></dl>
+
+</div>
+</div>
 <a id="a57907b7a33b7951c2253a1599896667a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a57907b7a33b7951c2253a1599896667a">&#9670;&nbsp;</a></span>decryptAES()</h2>
 

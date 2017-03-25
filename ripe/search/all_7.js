@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keypair',['KeyPair',['../struct_ripe_1_1_key_pair.html',1,'Ripe']]]
+  ['isbase64',['isBase64',['../class_ripe.html#a683905d4617a12bcab67ecb67ea9fd8e',1,'Ripe']]]
 ];
