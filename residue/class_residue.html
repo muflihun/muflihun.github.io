@@ -87,6 +87,7 @@ Public Types</h2></td></tr>
 <b>ALLOW_PLAIN_LOG_REQUEST</b> = 8, 
 <br />
 &#160;&#160;<b>ALLOW_BULK_LOG_REQUEST</b> = 16, 
+<b>ALLOW_PINGING_DEAD_CLIENT</b> = 32, 
 <b>COMPRESSION</b> = 512
 <br />
  }<tr class="memdesc:aec68ee5347d85c3d3c50e4b8b7452fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server flags enum that are relavant to the client. <br /></td></tr>
@@ -192,6 +193,12 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="memitem:ad60371fcd069f78079bf856fef5fe307"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ad60371fcd069f78079bf856fef5fe307">setBulkSize</a> (unsigned int bulkSize)</td></tr>
 <tr class="memdesc:ad60371fcd069f78079bf856fef5fe307"><td class="mdescLeft">&#160;</td><td class="mdescRight">setBulkSize number of log messages to be bulked together  <a href="#ad60371fcd069f78079bf856fef5fe307">More...</a><br /></td></tr>
 <tr class="separator:ad60371fcd069f78079bf856fef5fe307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceef85d15506552784ab8f87d0b075e9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#aceef85d15506552784ab8f87d0b075e9">enableAutoBulkParams</a> () noexcept</td></tr>
+<tr class="memdesc:aceef85d15506552784ab8f87d0b075e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables automatic setting of bulk parameters depending on what's most efficient. It essentially enables bulk if server supports it and sets bulk size and dispatch delay accordingly.  <a href="#aceef85d15506552784ab8f87d0b075e9">More...</a><br /></td></tr>
+<tr class="separator:aceef85d15506552784ab8f87d0b075e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a262f73f8f6c4d749f4a7fd4bccce8fbf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a262f73f8f6c4d749f4a7fd4bccce8fbf">disableAutoBulkParams</a> () noexcept</td></tr>
+<tr class="memdesc:a262f73f8f6c4d749f4a7fd4bccce8fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables automatic setting of bulk params.  <a href="#a262f73f8f6c4d749f4a7fd4bccce8fbf">More...</a><br /></td></tr>
+<tr class="separator:a262f73f8f6c4d749f4a7fd4bccce8fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5579e7935c56178d04082e49109fc71a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a5579e7935c56178d04082e49109fc71a">setKeySize</a> (std::size_t keySize)</td></tr>
 <tr class="memdesc:a5579e7935c56178d04082e49109fc71a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of RSA key when connecting.  <a href="#a5579e7935c56178d04082e49109fc71a">More...</a><br /></td></tr>
 <tr class="separator:a5579e7935c56178d04082e49109fc71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -508,6 +515,35 @@ setParams(const std::string&amp;, const std::string&amp;) </dd></dl>
 
 </div>
 </div>
+<a id="a262f73f8f6c4d749f4a7fd4bccce8fbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a262f73f8f6c4d749f4a7fd4bccce8fbf">&#9670;&nbsp;</a></span>disableAutoBulkParams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Residue::disableAutoBulkParams </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Disables automatic setting of bulk params. </p>
+<dl class="section note"><dt>Note</dt><dd>It does not reset parameters back to what they were, meaning this only implies it does not change any parameters when reconnected </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_residue.html#aceef85d15506552784ab8f87d0b075e9" title="Enables automatic setting of bulk parameters depending on what&#39;s most efficient. It essentially enabl...">enableAutoBulkParams()</a> </dd></dl>
+
+</div>
+</div>
 <a id="abfea282f667ce19acc58d50922ce36be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abfea282f667ce19acc58d50922ce36be">&#9670;&nbsp;</a></span>disablePlainRequest()</h2>
 
@@ -561,6 +597,34 @@ setParams(const std::string&amp;, const std::string&amp;) </dd></dl>
 
 <p>Safely disconnects from the server. This will also call <a class="el" href="class_residue.html#aa3f2e619424aece74ecd6586c0539eb0" title="Wait to dispatch all the log requests to the server. ">wait()</a> </p>
 <p>You should always call this before ending your application. </p>
+
+</div>
+</div>
+<a id="aceef85d15506552784ab8f87d0b075e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceef85d15506552784ab8f87d0b075e9">&#9670;&nbsp;</a></span>enableAutoBulkParams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Residue::enableAutoBulkParams </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables automatic setting of bulk parameters depending on what's most efficient. It essentially enables bulk if server supports it and sets bulk size and dispatch delay accordingly. </p>
+<dl class="section note"><dt>Note</dt><dd>You need re-connect using <pre><a class="el" href="class_residue.html#ade47304dd7f55b019fdb50a546be278e" title="Connect to residue on localhost using default port and previously provided access code map...">connect()</a></pre> helper method </dd></dl>
 
 </div>
 </div>
