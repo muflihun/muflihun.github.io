@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['version',['version',['../class_residue.html#ad6fca8105141d2d5dd9447bab04d377f',1,'Residue']]]
+  ['maxbulksize',['maxBulkSize',['../class_residue.html#af9a60a6345f74b2c73eb424c9b2fffe6',1,'Residue']]]
 ];

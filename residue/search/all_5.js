@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['localhost',['LOCALHOST',['../class_residue.html#afb629104e2f73fd1b1125cfcbcfbc9b4',1,'Residue']]]
+  ['hasflag',['hasFlag',['../class_residue.html#a6844f7ce57571fb59d2d7cf66c3a6739',1,'Residue']]]
 ];

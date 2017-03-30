@@ -80,6 +80,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
+<tr class="memitem:aec68ee5347d85c3d3c50e4b8b7452fb6"><td class="memItemLeft" align="right" valign="top"><a id="aec68ee5347d85c3d3c50e4b8b7452fb6"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#aec68ee5347d85c3d3c50e4b8b7452fb6">Flag</a> : unsigned int { <br />
+&#160;&#160;<b>NONE</b> = 0, 
+<b>ALLOW_UNKNOWN_LOGGERS</b> = 1, 
+<b>AUTHORIZE_LOGGERS_WITH_NO_ACCESS_CODE</b> = 4, 
+<b>ALLOW_PLAIN_LOG_REQUEST</b> = 8, 
+<br />
+&#160;&#160;<b>ALLOW_BULK_LOG_REQUEST</b> = 16, 
+<b>COMPRESSION</b> = 512
+<br />
+ }<tr class="memdesc:aec68ee5347d85c3d3c50e4b8b7452fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server flags enum that are relavant to the client. <br /></td></tr>
+</td></tr>
+<tr class="separator:aec68ee5347d85c3d3c50e4b8b7452fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a530e1b470fef98379231c8a631ea2645"><td class="memItemLeft" align="right" valign="top"><a id="a530e1b470fef98379231c8a631ea2645"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a530e1b470fef98379231c8a631ea2645">AccessCodeMap</a> = std::unordered_map&lt; std::string, std::string &gt;</td></tr>
 <tr class="memdesc:a530e1b470fef98379231c8a631ea2645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map of logger_id and corresponding access code to send log message to the server. <br /></td></tr>
@@ -117,6 +129,9 @@ static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <tr class="memitem:a017672dcdf9dd58e3bb9d9e25f7173d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a017672dcdf9dd58e3bb9d9e25f7173d5">connect</a> (int port, <a class="el" href="class_residue.html#a530e1b470fef98379231c8a631ea2645">AccessCodeMap</a> *accessCodeMap)</td></tr>
 <tr class="memdesc:a017672dcdf9dd58e3bb9d9e25f7173d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to residue on localhost.  <a href="#a017672dcdf9dd58e3bb9d9e25f7173d5">More...</a><br /></td></tr>
 <tr class="separator:a017672dcdf9dd58e3bb9d9e25f7173d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a679b5369a6c1bc6c00bf6652298f0a45"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a679b5369a6c1bc6c00bf6652298f0a45">connect</a> (const std::string &amp;host, <a class="el" href="class_residue.html#a530e1b470fef98379231c8a631ea2645">AccessCodeMap</a> *accessCodeMap)</td></tr>
+<tr class="memdesc:a679b5369a6c1bc6c00bf6652298f0a45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to residue using default port.  <a href="#a679b5369a6c1bc6c00bf6652298f0a45">More...</a><br /></td></tr>
+<tr class="separator:a679b5369a6c1bc6c00bf6652298f0a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefd5f85b7e3df187f86483ffe4cdcd1b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#aefd5f85b7e3df187f86483ffe4cdcd1b">connect</a> (<a class="el" href="class_residue.html#a530e1b470fef98379231c8a631ea2645">AccessCodeMap</a> *accessCodeMap)</td></tr>
 <tr class="memdesc:aefd5f85b7e3df187f86483ffe4cdcd1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to residue on localhost using default port.  <a href="#aefd5f85b7e3df187f86483ffe4cdcd1b">More...</a><br /></td></tr>
 <tr class="separator:aefd5f85b7e3df187f86483ffe4cdcd1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,6 +148,14 @@ static const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom
 <tr class="memitem:a083fd31f46cb74adb5dd765ba460d0a9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a083fd31f46cb74adb5dd765ba460d0a9">connecting</a> () noexcept</td></tr>
 <tr class="memdesc:a083fd31f46cb74adb5dd765ba460d0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check connection to the server.  <a href="#a083fd31f46cb74adb5dd765ba460d0a9">More...</a><br /></td></tr>
 <tr class="separator:a083fd31f46cb74adb5dd765ba460d0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9a60a6345f74b2c73eb424c9b2fffe6"><td class="memItemLeft" align="right" valign="top"><a id="af9a60a6345f74b2c73eb424c9b2fffe6"></a>
+static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#af9a60a6345f74b2c73eb424c9b2fffe6">maxBulkSize</a> () noexcept</td></tr>
+<tr class="memdesc:af9a60a6345f74b2c73eb424c9b2fffe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">If connected this identifies maximum number of items in bulk that server accepts. <br /></td></tr>
+<tr class="separator:af9a60a6345f74b2c73eb424c9b2fffe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e5a1eb4608a67a48edb62b09a04975"><td class="memItemLeft" align="right" valign="top"><a id="a59e5a1eb4608a67a48edb62b09a04975"></a>
+static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a59e5a1eb4608a67a48edb62b09a04975">serverFlags</a> () noexcept</td></tr>
+<tr class="memdesc:a59e5a1eb4608a67a48edb62b09a04975"><td class="mdescLeft">&#160;</td><td class="mdescRight">If connected this identifies server flags. <br /></td></tr>
+<tr class="separator:a59e5a1eb4608a67a48edb62b09a04975"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1a642f4428bb02e82a52bcbcab9df3f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ab1a642f4428bb02e82a52bcbcab9df3f">disconnect</a> () noexcept</td></tr>
 <tr class="memdesc:ab1a642f4428bb02e82a52bcbcab9df3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely disconnects from the server. This will also call <a class="el" href="class_residue.html#aa3f2e619424aece74ecd6586c0539eb0" title="Wait to dispatch all the log requests to the server. ">wait()</a>  <a href="#ab1a642f4428bb02e82a52bcbcab9df3f">More...</a><br /></td></tr>
 <tr class="separator:ab1a642f4428bb02e82a52bcbcab9df3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,9 +167,9 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a41082b8432a1c22a2087887777f09011">setApplicationId</a> (const std::string &amp;id) noexcept</td></tr>
 <tr class="memdesc:a41082b8432a1c22a2087887777f09011"><td class="mdescLeft">&#160;</td><td class="mdescRight">Application ID is what gets passed on to the server for app format specifier. <br /></td></tr>
 <tr class="separator:a41082b8432a1c22a2087887777f09011"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bc1c73a82d964ec40600cb72f99645f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a3bc1c73a82d964ec40600cb72f99645f">enableBulkDispatch</a> () noexcept</td></tr>
-<tr class="memdesc:a3bc1c73a82d964ec40600cb72f99645f"><td class="mdescLeft">&#160;</td><td class="mdescRight">enableBulkDispatch turns on bulk dispatch.  <a href="#a3bc1c73a82d964ec40600cb72f99645f">More...</a><br /></td></tr>
-<tr class="separator:a3bc1c73a82d964ec40600cb72f99645f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5521146d9286ff7488868e3579751130"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a5521146d9286ff7488868e3579751130">enableBulkDispatch</a> ()</td></tr>
+<tr class="memdesc:a5521146d9286ff7488868e3579751130"><td class="mdescLeft">&#160;</td><td class="mdescRight">enableBulkDispatch turns on bulk dispatch.  <a href="#a5521146d9286ff7488868e3579751130">More...</a><br /></td></tr>
+<tr class="separator:a5521146d9286ff7488868e3579751130"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affc470c515fabf8b9bcc7a63965a57dc"><td class="memItemLeft" align="right" valign="top"><a id="affc470c515fabf8b9bcc7a63965a57dc"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#affc470c515fabf8b9bcc7a63965a57dc">disableBulkDispatch</a> () noexcept</td></tr>
 <tr class="memdesc:affc470c515fabf8b9bcc7a63965a57dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">disableBulkDispatch turns off bulk dispatch. <br /></td></tr>
@@ -161,17 +184,31 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="separator:acc949f1c8b0530d79b11f60c31bfe5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6952d570eeb50e5a4098ad615e797684"><td class="memItemLeft" align="right" valign="top"><a id="a6952d570eeb50e5a4098ad615e797684"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a6952d570eeb50e5a4098ad615e797684">setTimeOffset</a> (int offset) noexcept</td></tr>
-<tr class="memdesc:a6952d570eeb50e5a4098ad615e797684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset in seconds for log time. By default no offset. <br /></td></tr>
+<tr class="memdesc:a6952d570eeb50e5a4098ad615e797684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset in seconds for log time. [Default: 0]. <br /></td></tr>
 <tr class="separator:a6952d570eeb50e5a4098ad615e797684"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c6d59a5076991c70a0e71b0abd9935d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a4c6d59a5076991c70a0e71b0abd9935d">setBulkSize</a> (std::size_t bulkSize) noexcept</td></tr>
-<tr class="memdesc:a4c6d59a5076991c70a0e71b0abd9935d"><td class="mdescLeft">&#160;</td><td class="mdescRight">setBulkSize number of log messages to be bulked together  <a href="#a4c6d59a5076991c70a0e71b0abd9935d">More...</a><br /></td></tr>
-<tr class="separator:a4c6d59a5076991c70a0e71b0abd9935d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1ecad58f492dd91f273305aefc2883a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#aa1ecad58f492dd91f273305aefc2883a">setDispatchDelay</a> (unsigned int delay) noexcept</td></tr>
+<tr class="memdesc:aa1ecad58f492dd91f273305aefc2883a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delay between dispatching log messages (in milliseconds) [Default: 1ms].  <a href="#aa1ecad58f492dd91f273305aefc2883a">More...</a><br /></td></tr>
+<tr class="separator:aa1ecad58f492dd91f273305aefc2883a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad60371fcd069f78079bf856fef5fe307"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ad60371fcd069f78079bf856fef5fe307">setBulkSize</a> (unsigned int bulkSize)</td></tr>
+<tr class="memdesc:ad60371fcd069f78079bf856fef5fe307"><td class="mdescLeft">&#160;</td><td class="mdescRight">setBulkSize number of log messages to be bulked together  <a href="#ad60371fcd069f78079bf856fef5fe307">More...</a><br /></td></tr>
+<tr class="separator:ad60371fcd069f78079bf856fef5fe307"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5579e7935c56178d04082e49109fc71a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a5579e7935c56178d04082e49109fc71a">setKeySize</a> (std::size_t keySize)</td></tr>
 <tr class="memdesc:a5579e7935c56178d04082e49109fc71a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of RSA key when connecting.  <a href="#a5579e7935c56178d04082e49109fc71a">More...</a><br /></td></tr>
 <tr class="separator:a5579e7935c56178d04082e49109fc71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ac5ff439daacd08053ab41e4af21233"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a7ac5ff439daacd08053ab41e4af21233">setKnownClient</a> (const std::string &amp;<a class="el" href="class_residue.html#abd3853e36a30eeac55330b12503e128e">clientId</a>, const std::string &amp;privateKey)</td></tr>
 <tr class="memdesc:a7ac5ff439daacd08053ab41e4af21233"><td class="mdescLeft">&#160;</td><td class="mdescRight">If server knows you already you can let us know and we will use this identity.  <a href="#a7ac5ff439daacd08053ab41e4af21233">More...</a><br /></td></tr>
 <tr class="separator:a7ac5ff439daacd08053ab41e4af21233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6844f7ce57571fb59d2d7cf66c3a6739"><td class="memItemLeft" align="right" valign="top"><a id="a6844f7ce57571fb59d2d7cf66c3a6739"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a6844f7ce57571fb59d2d7cf66c3a6739">hasFlag</a> (<a class="el" href="class_residue.html#aec68ee5347d85c3d3c50e4b8b7452fb6">Flag</a> flag) noexcept</td></tr>
+<tr class="memdesc:a6844f7ce57571fb59d2d7cf66c3a6739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for server flag and returns true if flag set otherwise not. <br /></td></tr>
+<tr class="separator:a6844f7ce57571fb59d2d7cf66c3a6739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd477bb677ccc6bcb9aea2473f90b697"><td class="memItemLeft" align="right" valign="top"><a id="acd477bb677ccc6bcb9aea2473f90b697"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#acd477bb677ccc6bcb9aea2473f90b697">enablePlainRequest</a> () noexcept</td></tr>
+<tr class="memdesc:acd477bb677ccc6bcb9aea2473f90b697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send plain log request when possible (i.e, when server allows it) <br /></td></tr>
+<tr class="separator:acd477bb677ccc6bcb9aea2473f90b697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfea282f667ce19acc58d50922ce36be"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#abfea282f667ce19acc58d50922ce36be">disablePlainRequest</a> () noexcept</td></tr>
+<tr class="memdesc:abfea282f667ce19acc58d50922ce36be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable plain log request.  <a href="#abfea282f667ce19acc58d50922ce36be">More...</a><br /></td></tr>
+<tr class="separator:abfea282f667ce19acc58d50922ce36be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -197,7 +234,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
 <div class="textblock"><p>The <a class="el" href="class_residue.html" title="The Residue class provides helper methods to connect and interact to residue server seamlessly...">Residue</a> class provides helper methods to connect and interact to residue server seamlessly. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a62825d1a0fb086b3c323c1f63892ad74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62825d1a0fb086b3c323c1f63892ad74">&#9670;&nbsp;</a></span>connect() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a62825d1a0fb086b3c323c1f63892ad74">&#9670;&nbsp;</a></span>connect() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,7 +292,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
 </div>
 </div>
 <a id="a017672dcdf9dd58e3bb9d9e25f7173d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a017672dcdf9dd58e3bb9d9e25f7173d5">&#9670;&nbsp;</a></span>connect() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a017672dcdf9dd58e3bb9d9e25f7173d5">&#9670;&nbsp;</a></span>connect() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -299,8 +336,53 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
 
 </div>
 </div>
+<a id="a679b5369a6c1bc6c00bf6652298f0a45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a679b5369a6c1bc6c00bf6652298f0a45">&#9670;&nbsp;</a></span>connect() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Residue::connect </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_residue.html#a530e1b470fef98379231c8a631ea2645">AccessCodeMap</a> *&#160;</td>
+          <td class="paramname"><em>accessCodeMap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Connect to residue using default port. </p>
+<dl class="section see"><dt>See also</dt><dd>connect(const std::string&amp;, int, std::map&lt;std::string, std::string&gt;*) </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">exception</td><td>When connection fails </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aefd5f85b7e3df187f86483ffe4cdcd1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefd5f85b7e3df187f86483ffe4cdcd1b">&#9670;&nbsp;</a></span>connect() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aefd5f85b7e3df187f86483ffe4cdcd1b">&#9670;&nbsp;</a></span>connect() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,7 +417,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ResidueDispatcher</b
 </div>
 </div>
 <a id="ade47304dd7f55b019fdb50a546be278e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade47304dd7f55b019fdb50a546be278e">&#9670;&nbsp;</a></span>connect() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ade47304dd7f55b019fdb50a546be278e">&#9670;&nbsp;</a></span>connect() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -426,6 +508,34 @@ setParams(const std::string&amp;, const std::string&amp;) </dd></dl>
 
 </div>
 </div>
+<a id="abfea282f667ce19acc58d50922ce36be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfea282f667ce19acc58d50922ce36be">&#9670;&nbsp;</a></span>disablePlainRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Residue::disablePlainRequest </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Disable plain log request. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_residue.html#acd477bb677ccc6bcb9aea2473f90b697" title="Send plain log request when possible (i.e, when server allows it) ">enablePlainRequest()</a> </dd></dl>
+
+</div>
+</div>
 <a id="ab1a642f4428bb02e82a52bcbcab9df3f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1a642f4428bb02e82a52bcbcab9df3f">&#9670;&nbsp;</a></span>disconnect()</h2>
 
@@ -454,8 +564,8 @@ setParams(const std::string&amp;, const std::string&amp;) </dd></dl>
 
 </div>
 </div>
-<a id="a3bc1c73a82d964ec40600cb72f99645f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bc1c73a82d964ec40600cb72f99645f">&#9670;&nbsp;</a></span>enableBulkDispatch()</h2>
+<a id="a5521146d9286ff7488868e3579751130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5521146d9286ff7488868e3579751130">&#9670;&nbsp;</a></span>enableBulkDispatch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -472,18 +582,24 @@ setParams(const std::string&amp;, const std::string&amp;) </dd></dl>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>enableBulkDispatch turns on bulk dispatch. </p>
 <dl class="section note"><dt>Note</dt><dd>MAKE SURE SERVER SUPPORTS BULK LOG REQUESTS </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">exception</td><td>if server does not allow bulk requests. (can only determine when connected) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a4c6d59a5076991c70a0e71b0abd9935d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c6d59a5076991c70a0e71b0abd9935d">&#9670;&nbsp;</a></span>setBulkSize()</h2>
+<a id="ad60371fcd069f78079bf856fef5fe307"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad60371fcd069f78079bf856fef5fe307">&#9670;&nbsp;</a></span>setBulkSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -494,8 +610,43 @@ setParams(const std::string&amp;, const std::string&amp;) </dd></dl>
         <tr>
           <td class="memname">static void Residue::setBulkSize </td>
           <td>(</td>
-          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>bulkSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>setBulkSize number of log messages to be bulked together </p>
+<dl class="section note"><dt>Note</dt><dd>This depends on what server accepts. The configuration value on the server is <code>max_items_in_bulk</code>. Please contact your log server hosting to get this number. Failing to select correct number can fail. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">exception</td><td>if connected and specified bulk size exceeds maximum allowed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa1ecad58f492dd91f273305aefc2883a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1ecad58f492dd91f273305aefc2883a">&#9670;&nbsp;</a></span>setDispatchDelay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Residue::setDispatchDelay </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>delay</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -506,8 +657,9 @@ setParams(const std::string&amp;, const std::string&amp;) </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>setBulkSize number of log messages to be bulked together </p>
-<dl class="section note"><dt>Note</dt><dd>This depends on what server accepts. The configuration value on the server is <code>max_items_in_bulk</code>. Please contact your log server hosting to get this number. Failing to select correct number can fail. </dd></dl>
+<p>Delay between dispatching log messages (in milliseconds) [Default: 1ms]. </p>
+<p>Setting correct delay is very important depending on your application and needs. Some applications that run for long (e.g, GUI application) may need longer delays between collecting log message and dispatching them to the server. This is very helpful for bulk requests in combination with compression enabled servers. When you collect many messages before they are dispatched to the server and you have bulk request and compression enabled, there are more changes of similar strings, meaning smaller packets.</p>
+<p>For example, if you have dispatch delay set to 10000 (10 seconds) and you have bulk requests (size 20) and compression enabled, when you log messages (using any method, e.g, LOG(INFO)...) it is going to hold the message in local memory for 10 seconds. Let's say within 10 seconds you logged 100 times, in this situation there are high chances you will have duplicate strings (for example lots of ":" or alphabets (e.g, "a") hence the compression will be much more useful. </p>
 
 </div>
 </div>
