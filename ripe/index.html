@@ -17,19 +17,25 @@ body { padding: 10px; }
 #output {
     white-space: pre-wrap;
 }
+#copy { float: right; }
 </style>
 <script type="text/javascript" src="jsencrypt.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+
 <script>
    
+  var clipboard = null;
   togglePublicKey = function() {
     $("#public-key").toggle(); 
     updatePublicKeyButton();
   }
+
   updatePublicKeyButton = function() {
     $("#toggle-public-key").val($("#public-key").is(":visible") ? "Hide Public Key" : "Show Public Key");
   }
   $(document).ready(function() {
+    clipboard = new Clipboard('#copy');
      $('#toggle-public-key').click(function() { togglePublicKey(); });
      $('.output').hide();
      $('#encrypt').click(function () {
@@ -78,6 +84,7 @@ body { padding: 10px; }
 <br/>
 <br/>
 <label class='output'>Encrypted Message</label>
+<input type='button' id='copy' class='output' value='Copy'  data-clipboard-target="#output" />
 <pre id='output' class='output'></pre>
 <hr/>
 <div style='text-align: center'>&copy; <a href='https://muflihun.com'>Muflihun.com<a/></div>
