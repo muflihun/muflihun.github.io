@@ -21,17 +21,35 @@ body { padding: 10px; }
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>
    
+  togglePublicKey = function() {
+    $("#public-key").toggle(); 
+    updatePublicKeyButton();
+  }
+  updatePublicKeyButton = function() {
+    $("#toggle-public-key").val($("#public-key").is(":visible") ? "Hide Public Key" : "Show Public Key");
+  }
   $(document).ready(function() {
+     $('#toggle-public-key').click(function() { togglePublicKey(); });
      $('#output').hide();
      $('#encrypt').click(function () {
          var crypt = new JSEncrypt();
          crypt.setPublicKey($("#public-key").val());
-         $('#output').text(crypt.encrypt($("#message").val()));
+         var encrypted = crypt.encrypt($("#message").val());
+         if (encrypted === false) {
+             encrypted = "Invalid public key";
+             $("#public-key").show();
+             updatePublicKeyButton();
+         } else {
+              $("#public-key").hide();
+             updatePublicKeyButton();
+         }
+         $('#output').text(encrypted);
          $('#output').show();
      });
      var keyFromParam = /key=([^&]+)/.exec(location.search);
      if (keyFromParam !== null && keyFromParam.length === 2) {
          $('#public-key').val(keyFromParam[1]);
+         togglePublicKey();
      }
   }); 
 </script>
@@ -47,8 +65,11 @@ body { padding: 10px; }
 <br/>
 <a href='/'>Home</a><br/>
 <hr/>
+<input type='button' id='toggle-public-key' value='Hide Public Key' />
+<br/>
 <textarea id='public-key' placeholder="Enter receipient public key here">
 </textarea>
+<br/>
 <br/>
 <textarea id='message' placeholder="Enter your message here"></textarea>
 <br/>
