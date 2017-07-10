@@ -30,7 +30,7 @@ body { padding: 10px; }
   }
   $(document).ready(function() {
      $('#toggle-public-key').click(function() { togglePublicKey(); });
-     $('#output').hide();
+     $('.output').hide();
      $('#encrypt').click(function () {
          var crypt = new JSEncrypt();
          crypt.setPublicKey($("#public-key").val());
@@ -44,7 +44,7 @@ body { padding: 10px; }
              updatePublicKeyButton();
          }
          $('#output').text(encrypted);
-         $('#output').show();
+         $('.output').show();
      });
      var keyFromParam = /key=([^&]+)/.exec(location.search);
      if (keyFromParam !== null && keyFromParam.length === 2) {
@@ -76,7 +76,8 @@ body { padding: 10px; }
 <input type='button' id='encrypt' value='Encrypt' />
 <br/>
 <br/>
-<pre id='output'></pre>
+<label class='output'>Encrypted Message</label>
+<pre id='output' class='output'></pre>
 <hr/>
 <div style='text-align: center'>&copy; <a href='https://muflihun.com'>Muflihun.com<a/></div>
 </body>
