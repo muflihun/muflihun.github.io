@@ -26,6 +26,7 @@ body { padding: 10px; }
 <script>
    
   var clipboard = null;
+  var crypt = null;
   togglePublicKey = function() {
     $("#public-key").toggle(); 
     updatePublicKeyButton();
@@ -39,11 +40,11 @@ body { padding: 10px; }
      $('#toggle-public-key').click(function() { togglePublicKey(); });
      $('.output').hide();
      $('#encrypt').click(function () {
-         var crypt = new JSEncrypt();
+         crypt = new JSEncrypt();
          crypt.setPublicKey($("#public-key").val());
          var encrypted = crypt.encrypt($("#message").val());
          if (encrypted === false) {
-             encrypted = "Invalid public key";
+             encrypted = "Invalid public key or message too long.";
              $("#public-key").show();
              updatePublicKeyButton();
          } else {
