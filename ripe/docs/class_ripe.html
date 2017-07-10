@@ -121,12 +121,11 @@ static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <tr class="memitem:a67c046c58f4c81cc63e3d7013ef339e3"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a67c046c58f4c81cc63e3d7013ef339e3">signRSA</a> (const std::string &amp;data, const std::string &amp;privateKeyPEM, const std::string &amp;secret=&quot;&quot;)</td></tr>
 <tr class="memdesc:a67c046c58f4c81cc63e3d7013ef339e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signs the data with private key.  <a href="#a67c046c58f4c81cc63e3d7013ef339e3">More...</a><br /></td></tr>
 <tr class="separator:a67c046c58f4c81cc63e3d7013ef339e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a704a0f41f62e8aaa0e94607c1545ead9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_ripe_1_1_key_pair.html">KeyPair</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a704a0f41f62e8aaa0e94607c1545ead9">generateRSAKeyPair</a> (unsigned int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>)</td></tr>
-<tr class="memdesc:a704a0f41f62e8aaa0e94607c1545ead9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate key pair and returns <a class="el" href="struct_ripe_1_1_key_pair.html" title="RSA Key pair. ">KeyPair</a>.  <a href="#a704a0f41f62e8aaa0e94607c1545ead9">More...</a><br /></td></tr>
-<tr class="separator:a704a0f41f62e8aaa0e94607c1545ead9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3eac579bde315831aef62ebafaf394c6"><td class="memItemLeft" align="right" valign="top"><a id="a3eac579bde315831aef62ebafaf394c6"></a>
-static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a3eac579bde315831aef62ebafaf394c6">maxRSABlockSize</a> (std::size_t keySize)</td></tr>
-<tr class="memdesc:a3eac579bde315831aef62ebafaf394c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum size of RSA block with specified key size. <br /></td></tr>
+<tr class="memitem:a680305b6eb2eeb85b2cf9a81dcf32aa1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_ripe_1_1_key_pair.html">KeyPair</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a680305b6eb2eeb85b2cf9a81dcf32aa1">generateRSAKeyPair</a> (unsigned int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>, const std::string &amp;secret=&quot;&quot;)</td></tr>
+<tr class="memdesc:a680305b6eb2eeb85b2cf9a81dcf32aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate key pair and returns <a class="el" href="struct_ripe_1_1_key_pair.html" title="RSA Key pair. ">KeyPair</a>.  <a href="#a680305b6eb2eeb85b2cf9a81dcf32aa1">More...</a><br /></td></tr>
+<tr class="separator:a680305b6eb2eeb85b2cf9a81dcf32aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eac579bde315831aef62ebafaf394c6"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a3eac579bde315831aef62ebafaf394c6">maxRSABlockSize</a> (std::size_t keySize)</td></tr>
+<tr class="memdesc:a3eac579bde315831aef62ebafaf394c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum size of RSA block with specified key size.  <a href="#a3eac579bde315831aef62ebafaf394c6">More...</a><br /></td></tr>
 <tr class="separator:a3eac579bde315831aef62ebafaf394c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6098f0c0ff7055593b6a8e7497e8a5fb"><td class="memItemLeft" align="right" valign="top"><a id="a6098f0c0ff7055593b6a8e7497e8a5fb"></a>
 static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a6098f0c0ff7055593b6a8e7497e8a5fb">minRSAKeySize</a> (std::size_t dataSize)</td></tr>
@@ -138,13 +137,13 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class=
 <tr class="memitem:afc2a834d7a596ccd9050a7b8067f81ce"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#afc2a834d7a596ccd9050a7b8067f81ce">decryptRSA</a> (std::string &amp;data, const std::string &amp;key, bool <a class="el" href="class_ripe.html#a683905d4617a12bcab67ecb67ea9fd8e">isBase64</a>, bool isHex=false, const std::string &amp;secret=&quot;&quot;)</td></tr>
 <tr class="memdesc:afc2a834d7a596ccd9050a7b8067f81ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">decryptRSA Decrypts using RSA key  <a href="#afc2a834d7a596ccd9050a7b8067f81ce">More...</a><br /></td></tr>
 <tr class="separator:afc2a834d7a596ccd9050a7b8067f81ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3fcb8adfcd970811da2e138efaab21f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ae3fcb8adfcd970811da2e138efaab21f">writeRSAKeyPair</a> (const std::string &amp;publicFile, const std::string &amp;privateFile, int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>)</td></tr>
-<tr class="memdesc:ae3fcb8adfcd970811da2e138efaab21f"><td class="mdescLeft">&#160;</td><td class="mdescRight">writeRSAKeyPair Writes RSA key pair to public and private file paths.  <a href="#ae3fcb8adfcd970811da2e138efaab21f">More...</a><br /></td></tr>
-<tr class="separator:ae3fcb8adfcd970811da2e138efaab21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2625c9619dd50613458fedb672aa1ea"><td class="memItemLeft" align="right" valign="top"><a id="ad2625c9619dd50613458fedb672aa1ea"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ad2625c9619dd50613458fedb672aa1ea">generateRSAKeyPairBase64</a> (int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>)</td></tr>
-<tr class="memdesc:ad2625c9619dd50613458fedb672aa1ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">generateRSAKeyPair Generates RSA key pair and returns colon seperated base64 where first part is private key and second part is public key. <br /></td></tr>
-<tr class="separator:ad2625c9619dd50613458fedb672aa1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc9ceb8e3094fe1ce97c6f7508d9c69"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a1dc9ceb8e3094fe1ce97c6f7508d9c69">writeRSAKeyPair</a> (const std::string &amp;publicFile, const std::string &amp;privateFile, int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>, const std::string &amp;secret=&quot;&quot;)</td></tr>
+<tr class="memdesc:a1dc9ceb8e3094fe1ce97c6f7508d9c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">writeRSAKeyPair Writes RSA key pair to public and private file paths.  <a href="#a1dc9ceb8e3094fe1ce97c6f7508d9c69">More...</a><br /></td></tr>
+<tr class="separator:a1dc9ceb8e3094fe1ce97c6f7508d9c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d4b1ac38cee624cedbeaf599e5e3f31"><td class="memItemLeft" align="right" valign="top"><a id="a6d4b1ac38cee624cedbeaf599e5e3f31"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a6d4b1ac38cee624cedbeaf599e5e3f31">generateRSAKeyPairBase64</a> (int length=<a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a>, const std::string &amp;secret=&quot;&quot;)</td></tr>
+<tr class="memdesc:a6d4b1ac38cee624cedbeaf599e5e3f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">generateRSAKeyPair Generates RSA key pair and returns colon seperated base64 where first part is private key and second part is public key. <br /></td></tr>
+<tr class="separator:a6d4b1ac38cee624cedbeaf599e5e3f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadac58f6af172236243e68127a95559b"><td class="memItemLeft" align="right" valign="top"><a id="aadac58f6af172236243e68127a95559b"></a>
 static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#aadac58f6af172236243e68127a95559b">base64Decode</a> (const std::string &amp;base64Encoded)</td></tr>
 <tr class="memdesc:aadac58f6af172236243e68127a95559b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodes encoded base64. <br /></td></tr>
@@ -224,6 +223,10 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#a485490a265e49dcc44d7a73a66f25f5e">BASE64_CHARS</a></td></tr>
 <tr class="memdesc:a485490a265e49dcc44d7a73a66f25f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible base64 characters. <br /></td></tr>
 <tr class="separator:a485490a265e49dcc44d7a73a66f25f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac08f3740bd5b9793b4f5d20643327f70"><td class="memItemLeft" align="right" valign="top"><a id="ac08f3740bd5b9793b4f5d20643327f70"></a>
+static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#ac08f3740bd5b9793b4f5d20643327f70">PRIVATE_RSA_ALGORITHM</a></td></tr>
+<tr class="memdesc:ac08f3740bd5b9793b4f5d20643327f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Algorithm for private rsa key. <br /></td></tr>
+<tr class="separator:ac08f3740bd5b9793b4f5d20643327f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa56a411047627c9a0fbfc4cf6fc83c5d"><td class="memItemLeft" align="right" valign="top"><a id="aa56a411047627c9a0fbfc4cf6fc83c5d"></a>
 static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ripe.html#aa56a411047627c9a0fbfc4cf6fc83c5d">ZLIB_BUFFER_SIZE</a></td></tr>
 <tr class="memdesc:aa56a411047627c9a0fbfc4cf6fc83c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer size for zlib. <br /></td></tr>
@@ -824,8 +827,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 
 </div>
 </div>
-<a id="a704a0f41f62e8aaa0e94607c1545ead9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a704a0f41f62e8aaa0e94607c1545ead9">&#9670;&nbsp;</a></span>generateRSAKeyPair()</h2>
+<a id="a680305b6eb2eeb85b2cf9a81dcf32aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a680305b6eb2eeb85b2cf9a81dcf32aa1">&#9670;&nbsp;</a></span>generateRSAKeyPair()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -837,8 +840,18 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
           <td class="memname">static <a class="el" href="struct_ripe_1_1_key_pair.html">KeyPair</a> Ripe::generateRSAKeyPair </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>length</em> = <code><a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a></code></td><td>)</td>
+          <td class="paramname"><em>length</em> = <code><a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>secret</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -849,7 +862,48 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><div class="memdoc">
 
 <p>Generate key pair and returns <a class="el" href="struct_ripe_1_1_key_pair.html" title="RSA Key pair. ">KeyPair</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>Length of the key (2048 for 256-bit key, ...) </td></tr>
+    <tr><td class="paramname">secret</td><td>Password for private RSA key (if any) </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_ripe_1_1_key_pair.html" title="RSA Key pair. ">KeyPair</a> </dd></dl>
+
+</div>
+</div>
+<a id="a3eac579bde315831aef62ebafaf394c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eac579bde315831aef62ebafaf394c6">&#9670;&nbsp;</a></span>maxRSABlockSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned int Ripe::maxRSABlockSize </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>keySize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum size of RSA block with specified key size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keySize</td><td>2048 for 256-bit key, ... </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -928,7 +982,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Base64 format of encrypted data with format: <pre>[LENGTH]:[IV]:[&lt;Client_ID&gt;:]:[Base64 Data]</pre> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Base64 format of encrypted data with format: <pre>[LENGTH]:[IV]:[[Client_ID]:]:[Base64 Data]</pre> </dd></dl>
 
 </div>
 </div>
@@ -1037,8 +1091,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 
 </div>
 </div>
-<a id="ae3fcb8adfcd970811da2e138efaab21f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3fcb8adfcd970811da2e138efaab21f">&#9670;&nbsp;</a></span>writeRSAKeyPair()</h2>
+<a id="a1dc9ceb8e3094fe1ce97c6f7508d9c69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dc9ceb8e3094fe1ce97c6f7508d9c69">&#9670;&nbsp;</a></span>writeRSAKeyPair()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1062,7 +1116,13 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>length</em> = <code><a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a></code>&#160;</td>
+          <td class="paramname"><em>length</em> = <code><a class="el" href="class_ripe.html#a66f6f6e124c8df4b5c40d74f24f2eed2">DEFAULT_RSA_LENGTH</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>secret</em> = <code>&quot;&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1080,7 +1140,10 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>writeRSAKeyPair Writes RSA key pair to public and private file paths. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">length</td><td>RSA key size </td></tr>
+    <tr><td class="paramname">publicFile</td><td>Output path for public file. It must be wriable. </td></tr>
+    <tr><td class="paramname">privateFile</td><td>Output path for private file. It must be writable. </td></tr>
+    <tr><td class="paramname">length</td><td>Length of the key (2048 for 256-bit key, ...) </td></tr>
+    <tr><td class="paramname">secret</td><td>Password for private RSA key (if any) </td></tr>
   </table>
   </dd>
 </dl>
