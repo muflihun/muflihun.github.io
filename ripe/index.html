@@ -42,6 +42,10 @@ pre {
     $('#char-count').text($('#message').val().length + " characters");
   }
 
+  maxEncryptSize = function(keySize) {
+    return (keySize / 8) - 11;
+  }
+
   updatePublicKeyButton = function() {
     $("#toggle-public-key").val($("#public-key").is(":visible") ? "Hide Public Key" : "Show Public Key");
   }
