@@ -41,6 +41,7 @@ pre {
   updateCharCount = function() {
     var curr = $('#message').val().length;
     var text = curr + (allowedChars !== null ? "/" + allowedChars : "") + " characters";
+    if (curr === 0 && allowedChars !== null) { text = "Maximum " + allowedChars + " characters allowed"; }
     var clr = '#999';
     if (allowedChars !== null && curr > allowedChars) { clr = '#f00'; }
     $('#char-count').html("<span style='color:" + clr + "'>" + text + "</span>");
@@ -104,6 +105,7 @@ pre {
      var keyFromParam = /key=([^&]+)/.exec(location.search);
      if (keyFromParam !== null && keyFromParam.length === 2) {
          $('#public-key').val(keyFromParam[1]);
+         $('#public-key').change();
          togglePublicKey();
      }
   }); 
