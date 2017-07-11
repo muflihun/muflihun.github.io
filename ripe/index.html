@@ -19,7 +19,6 @@ body { padding: 10px; }
 }
 #char-count {
     float:right;
-    color: #999;
 }
 pre {
     white-space: pre-wrap;
@@ -34,12 +33,17 @@ pre {
    
   var clipboard = null;
   var crypt = null;
+  var allowedChars = null;
   togglePublicKey = function() {
     $("#public-key").toggle(); 
     updatePublicKeyButton();
   }
   updateCharCount = function() {
-    $('#char-count').text($('#message').val().length + " characters");
+    var curr = $('#message').val().length;
+    var text = curr + (allowedChars !== null ? "/" + allowedChars : "") + " characters";
+    var clr = '#999';
+    if (allowedChars !== null && curr > allowedChars) { clr = '#f00'; }
+    $('#char-count').html("<span style='color:" + clr + "'>" + text + "</span>");
   }
 
   maxEncryptSize = function(keySize) {
@@ -63,14 +67,20 @@ pre {
          $('#gen-pri').text(new_crypt.getPrivateKey());
          $('#gen-pub').text(new_crypt.getPublicKey()); 
      });
-     $('#encrypt').click(function () {
-         updateCharCount();
+     $('#public-key').change(function() {
          crypt = new JSEncrypt();
          crypt.setPublicKey($("#public-key").val());
+         allowedChars = maxEncryptSize(crypt.key.n.bitLength());
+         updateCharCount();
+     });
+     $('#encrypt').click(function () {
+         updateCharCount();
+         $('#public-key').change();
          var encrypted = crypt.encrypt($("#message").val());
          if (encrypted === false) {
              encrypted = "Invalid public key or message too long.";
              if ($("#public-key").val().length === 0) { encrypted = "Please enter valid public key"; }
+             if (allowedChars !== null && $("#public-key").val().length > allowedChars) { encrypted = "Message too long. Maximum allowed characters is " + allowedChars; }
              $("#public-key").show();
              updatePublicKeyButton();
          } else {
