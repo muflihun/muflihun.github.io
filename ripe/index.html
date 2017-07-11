@@ -17,6 +17,10 @@ body { padding: 10px; }
 #messaged {
     font-family: monospace;
 }
+#char-count {
+    float:right;
+    color: #999;
+}
 pre {
     white-space: pre-wrap;
 }
@@ -34,12 +38,16 @@ pre {
     $("#public-key").toggle(); 
     updatePublicKeyButton();
   }
+  updateCharCount = function() {
+    $('#char-count').text($('#message').val().length + " characters");
+  }
 
   updatePublicKeyButton = function() {
     $("#toggle-public-key").val($("#public-key").is(":visible") ? "Hide Public Key" : "Show Public Key");
   }
   $(document).ready(function() {
      clipboard = new Clipboard('#copy');
+     $('#message').keyup(function() { updateCharCount(); } );
      $('#toggle-public-key').click(function() { togglePublicKey(); });
      $('.output,.outputd').hide();
      $('.gen,.genk').hide();
@@ -52,11 +60,13 @@ pre {
          $('#gen-pub').text(new_crypt.getPublicKey()); 
      });
      $('#encrypt').click(function () {
+         updateCharCount();
          crypt = new JSEncrypt();
          crypt.setPublicKey($("#public-key").val());
          var encrypted = crypt.encrypt($("#message").val());
          if (encrypted === false) {
              encrypted = "Invalid public key or message too long.";
+             if ($("#public-key").val().length === 0) { encrypted = "Please enter valid public key"; }
              $("#public-key").show();
              updatePublicKeyButton();
          } else {
@@ -76,6 +86,7 @@ pre {
          $('#outputd').text(decrypted);
          $('#outputd').show();
      });
+     
      var keyFromParam = /key=([^&]+)/.exec(location.search);
      if (keyFromParam !== null && keyFromParam.length === 2) {
          $('#public-key').val(keyFromParam[1]);
@@ -106,6 +117,7 @@ pre {
 <br/>
 <br/>
 <textarea id='message' placeholder="Enter your message here"></textarea>
+<div id='char-count'></div>
 <br/>
 <input type='button' id='encrypt' value='Encrypt' />
 <br/>
