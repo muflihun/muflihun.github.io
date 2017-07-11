@@ -130,13 +130,6 @@ pre {
 <input type='button' id='copy' class='output' value='Copy'  data-clipboard-target="#output" />
 <pre id='output' class='output'></pre>
 <hr/>
-<h3>Generate A Key Pair</h3>
-<input type='button' id='generate' value='Generate' />
-<pre id='gen-pub' class='genk'></pre>
-<pre id='gen-pri' class='genk'></pre>
-<br/>
-<p class='gen'>Note: These are 128-bit keys and are not password protected (which adds extra layer of security). Please use ripe CLI tool to create more secure keys</p>
-<hr/>
 <h3>Decrypt A Message</h3>
 <textarea id='private-key' placeholder="Enter your private key here"></textarea>
 <br/>
@@ -151,6 +144,14 @@ pre {
 <br/>
 <p>Note: This decryption tool does not support passpharase. Please use ripe CLI tool to decrypt using encrypted private RSA keys</p>
 <p>Note: No data is sent across the wire.</p>
+<hr/>
+<h3>Generate A Key Pair</h3>
+<input type='button' id='generate' value='Generate' />
+<pre id='gen-pub' class='genk'></pre>
+<pre id='gen-pri' class='genk'></pre>
+<br/>
+<p class='gen'>Note: These are 128-bit keys and are not password protected (which adds extra layer of security). Please use ripe CLI tool to create more secure keys</p>
+<hr/>
 <div style='text-align: center'>&copy; <a href='https://muflihun.com'>Muflihun.com<a/></div>
 </body>
 </html>
