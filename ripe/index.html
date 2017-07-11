@@ -71,7 +71,7 @@ pre {
      $('#public-key').change(function() {
          crypt = new JSEncrypt();
          crypt.setPublicKey($("#public-key").val());
-         allowedChars = maxEncryptSize(crypt.key.n.bitLength());
+         allowedChars = parseInt(maxEncryptSize(crypt.key.n.bitLength()));
          updateCharCount();
      });
      $('#encrypt').click(function () {
