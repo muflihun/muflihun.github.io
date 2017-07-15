@@ -218,7 +218,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="memdesc:a262f73f8f6c4d749f4a7fd4bccce8fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables automatic setting of bulk params.  <a href="#a262f73f8f6c4d749f4a7fd4bccce8fbf">More...</a><br /></td></tr>
 <tr class="separator:a262f73f8f6c4d749f4a7fd4bccce8fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5579e7935c56178d04082e49109fc71a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a5579e7935c56178d04082e49109fc71a">setKeySize</a> (std::size_t keySize)</td></tr>
-<tr class="memdesc:a5579e7935c56178d04082e49109fc71a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of RSA key when connecting.  <a href="#a5579e7935c56178d04082e49109fc71a">More...</a><br /></td></tr>
+<tr class="memdesc:a5579e7935c56178d04082e49109fc71a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of RSA key (in bits) when connecting.  <a href="#a5579e7935c56178d04082e49109fc71a">More...</a><br /></td></tr>
 <tr class="separator:a5579e7935c56178d04082e49109fc71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c92d2637cb026de9c5c202dba98edda"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a1c92d2637cb026de9c5c202dba98edda">setApplicationArgs</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a1c92d2637cb026de9c5c202dba98edda"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1082,15 +1082,15 @@ By default it is enabled </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Size of RSA key when connecting. </p>
+<p>Size of RSA key (in bits) when connecting. </p>
 <p>RSA key is generated on the fly when client is unknown to the server.</p>
 <p>You can choose to speed up connection process by understanding 3 following points and acting accordingly;</p><ul>
-<li>Default value is 256-bit key (2048) which takes ~150ms to generate the key, if you increase it to 512-bit (4096) it takes ~3s to generate this key. This means connection will be 2850 ms slow but is more secure. This situation is useful for big applications that can take this long, e.g, gui application</li>
+<li>Default value is 2048-bit which takes ~150ms to generate the key, if you increase it to 4096-bit it takes ~3s to generate this key. This means connection will be 2850 ms slow but is more secure. This situation is useful for big applications that can take this long, e.g, gui application</li>
 <li>Having pre-defined key helps speed up connection process by saving overhead of key generation with each connection.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">keySize</td><td>Size of key in bytes (2048 (256-bit key), ...) </td></tr>
+    <tr><td class="paramname">keySize</td><td>Size of key in bits, i.e, 2048, 4096, ... </td></tr>
   </table>
   </dd>
 </dl>
@@ -1208,7 +1208,7 @@ By default it is enabled </dd></dl>
 </div><div class="memdoc">
 
 <p>Default key size for RSA. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_residue.html#a5579e7935c56178d04082e49109fc71a" title="Size of RSA key when connecting. ">setKeySize</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_residue.html#a5579e7935c56178d04082e49109fc71a" title="Size of RSA key (in bits) when connecting. ">setKeySize</a> </dd></dl>
 
 </div>
 </div>
