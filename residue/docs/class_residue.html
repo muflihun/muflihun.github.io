@@ -822,7 +822,27 @@ By default it is enabled </dd></dl>
 </div><div class="memdoc">
 
 <p>Loads all the configurations from JSON file. </p>
-<p>A JSON file should look similar to. Only </p><pre>url</pre><p> is required, rest of them are optional <code> { "url": "localhost:8777", "access_codes": [ { "logger_id": "securitybox-businesslogger", "code": "134193F1A993FA6A4FE" } ], "application_id": "com.muflihun.securitybox", "rsa_key_size": 2048, "plain_request": false, "utc_time": false, "time_offset": -3600, "dispatch_delay": 1, "main_thread_id": "gui_thread", "client_id": "muflihun00102030", "client_private_key": "samples/clients/netcat/client-256-private.pem", "server_public_key": "samples/clients/netcat/server-1024-public.pem" } </code> </p><dl class="params"><dt>Parameters</dt><dd>
+<p>A JSON file should look similar to. Only </p><pre>url</pre><p> is required, rest of them are optional </p><pre>
+{
+    "url": "localhost:8777",
+    "access_codes": [
+        {
+            "logger_id": "securitybox-businesslogger",
+            "code": "134193F1A993FA6A4FE"
+        }
+    ],
+    "application_id": "com.muflihun.securitybox",
+    "rsa_key_size": 2048,
+    "plain_request": false,
+    "utc_time": false,
+    "time_offset": -3600,
+    "dispatch_delay": 1,
+    "main_thread_id": "gui_thread",
+    "client_id": "muflihun00102030",
+    "client_private_key": "samples/clients/netcat/client-256-private.pem",
+    "server_public_key": "samples/clients/netcat/server-1024-public.pem"
+}
+</pre> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">jsonFilename</td><td>Path to configuration JSON file </td></tr>
   </table>
