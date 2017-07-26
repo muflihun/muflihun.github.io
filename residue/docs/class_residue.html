@@ -273,6 +273,10 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#afb629104e2f73fd1b1125cfcbcfbc9b4">LOCALHOST</a></td></tr>
 <tr class="memdesc:afb629104e2f73fd1b1125cfcbcfbc9b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">127.0.0.1 <br /></td></tr>
 <tr class="separator:afb629104e2f73fd1b1125cfcbcfbc9b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c33b99af70312d46d02a5276200c79"><td class="memItemLeft" align="right" valign="top"><a id="ab6c33b99af70312d46d02a5276200c79"></a>
+static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ab6c33b99af70312d46d02a5276200c79">PING_THRESHOLD</a></td></tr>
+<tr class="memdesc:ab6c33b99af70312d46d02a5276200c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threshold (seconds) to check against client age and whether we should send ping request or not. <br /></td></tr>
+<tr class="separator:ab6c33b99af70312d46d02a5276200c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08af58bb017f1d485e74d849de6b02e6"><td class="memItemLeft" align="right" valign="top"><a id="a08af58bb017f1d485e74d849de6b02e6"></a>
 static volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a08af58bb017f1d485e74d849de6b02e6">s_internalLoggingLevel</a></td></tr>
 <tr class="memdesc:a08af58bb017f1d485e74d849de6b02e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <a class="el" href="class_residue.html#aa09c4c797a923c900bd79f537253a620" title="Sets logging level for residue client library internal logging. ">setInternalLoggingLevel(int)</a> <br /></td></tr>
@@ -841,7 +845,8 @@ By default it is enabled </dd></dl>
     "client_id": "my_client",
     "client_private_key": "client-private.pem",
     "client_key_secret": "",
-    "server_public_key": "server-public.pem"
+    "server_public_key": "server-public.pem",
+    "internal_logging_level": 2
 }
 </pre> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1072,10 +1077,11 @@ By default it is enabled </dd></dl>
 <p>Sets logging level for residue client library internal logging. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">level</td><td>0 = details, 1 = debug, 2 = error, 3 = warning, 4 = info, 5 = none (default) </td></tr>
+    <tr><td class="paramname">level</td><td>CRAZY = 0, DEBUG = 1, INFO = 2, WARNING = 3, ERROR = 4, NONE = 5 (default)</td></tr>
   </table>
   </dd>
 </dl>
+<p>E.g, for ERROR and WARNING = use level 3 for just ERROR = use level 4 </p>
 
 </div>
 </div>
