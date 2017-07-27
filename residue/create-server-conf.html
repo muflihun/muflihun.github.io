@@ -1,47 +1,61 @@
 <html>
 <head>
  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0'/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
 <style>
 body { padding: 10px; }
 h4 { color: #666;}
+.field-label {
+	margin-right: 10px;
+}
 .field-label::after {
 	content: ':';
 }
 #output {
 	width: 500px;
+	max-width: 100%;
 	height: 300px;
 	font-family: monospace;
+}
+.field {
+	margin-top: 10px;
 }
 </style>
 <script src="assets/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
-		$('#generate').click(function() {
-			var conf = {};
-			$('.field-value > input').each(function(idx, item) {
-				var val = $(item).val();
-				if ($(item).attr('type') === 'number') {
-					val = parseInt(val);
-				} else if ($(item).attr('type') === 'checkbox') {
-					val = $(item).is(':checked');
-				}
-			    conf[$(item).attr('id')] = val;
-			});
-			console.log(conf);
-			$('#output').text(JSON.stringify(conf, null, 2));
-		});
-		
-		$('#load').click(function() {
-			var conf = JSON.parse($('#output').val());
-			for (var key in conf) {
-			  if (conf.hasOwnProperty(key)) {
-				 $('#' + key).val(conf[key]);
-				 console.log(conf[key]);
-			  }
+	    $('#generate').click(function() {
+	        var conf = {};
+	        $('.field-value > input').each(function(idx, item) {
+	            var val = $(item).val();
+	            if ($(item).attr('type') === 'number') {
+	                val = parseInt(val);
+	            } else if ($(item).attr('type') === 'checkbox') {
+	                val = $(item).is(':checked');
+	            }
+	            conf[$(item).attr('id')] = val;
+	        });
+	        $('#output').val(JSON.stringify(conf, null, 2));
+	    });
+
+	    $('#load').click(function() {
+			if ($('#output').val().trim().length === 0) {
+				return;
 			}
-		});
+	        var conf = JSON.parse($('#output').val());
+	        for (var key in conf) {
+	            if (conf.hasOwnProperty(key)) {
+	                if ($('#' + key).attr('type') === 'checkbox') {
+						$('#' + key).prop('checked', conf[key]);
+	                } else {
+	                    $('#' + key).val(conf[key]);
+	                }
+	            }
+	        }
+	    });
 	});
 </script>
 </head>
@@ -168,9 +182,7 @@ h4 { color: #666;}
 	<button id='generate'>Generate</button><br/>
 	<br/>
 	<br/>
-	<textarea id='output'>
-		
-	</textarea>
+	<textarea id='output'></textarea>
 	<br/>
 	<br/>
 	<button id='load'>Load</button>
