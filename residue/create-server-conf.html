@@ -15,14 +15,21 @@ h4 { color: #666;}
 	font-family: monospace;
 }
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="assets/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
 		$('#generate').click(function() {
 			var conf = {};
 			$('.field-value > input').each(function(idx, item) {
-			    conf[$(item).attr('id')] = $(item).val();
+				var val = $(item).val();
+				if ($(item).attr('type') === 'number') {
+					val = parseInt(val);
+				} else if ($(item).attr('type') === 'checkbox') {
+					val = $(item).is(':checked');
+				}
+			    conf[$(item).attr('id')] = val;
 			});
+			console.log(conf);
 			$('#output').text(JSON.stringify(conf, null, 2));
 		});
 		
@@ -62,9 +69,102 @@ h4 { color: #666;}
 		<span class="field-value"><input type='number' id='logging_port' value='8779' /></span>
 	</div>
 	<div class="field">
-		<span class="field-label"><label>Server Key</label></span>
+		<span class="field-label"><label>Server Admin Key</label></span>
 		<span class="field-value"><input type='text' id='server_key' value='' /></span>
 	</div>
+	<div class="field">
+		<span class="field-label"><label>Server Private Key (File Path)</label></span>
+		<span class="field-value"><input type='text' id='server_rsa_private_key' value='' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Server Public Key (File Path)</label></span>
+		<span class="field-value"><input type='text' id='server_rsa_public_key' value='' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Default Key Size</label></span>
+		<span class="field-value"><input type='number' id='logging_port' value='256' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Default Token Age</label></span>
+		<span class="field-value"><input type='number' id='token_age' value='3600' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Max Token Age</label></span>
+		<span class="field-value"><input type='number' id='max_token_age' value='0' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Client Age</label></span>
+		<span class="field-value"><input type='number' id='client_age' value='3600' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Non-Ack Client Age</label></span>
+		<span class="field-value"><input type='number' id='non_acknowledged_client_age' value='300' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Client Integrity Schedule</label></span>
+		<span class="field-value"><input type='number' id='client_integrity_task_interval' value='300' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Maximum Bulk Items</label></span>
+		<span class="field-value"><input type='number' id='max_items_in_bulk' value='50' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Dispatch Delay (ms)</label></span>
+		<span class="field-value"><input type='number' id='dispatch_delay' value='1' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>authorize_loggers_with_no_access_code</label></span>
+		<span class="field-value"><input type='checkbox' id='authorize_loggers_with_no_access_code' checked /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>allow_plain_connection</label></span>
+		<span class="field-value"><input type='checkbox' id='allow_plain_connection' checked /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>allow_unknown_loggers</label></span>
+		<span class="field-value"><input type='checkbox' id='allow_plain_connection' checked /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>allow_unknown_clients</label></span>
+		<span class="field-value"><input type='checkbox' id='allow_plain_connection' checked /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>accept_input</label></span>
+		<span class="field-value"><input type='checkbox' id='allow_plain_connection' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>check_tokens</label></span>
+		<span class="field-value"><input type='checkbox' id='check_tokens' checked /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>allow_plain_log_request</label></span>
+		<span class="field-value"><input type='checkbox' id='allow_plain_log_request' checked /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>immediate_flush</label></span>
+		<span class="field-value"><input type='checkbox' id='immediate_flush' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>compression</label></span>
+		<span class="field-value"><input type='checkbox' id='compression' checked /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>allow_pinging_dead_client</label></span>
+		<span class="field-value"><input type='checkbox' id='allow_pinging_dead_client' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>archived_log_directory</label></span>
+		<span class="field-value"><input type='text' id='archived_log_directory' value='' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>archived_log_filename</label></span>
+		<span class="field-value"><input type='text' id='archived_log_filename' value='' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>archived_log_compressed_filename</label></span>
+		<span class="field-value"><input type='text' id='archived_log_compressed_filename' value='' /></span>
+	</div>
+	
 	<button id='generate'>Generate</button><br/>
 	<br/>
 	<br/>
