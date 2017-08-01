@@ -22,6 +22,12 @@ h4 { color: #666;}
 }
 .field {
 	margin-top: 10px;
+        display: inline-block;
+        width: 49%;
+}
+.field-value {
+        float:right;
+        margin-right: 10px;
 }
 </style>
 <script src="assets/jquery.min.js"></script>
@@ -127,8 +133,17 @@ h4 { color: #666;}
 		<span class="field-value"><input type='number' id='dispatch_delay' value='1' /></span>
 	</div>
 	<div class="field">
-		<span class="field-label"><label>authorize_loggers_with_no_access_code</label></span>
-		<span class="field-value"><input type='checkbox' id='authorize_loggers_with_no_access_code' checked /></span>
+		<span class="field-label"><label>Timestamp Validity (sec)</label></span>
+		<span class="field-value"><input type='number' id='timestamp_validity' value='120' /></span>
+	</div>
+
+	<div class="field">
+		<span class="field-label"><label>requires_timestamp</label></span>
+		<span class="field-value"><input type='checkbox' id='requires_timestamp' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>allow_default_access_code</label></span>
+		<span class="field-value"><input type='checkbox' id='allow_default_access_code' checked /></span>
 	</div>
 	<div class="field">
 		<span class="field-label"><label>allow_plain_connection</label></span>

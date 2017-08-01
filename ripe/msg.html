@@ -1,0 +1,167 @@
+<html>
+<head>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0'/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<style>
+body { padding: 10px; }
+#public-key, #private-key {
+    width: 100%;
+    height: 280px;
+    font-family: monospace;
+}
+#message, #messaged {
+    width: 100%;
+    height: 280px;
+}
+#messaged {
+    font-family: monospace;
+}
+#char-count {
+    float:right;
+}
+pre {
+    white-space: pre-wrap;
+}
+#copy { float: right; }
+</style>
+<script type="text/javascript" src="jsencrypt.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+
+<script>
+   
+  var clipboard = null;
+  var crypt = null;
+  var allowedChars = null;
+  togglePublicKey = function() {
+    $("#public-key").toggle(); 
+    updatePublicKeyButton();
+  }
+  updateCharCount = function() {
+    var curr = $('#message').val().length;
+    var text = curr + (allowedChars !== null ? "/" + allowedChars : "") + " characters";
+    if (curr === 0 && allowedChars !== null) { text = "Maximum " + allowedChars + " characters allowed"; }
+    var clr = '#999';
+    if (allowedChars !== null && curr > allowedChars) { clr = '#f00'; }
+    $('#char-count').html("<span style='color:" + clr + "'>" + text + "</span>");
+  }
+
+  maxEncryptSize = function(keySize) {
+    return (keySize / 8) - 11;
+  }
+
+  updatePublicKeyButton = function() {
+    $("#toggle-public-key").val($("#public-key").is(":visible") ? "Hide Public Key" : "Show Public Key");
+  }
+  $(document).ready(function() {
+     clipboard = new Clipboard('#copy');
+     $('#message').keyup(function() { updateCharCount(); } );
+     $('#toggle-public-key').click(function() { togglePublicKey(); });
+     $('.output,.outputd').hide();
+     $('.gen,.genk').hide();
+     $('#generate').click(function() {
+         $('.gen,.genk').show();
+         $('.genk').text('Generating...');
+         var new_crypt = new JSEncrypt({default_key_size: 1024});
+         new_crypt.getKey();
+         $('#gen-pri').text(new_crypt.getPrivateKey());
+         $('#gen-pub').text(new_crypt.getPublicKey()); 
+     });
+     $('#public-key').change(function() {
+         crypt = new JSEncrypt();
+         crypt.setPublicKey($("#public-key").val());
+         allowedChars = parseInt(maxEncryptSize(crypt.key.n.bitLength()));
+         updateCharCount();
+     });
+     $('#encrypt').click(function () {
+         updateCharCount();
+         $('#public-key').change();
+         var encrypted = crypt.encrypt($("#message").val());
+         if (encrypted === false) {
+             encrypted = "Invalid public key or message too long.";
+             if ($("#public-key").val().length === 0) { encrypted = "Please enter valid public key"; }
+             if (allowedChars !== null && $("#public-key").val().length > allowedChars) { encrypted = "Message too long. Maximum allowed characters is " + allowedChars; }
+             $("#public-key").show();
+             updatePublicKeyButton();
+         } else {
+              $("#public-key").hide();
+             updatePublicKeyButton();
+         }
+         $('#output').text(encrypted);
+         $('.output').show();
+     });
+     $('#decrypt').click(function() {
+         crypt = new JSEncrypt();
+         crypt.setPrivateKey($("#private-key").val());
+         var decrypted = crypt.decrypt($("#messaged").val());
+         if (decrypted === false || decrypted.length === 0) {
+             decrypted = "Failed to read the message. Make sure the private key is correct";
+         }
+         $('#outputd').text(decrypted);
+         $('#outputd').show();
+     });
+     
+     var keyFromParam = /key=([^&]+)/.exec(location.search);
+     if (keyFromParam !== null && keyFromParam.length === 2) {
+         $('#public-key').val(keyFromParam[1]);
+         $('#public-key').change();
+         togglePublicKey();
+     }
+  }); 
+</script>
+</head>
+<body>
+<h3><img src='/labs.png' style='width:64px;height:auto;vertical-align: bottom;' /> Muflihun Labs</h3>
+<br/>
+<img style='width:256px;max-width:50%' src='https://raw.githubusercontent.com/muflihun/ripe/master/ripe.png?' />
+<br/>
+<br/>
+<p>
+You can use this page to encrypt/decrypt a message using key pair.
+</p>
+<br/>
+<a href='/'>Home</a><br/>
+<hr/>
+<h3>Encrypt A Message</h3>
+<input type='button' id='toggle-public-key' value='Hide Public Key' />
+<br/>
+<textarea id='public-key' placeholder="Enter receipient public key here">
+</textarea>
+<br/>
+<br/>
+<textarea id='message' placeholder="Enter your message here"></textarea>
+<div id='char-count'></div>
+<br/>
+<input type='button' id='encrypt' value='Encrypt' />
+<br/>
+<br/>
+<label class='output'>Encrypted Message</label>
+<input type='button' id='copy' class='output' value='Copy'  data-clipboard-target="#output" />
+<pre id='output' class='output'></pre>
+<hr/>
+<h3>Decrypt A Message</h3>
+<textarea id='private-key' placeholder="Enter your private key here"></textarea>
+<br/>
+<br/>
+<textarea id='messaged' placeholder="Enter encrypted message here"></textarea>
+<br/>
+<input type='button' id='decrypt' value='Decrypt' />
+<br/>
+<br/>
+<label class='outputd'>Message</label>
+<pre id='outputd' class='outputd'></pre>
+<br/>
+<p>Note: This decryption tool does not support passpharase. Please use ripe CLI tool to decrypt using encrypted private RSA keys</p>
+<p>Note: No data is sent across the wire.</p>
+<hr/>
+<h3>Generate A Key Pair</h3>
+<input type='button' id='generate' value='Generate' />
+<pre id='gen-pub' class='genk'></pre>
+<pre id='gen-pri' class='genk'></pre>
+<br/>
+<p class='gen'>Note: These are 1024-bit keys and are not password protected (which adds extra layer of security). Please use ripe CLI tool to create more secure keys</p>
+<hr/>
+<div style='text-align: center'>&copy; <a href='https://muflihun.com'>Muflihun.com<a/></div>
+</body>
+</html>
