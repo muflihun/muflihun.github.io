@@ -83,16 +83,26 @@ Public Types</h2></td></tr>
 <tr class="memitem:aec68ee5347d85c3d3c50e4b8b7452fb6"><td class="memItemLeft" align="right" valign="top"><a id="aec68ee5347d85c3d3c50e4b8b7452fb6"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#aec68ee5347d85c3d3c50e4b8b7452fb6">Flag</a> : unsigned int { <br />
 &#160;&#160;<b>NONE</b> = 0, 
 <b>ALLOW_UNKNOWN_LOGGERS</b> = 1, 
-<b>AUTHORIZE_LOGGERS_WITH_NO_ACCESS_CODE</b> = 4, 
+<b>ALLOW_DEFAULT_ACCESS_CODE</b> = 4, 
 <b>ALLOW_PLAIN_LOG_REQUEST</b> = 8, 
 <br />
 &#160;&#160;<b>ALLOW_BULK_LOG_REQUEST</b> = 16, 
-<b>ALLOW_PINGING_DEAD_CLIENT</b> = 32, 
-<b>COMPRESSION</b> = 512
+<b>COMPRESSION</b> = 256
 <br />
  }<tr class="memdesc:aec68ee5347d85c3d3c50e4b8b7452fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server flags enum that are relavant to the client. <br /></td></tr>
 </td></tr>
 <tr class="separator:aec68ee5347d85c3d3c50e4b8b7452fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96f34025975dfa98058ecd2ea00d9c89"><td class="memItemLeft" align="right" valign="top"><a id="a96f34025975dfa98058ecd2ea00d9c89"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>InternalLoggingLevel</b> : std::int8_t { <br />
+&#160;&#160;<b>crazy</b> = 0, 
+<b>debug</b> = 1, 
+<b>info</b> = 2, 
+<b>warning</b> = 3, 
+<br />
+&#160;&#160;<b>error</b> = 4, 
+<b>none</b> = 5
+<br />
+ }</td></tr>
+<tr class="separator:a96f34025975dfa98058ecd2ea00d9c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a530e1b470fef98379231c8a631ea2645"><td class="memItemLeft" align="right" valign="top"><a id="a530e1b470fef98379231c8a631ea2645"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a530e1b470fef98379231c8a631ea2645">AccessCodeMap</a> = std::unordered_map&lt; std::string, std::string &gt;</td></tr>
 <tr class="memdesc:a530e1b470fef98379231c8a631ea2645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map of logger_id and corresponding access code to send log message to the server. <br /></td></tr>
@@ -234,6 +244,9 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="memitem:aa09c4c797a923c900bd79f537253a620"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#aa09c4c797a923c900bd79f537253a620">setInternalLoggingLevel</a> (int level)</td></tr>
 <tr class="memdesc:aa09c4c797a923c900bd79f537253a620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets logging level for residue client library internal logging.  <a href="#aa09c4c797a923c900bd79f537253a620">More...</a><br /></td></tr>
 <tr class="separator:aa09c4c797a923c900bd79f537253a620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3e055fe615ba66239f52134c73fc96e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#aa3e055fe615ba66239f52134c73fc96e">setInternalLoggingLevel</a> (InternalLoggingLevel level)</td></tr>
+<tr class="memdesc:aa3e055fe615ba66239f52134c73fc96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to set logging level for debugging/info.  <a href="#aa3e055fe615ba66239f52134c73fc96e">More...</a><br /></td></tr>
+<tr class="separator:aa3e055fe615ba66239f52134c73fc96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6844f7ce57571fb59d2d7cf66c3a6739"><td class="memItemLeft" align="right" valign="top"><a id="a6844f7ce57571fb59d2d7cf66c3a6739"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a6844f7ce57571fb59d2d7cf66c3a6739">hasFlag</a> (<a class="el" href="class_residue.html#aec68ee5347d85c3d3c50e4b8b7452fb6">Flag</a> flag) noexcept</td></tr>
 <tr class="memdesc:a6844f7ce57571fb59d2d7cf66c3a6739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for server flag and returns true if flag set otherwise not. <br /></td></tr>
@@ -277,9 +290,13 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a c
 static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ab6c33b99af70312d46d02a5276200c79">PING_THRESHOLD</a></td></tr>
 <tr class="memdesc:ab6c33b99af70312d46d02a5276200c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threshold (seconds) to check against client age and whether we should send ping request or not. <br /></td></tr>
 <tr class="separator:ab6c33b99af70312d46d02a5276200c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad723ef1fad99fe73b817de98abd8278c"><td class="memItemLeft" align="right" valign="top"><a id="ad723ef1fad99fe73b817de98abd8278c"></a>
+static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ad723ef1fad99fe73b817de98abd8278c">DEFAULT_ACCESS_CODE</a></td></tr>
+<tr class="memdesc:ad723ef1fad99fe73b817de98abd8278c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default access code value if allowed. <br /></td></tr>
+<tr class="separator:ad723ef1fad99fe73b817de98abd8278c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08af58bb017f1d485e74d849de6b02e6"><td class="memItemLeft" align="right" valign="top"><a id="a08af58bb017f1d485e74d849de6b02e6"></a>
 static volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a08af58bb017f1d485e74d849de6b02e6">s_internalLoggingLevel</a></td></tr>
-<tr class="memdesc:a08af58bb017f1d485e74d849de6b02e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <a class="el" href="class_residue.html#aa09c4c797a923c900bd79f537253a620" title="Sets logging level for residue client library internal logging. ">setInternalLoggingLevel(int)</a> <br /></td></tr>
+<tr class="memdesc:a08af58bb017f1d485e74d849de6b02e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <a class="el" href="class_residue.html#aa3e055fe615ba66239f52134c73fc96e" title="Helper function to set logging level for debugging/info. ">setInternalLoggingLevel(InternalLoggingLevel)</a> <br /></td></tr>
 <tr class="separator:a08af58bb017f1d485e74d849de6b02e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -1051,7 +1068,7 @@ By default it is enabled </dd></dl>
 </div>
 </div>
 <a id="aa09c4c797a923c900bd79f537253a620"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa09c4c797a923c900bd79f537253a620">&#9670;&nbsp;</a></span>setInternalLoggingLevel()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa09c4c797a923c900bd79f537253a620">&#9670;&nbsp;</a></span>setInternalLoggingLevel() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1082,6 +1099,35 @@ By default it is enabled </dd></dl>
   </dd>
 </dl>
 <p>E.g, for ERROR and WARNING = use level 3 for just ERROR = use level 4 </p>
+
+</div>
+</div>
+<a id="aa3e055fe615ba66239f52134c73fc96e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3e055fe615ba66239f52134c73fc96e">&#9670;&nbsp;</a></span>setInternalLoggingLevel() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Residue::setInternalLoggingLevel </td>
+          <td>(</td>
+          <td class="paramtype">InternalLoggingLevel&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Helper function to set logging level for debugging/info. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_residue.html#aa09c4c797a923c900bd79f537253a620" title="Sets logging level for residue client library internal logging. ">setInternalLoggingLevel(int)</a> </dd></dl>
 
 </div>
 </div>

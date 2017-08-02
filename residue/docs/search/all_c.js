@@ -6,7 +6,7 @@ var searchData=
   ['setapplicationid',['setApplicationId',['../class_residue.html#a41082b8432a1c22a2087887777f09011',1,'Residue']]],
   ['setbulksize',['setBulkSize',['../class_residue.html#ad60371fcd069f78079bf856fef5fe307',1,'Residue']]],
   ['setdispatchdelay',['setDispatchDelay',['../class_residue.html#aa1ecad58f492dd91f273305aefc2883a',1,'Residue']]],
-  ['setinternallogginglevel',['setInternalLoggingLevel',['../class_residue.html#aa09c4c797a923c900bd79f537253a620',1,'Residue']]],
+  ['setinternallogginglevel',['setInternalLoggingLevel',['../class_residue.html#aa09c4c797a923c900bd79f537253a620',1,'Residue::setInternalLoggingLevel(int level)'],['../class_residue.html#aa3e055fe615ba66239f52134c73fc96e',1,'Residue::setInternalLoggingLevel(InternalLoggingLevel level)']]],
   ['setkeysize',['setKeySize',['../class_residue.html#a5579e7935c56178d04082e49109fc71a',1,'Residue']]],
   ['setknownclient',['setKnownClient',['../class_residue.html#a9e05f5a3f498cf5a612a8a674ce0abcb',1,'Residue']]],
   ['setserverpublickey',['setServerPublicKey',['../class_residue.html#a1da90003e04519aa06cf1ca66d05b16a',1,'Residue']]],
