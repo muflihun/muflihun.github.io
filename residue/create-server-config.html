@@ -73,6 +73,14 @@ h4 { color: #666;}
 <h4>Create Server Config</h4>
 <div>
 	<div class="field">
+		<span class="field-label"><label>License Key File (File Path)</label></span>
+		<span class="field-value"><input type='text' id='license_key_path' value='' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Licensee Signature File (File Path)</label></span>
+		<span class="field-value"><input type='text' id='licensee_signature_path' value='' /></span>
+	</div>
+	<div class="field">
 		<span class="field-label"><label>Admin Port</label></span>
 		<span class="field-value"><input type='number' id='admin_port' value='8776' /></span>
 	</div>
@@ -95,6 +103,10 @@ h4 { color: #666;}
 	<div class="field">
 		<span class="field-label"><label>Server Private Key (File Path)</label></span>
 		<span class="field-value"><input type='text' id='server_rsa_private_key' value='' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Server Private Key Secret (Hex Encoded)</label></span>
+		<span class="field-value"><input type='text' id='server_rsa_secret' value='' /></span>
 	</div>
 	<div class="field">
 		<span class="field-label"><label>Server Public Key (File Path)</label></span>
