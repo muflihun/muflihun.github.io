@@ -187,16 +187,25 @@ h4 { color: #666;}
 		});
 		
 		$(document).on('click', '.remove_logger', function() {
+			if (!confirm("Are you sure you want to delete this logger?")) {
+				return;
+			}
 			var list = $('#loggers_list .field[idx=' + $(this).attr('idx') + ']');
 			list.remove();
 		});
 		
 		$(document).on('click', '.remove_client', function() {
+			if (!confirm("Are you sure you want to delete this client?")) {
+				return;
+			}
 			var list = $('#clients_list .field[idx=' + $(this).attr('idx') + ']');
 			list.remove();
 		});
 		
 		$(document).on('click', '.remove_access_code', function() {
+			if (!confirm("Are you sure you want to delete this access code?")) {
+				return;
+			}
 			var list = $('#loggers_list .field[idx=' + $(this).attr('idx') + '] .access_code[idx=' + $(this).attr('idx') + ']');
 			list.remove();
 		});
