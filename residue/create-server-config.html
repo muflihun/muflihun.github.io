@@ -20,14 +20,20 @@ h4 { color: #666;}
 	height: 300px;
 	font-family: monospace;
 }
-.field {
+.field,
+.field2 {
 	margin-top: 10px;
         display: inline-block;
         width: 49%;
+		clear: both;
 }
 .field-value {
-        float:right;
+        float: right;
         margin-right: 10px;
+}
+.big-button {
+	height: 30px;
+	
 }
 </style>
 <script src="assets/jquery.min.js"></script>
@@ -35,6 +41,8 @@ h4 { color: #666;}
 	$(document).ready(function() {
 	    $('#generate').click(function() {
 	        var conf = {};
+			conf.known_clients = [];
+			conf.known_loggers = [];
 	        $('.field-value > input').each(function(idx, item) {
 	            var val = $(item).val();
 	            if ($(item).attr('type') === 'number') {
@@ -44,13 +52,161 @@ h4 { color: #666;}
 	            }
 	            conf[$(item).attr('id')] = val;
 	        });
+			// known clients
+			$('#clients_list .field').each(function (idx, item) {
+				var client = {};
+				client.client_id = $(this).find('.client_id').val();
+				if (client.client_id.trim().length === 0) {
+					return;
+				}
+				client.public_key = $(this).find('.public_key').val();
+				var keySizeElem = $(this).find('.key_size');
+				if (keySizeElem.val().trim().length !== 0) {
+					client.key_size = keySizeElem.val();
+				}
+				conf.known_clients.push(client);
+			});
+			// known loggers
+			$('#loggers_list .field').each(function (idx, item) {
+				var logger = {};
+				logger.logger_id = $(this).find('.logger_id').val();
+				logger.configuration_file = $(this).find('.configuration_file').val();
+				if (logger.logger_id.trim().length === 0 || logger.configuration_file.trim().length === 0) {
+					return;
+				}
+				logger.archived_log_filename = $(this).find('.archived_log_filename').val();
+				if (logger.archived_log_filename.length === 0) {
+					delete logger.archived_log_filename;
+				}
+				logger.archived_log_compressed_filename = $(this).find('.archived_log_compressed_filename').val();
+				if (logger.archived_log_compressed_filename.length === 0) {
+					delete logger.archived_log_compressed_filename;
+				}
+				logger.archived_log_directory = $(this).find('.archived_log_directory').val();
+				if (logger.archived_log_directory.length === 0) {
+					delete logger.archived_log_directory;
+				}
+				logger.rotation_freq = $(this).find('.rotation_freq').val();
+				logger.allow_plain_log_request = $(this).find('.allow_plain_log_request').is(':checked');
+				logger.access_codes = [];
+				$(this).find('.access_code').each(function (idx, item) {
+					var accessCode = {};
+					accessCode.code = $(this).find('.code').val();
+					if (accessCode.code.trim().length === 0) {
+						return;
+					}
+					var age = parseInt($(this).find('.token_age').val());
+					if (age !== null) {
+						accessCode.token_age = age;
+					}
+					logger.access_codes.push(accessCode);
+				});
+				conf.known_loggers.push(logger);
+			});
 	        $('#output').val(JSON.stringify(conf, null, 2));
 	    });
+		
+		$('#add_client').click(function() {
+			var newDiv = $('<div></div>');
+			var count = parseInt($('#clients_list .field:last').attr("idx"));
+			if (isNaN(count)) {
+				count = 0;
+			}
+			count++;
+			var newField = '<div class="field" idx=\"' + count + '\">';
+			newField += '<span class="field-label"><label>Client ID</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="client_id" value="" /></span><br/>';
+			newField += '<span class="field-label"><label>Public Key (File Path)</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="public_key" value="" /></span><br/>';
+			newField += '<span class="field-label"><label>Key Size</label></span>';
+			newField += '<span class="field-value2"><input type="number" class="key_size" value="256" step="64" min="128" max="256" /></span>';
+			newField += '<br/><span class="field-value2"><button class="remove_client" idx=\"' + count + '\" class="big-button">Remove Client</button></span><br/>';
+			newField += '</div><hr/>';
+			newDiv.append(newField);
+			$('#clients_list').append(newDiv);
+		});
+		
+		$('#add_logger').click(function() {
+			var newDiv = $('<div></div>');
+			var count = parseInt($('#loggers_list .field:last').attr("idx"));
+			if (isNaN(count)) {
+				count = 0;
+			}
+			count++;
+			var newField = '<div class="field" idx=\"' + count + '\">';
+			newField += '<span class="field-label"><label>Logger ID</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="logger_id" value="" /></span><br/>';
+			newField += '<span class="field-label"><label>Configuration File</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="configuration_file" value="" /></span><br/>';
+			newField += '<span class="field-label"><label>archived_log_filename</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="archived_log_filename" value=""  placeholder="[default]" /></span><br/>';
+			newField += '<span class="field-label"><label>archived_log_compressed_filename</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="archived_log_compressed_filename" value=""  placeholder="[default]" /></span><br/>';
+			newField += '<span class="field-label"><label>archived_log_directory</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="archived_log_directory" value=""  placeholder="[default]" /></span><br/>';
+			newField += '<span class="field-label"><label>Rotation Frequency</label></span>';
+			newField += '<span class="field-value2"><select class="rotation_freq">';
+			newField += '<option value="NEVER" selected>NEVER</option>';
+			newField += '<option value="HOURLY">HOURLY</option>';
+			newField += '<option value="DAILY">DAILY</option>';
+			newField += '<option value="WEEKLY">WEEKLY</option>';
+			newField += '<option value="MONTHLY">MONTHLY</option>';
+			newField += '<option value="QUARTERLY">QUARTERLY</option>';
+			newField += '<option value="YEARLY">YEARLY</option>';
+			newField += '</select></span><br/>';
+			newField += '<span class="field-label"><label>allow_plain_log_request</label></span>';
+			newField += '<span class="field-value2"><input type="checkbox" class="allow_plain_log_request" /></span><br/>';
+			newField += '<span class="field-label"><label>Access Codes</label></span>';
+			newField += '<span class="field-value2"><button class="add_access_code" idx=\"' + count + '\" class="big-button">Add Access Code</button><div class="access_codes_list"></div></span><br/>';
+			newField += '<br/><span class="field-value2"><button class="remove_logger" idx=\"' + count + '\" class="big-button">Remove Logger</button></span><br/>';
+			newField += '</div><hr/>';
+			newDiv.append(newField);
+			$('#loggers_list').append(newDiv);
+		});
+		
+		$(document).on('click', '.add_access_code', function() {
+			var list = $('#loggers_list .field[idx=' + $(this).attr('idx') + '] .access_codes_list');
+			
+			var newDiv = $('<div></div>');
+			var count = list.find('.access_code').length;
+
+			var count = parseInt(list.find('.access_code:last').attr("idx"));
+			if (isNaN(count)) {
+				count = 0;
+			}
+			count++;
+			var newField = '<div class="field2 access_code" idx=\"' + count + '\">';
+			newField += '<span class="field-label"><label>Code</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="code" value="" /></span><br/>';
+			newField += '<span class="field-label"><label>Token Age</label></span>';
+			newField += '<span class="field-value2"><input type="number" class="token_age" value="3600" /></span><br/>';
+			newField += '<br/><span class="field-value2"><button class="remove_access_code" idx=\"' + count + '\" class="big-button">Remove Access Code</button></span><br/>';
+			newField += '</div>';
+			newDiv.append(newField);
+			list.append(newDiv);
+		});
+		
+		$(document).on('click', '.remove_logger', function() {
+			var list = $('#loggers_list .field[idx=' + $(this).attr('idx') + ']');
+			list.remove();
+		});
+		
+		$(document).on('click', '.remove_client', function() {
+			var list = $('#clients_list .field[idx=' + $(this).attr('idx') + ']');
+			list.remove();
+		});
+		
+		$(document).on('click', '.remove_access_code', function() {
+			var list = $('#loggers_list .field[idx=' + $(this).attr('idx') + '] .access_code[idx=' + $(this).attr('idx') + ']');
+			list.remove();
+		});
 
 	    $('#load').click(function() {
 			if ($('#output').val().trim().length === 0) {
 				return;
 			}
+			$('#clients_list>div').remove();
+			$('#loggers_list>div').remove();
 	        var conf = JSON.parse($('#output').val());
 	        for (var key in conf) {
 	            if (conf.hasOwnProperty(key)) {
@@ -59,6 +215,48 @@ h4 { color: #666;}
 	                } else {
 	                    $('#' + key).val(conf[key]);
 	                }
+					if (key === 'known_clients') {
+						for (var idx = 1; idx <= conf[key].length; ++idx) {
+		            		var obj = conf[key][idx - 1];
+		            		$('#add_client').click();
+							var field = $('#clients_list .field[idx=' + idx + ']');
+							field.find('.client_id').val(obj.client_id);
+							field.find('.public_key').val(obj.public_key);
+							if (typeof obj.key_size !== 'undefined') {
+								field.find('.key_size').val(obj.key_size);
+							}
+		            	}
+		            }
+					if (key === 'known_loggers') {
+						for (var idx = 1; idx <= conf[key].length; ++idx) {
+		            		var obj = conf[key][idx - 1];
+		            		$('#add_logger').click();
+							var field = $('#loggers_list .field[idx=' + idx + ']');
+							field.find('.logger_id').val(obj.logger_id);
+							field.find('.configuration_file').val(obj.configuration_file);
+							if (typeof obj.archived_log_filename !== 'undefined') {
+								field.find('.archived_log_filename').val(obj.archived_log_filename);
+							}
+							if (typeof obj.archived_log_compressed_filename !== 'undefined') {
+								field.find('.archived_log_compressed_filename').val(obj.archived_log_compressed_filename);
+							}
+							if (typeof obj.archived_log_compressed_filename !== 'undefined') {
+								field.find('.archived_log_compressed_filename').val(obj.archived_log_compressed_filename);
+							}
+							if (typeof obj.rotation_freq !== 'undefined') {
+								field.find('.rotation_freq').val(obj.rotation_freq.toUpperCase());
+							}
+							if (typeof obj.access_codes !== 'undefined') {
+								for (var idx2 = 1; idx2 <= obj.access_codes.length; ++idx2) {
+		            				var ac = obj.access_codes[idx2 - 1];
+									field.find('.add_access_code').click();
+									var field_ac = field.find('.access_codes_list .access_code[idx=' + idx2 + ']');
+									field_ac.find('.code').val(ac.code);
+									field_ac.find('.token_age').val(ac.token_age);
+								}
+							}
+		            	}
+		            }
 	            }
 	        }
 	    });
@@ -72,6 +270,7 @@ h4 { color: #666;}
 <br/>
 <h4>Create Server Config</h4>
 <div>
+	<h3>License</h3>
 	<div class="field">
 		<span class="field-label"><label>License Key File (File Path)</label></span>
 		<span class="field-value"><input type='text' id='license_key_path' value='' /></span>
@@ -80,6 +279,7 @@ h4 { color: #666;}
 		<span class="field-label"><label>Licensee Signature File (File Path)</label></span>
 		<span class="field-value"><input type='text' id='licensee_signature_path' value='' /></span>
 	</div>
+	<h3>Ports</h3>
 	<div class="field">
 		<span class="field-label"><label>Admin Port</label></span>
 		<span class="field-value"><input type='number' id='admin_port' value='8776' /></span>
@@ -96,6 +296,7 @@ h4 { color: #666;}
 		<span class="field-label"><label>Logging Port</label></span>
 		<span class="field-value"><input type='number' id='logging_port' value='8779' /></span>
 	</div>
+	<h3>Server</h3>
 	<div class="field">
 		<span class="field-label"><label>Server Admin Key</label></span>
 		<span class="field-value"><input type='text' id='server_key' value='' /></span>
@@ -113,53 +314,68 @@ h4 { color: #666;}
 		<span class="field-value"><input type='text' id='server_rsa_public_key' value='' /></span>
 	</div>
 	<div class="field">
-		<span class="field-label"><label>Default Key Size</label></span>
-		<span class="field-value"><input type='number' id='logging_port' value='256' /></span>
+		<span class="field-label"><label>Dispatch Delay (ms)</label></span>
+		<span class="field-value"><input type='number' id='dispatch_delay' value='1' /></span>
 	</div>
 	<div class="field">
-		<span class="field-label"><label>Default Token Age</label></span>
-		<span class="field-value"><input type='number' id='token_age' value='3600' /></span>
+		<span class="field-label"><label>allow_plain_connection</label></span>
+		<span class="field-value"><input type='checkbox' id='allow_plain_connection' checked /></span>
+	</div>
+	<h3>Client</h3>
+	<div class="field">
+		<span class="field-label"><label>Default Key Size</label></span>
+		<span class="field-value"><input type='number' id='logging_port' value='256' step='64' min='128' max='256' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>requires_timestamp</label></span>
+		<span class="field-value"><input type='checkbox' id='requires_timestamp' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Timestamp Validity (sec)</label></span>
+		<span class="field-value"><input type='number' id='timestamp_validity' value='120' min='30' /></span>
 	</div>
 	<div class="field">
 		<span class="field-label"><label>Max Token Age</label></span>
 		<span class="field-value"><input type='number' id='max_token_age' value='0' /></span>
 	</div>
 	<div class="field">
-		<span class="field-label"><label>Client Age</label></span>
-		<span class="field-value"><input type='number' id='client_age' value='3600' /></span>
+		<span class="field-label"><label>Default Token Age</label></span>
+		<span class="field-value"><input type='number' id='token_age' value='3600' /></span>
 	</div>
 	<div class="field">
-		<span class="field-label"><label>Non-Ack Client Age</label></span>
-		<span class="field-value"><input type='number' id='non_acknowledged_client_age' value='300' /></span>
+		<span class="field-label"><label>Client Age</label></span>
+		<span class="field-value"><input type='number' id='client_age' value='3600' min='120' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Non-acknowledged Client Age</label></span>
+		<span class="field-value"><input type='number' id='non_acknowledged_client_age' value='300' min='120' /></span>
 	</div>
 	<div class="field">
 		<span class="field-label"><label>Client Integrity Schedule</label></span>
-		<span class="field-value"><input type='number' id='client_integrity_task_interval' value='300' /></span>
+		<span class="field-value"><input type='number' id='client_integrity_task_interval' value='300' min='300' /></span>
 	</div>
 	<div class="field">
 		<span class="field-label"><label>Maximum Bulk Items</label></span>
-		<span class="field-value"><input type='number' id='max_items_in_bulk' value='50' /></span>
-	</div>
-	<div class="field">
-		<span class="field-label"><label>Dispatch Delay (ms)</label></span>
-		<span class="field-value"><input type='number' id='dispatch_delay' value='1' /></span>
-	</div>
-	<div class="field">
-		<span class="field-label"><label>Timestamp Validity (sec)</label></span>
-		<span class="field-value"><input type='number' id='timestamp_validity' value='120' /></span>
+		<span class="field-value"><input type='number' id='max_items_in_bulk' value='5' /></span>
 	</div>
 
+	<h3>Log Rotation</h3>
 	<div class="field">
-		<span class="field-label"><label>requires_timestamp</label></span>
-		<span class="field-value"><input type='checkbox' id='requires_timestamp' /></span>
+		<span class="field-label"><label>Archived Log Directory Format</label></span>
+		<span class="field-value"><input type='text' id='archived_log_directory' value='' /></span>
 	</div>
+	<div class="field">
+		<span class="field-label"><label>Archived Log Filename Format</label></span>
+		<span class="field-value"><input type='text' id='archived_log_filename' value='' /></span>
+	</div>
+	<div class="field">
+		<span class="field-label"><label>Compressed Archived Log Filename Format</label></span>
+		<span class="field-value"><input type='text' id='archived_log_compressed_filename' value='' /></span>
+	</div>
+	<h3>Options</h3>
 	<div class="field">
 		<span class="field-label"><label>allow_default_access_code</label></span>
 		<span class="field-value"><input type='checkbox' id='allow_default_access_code' checked /></span>
-	</div>
-	<div class="field">
-		<span class="field-label"><label>allow_plain_connection</label></span>
-		<span class="field-value"><input type='checkbox' id='allow_plain_connection' checked /></span>
 	</div>
 	<div class="field">
 		<span class="field-label"><label>allow_unknown_loggers</label></span>
@@ -189,23 +405,26 @@ h4 { color: #666;}
 		<span class="field-label"><label>compression</label></span>
 		<span class="field-value"><input type='checkbox' id='compression' checked /></span>
 	</div>
+	<h3>Others</h3>
 	<div class="field">
-		<span class="field-label"><label>allow_pinging_dead_client</label></span>
-		<span class="field-value"><input type='checkbox' id='allow_pinging_dead_client' /></span>
+		<span class="field-label"><label>Known Clients Endpoint</label></span>
+		<span class="field-value"><input type='text' id='known_clients_endpoint' value='' /></span>
 	</div>
 	<div class="field">
-		<span class="field-label"><label>archived_log_directory</label></span>
-		<span class="field-value"><input type='text' id='archived_log_directory' value='' /></span>
+		<span class="field-label"><label>Known Loggers Endpoint</label></span>
+		<span class="field-value"><input type='text' id='known_loggers_endpoint' value='' /></span>
 	</div>
-	<div class="field">
-		<span class="field-label"><label>archived_log_filename</label></span>
-		<span class="field-value"><input type='text' id='archived_log_filename' value='' /></span>
-	</div>
-	<div class="field">
-		<span class="field-label"><label>archived_log_compressed_filename</label></span>
-		<span class="field-value"><input type='text' id='archived_log_compressed_filename' value='' /></span>
+	<h3>Known Clients</h3>
+	<button id='add_client' class='big-button'>+</button>
+	<div id="clients_list">
 	</div>
 	
+	<h3>Known Loggers</h3>
+	<button id='add_logger' class='big-button'>+</button>
+	<div id="loggers_list">
+	</div>
+	<br/>
+	<br/>
 	<button id='generate'>Generate</button><br/>
 	<br/>
 	<br/>
