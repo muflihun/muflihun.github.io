@@ -14,6 +14,16 @@ h4 { color: #666;}
 .field:nth-child(odd) {
 	background-color: rgb(224, 241, 221);
 }
+.sub-field {
+    position: relative;
+    margin-top: 10px;
+}
+.sub-field:nth-child(even) {
+	background-color: rgb(247, 247, 235);
+}
+.sub-field:nth-child(odd) {
+	background-color: rgb(224, 241, 221);
+}
 .field-label {
 	display: inline-block;
 	width: 40%;
@@ -151,12 +161,12 @@ input[type=number] {
 			}
 			count++;
 			var newField = '<div class="field" idx=\"' + count + '\">';
-			newField += '<span class="field-label"><label>Client ID</label></span>';
-			newField += '<span class="field-value2"><input type="text" class="client_id" value="" /></span><br/>';
-			newField += '<span class="field-label"><label>Public Key (File Path)</label></span>';
-			newField += '<span class="field-value2"><input type="text" class="public_key" value="" /></span><br/>';
-			newField += '<span class="field-label"><label>Key Size</label></span>';
-			newField += '<span class="field-value2"><input type="number" class="key_size" value="256" step="64" min="128" max="256" /></span></span>';
+			newField += '<div class="sub-field"><span class="field-label"><label>Client ID</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="client_id" value="" /></span></div>';
+			newField += '<div class="sub-field"><span class="field-label"><label>Public Key (File Path)</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="public_key" value="" /></span></div>';
+			newField += '<div class="sub-field"><span class="field-label"><label>Key Size</label></span>';
+			newField += '<span class="field-value2"><input type="number" class="key_size" value="256" step="64" min="128" max="256" /></span></div></span>';
 			newField += '<button class="remove_client" idx=\"' + count + '\" class="big-button">&times;</button>';
 			newField += '</div>';
 			newDiv.append(newField);
@@ -171,17 +181,17 @@ input[type=number] {
 			}
 			count++;
 			var newField = '<div class="field" idx=\"' + count + '\">';
-			newField += '<span class="field-label"><label>Logger ID</label></span>';
-			newField += '<span class="field-value2"><input type="text" class="logger_id" value="" /></span><br/>';
-			newField += '<span class="field-label"><label>Configuration File</label></span>';
-			newField += '<span class="field-value2"><input type="text" class="configuration_file" value="" /></span><br/>';
-			newField += '<span class="field-label"><label>archived_log_filename</label></span>';
-			newField += '<span class="field-value2"><input type="text" class="archived_log_filename" value=""  placeholder="[default]" /></span><br/>';
-			newField += '<span class="field-label"><label>archived_log_compressed_filename</label></span>';
-			newField += '<span class="field-value2"><input type="text" class="archived_log_compressed_filename" value=""  placeholder="[default]" /></span><br/>';
-			newField += '<span class="field-label"><label>archived_log_directory</label></span>';
-			newField += '<span class="field-value2"><input type="text" class="archived_log_directory" value=""  placeholder="[default]" /></span><br/>';
-			newField += '<span class="field-label"><label>Rotation Frequency</label></span>';
+			newField += '<div class="sub-field"><span class="field-label"><label>Logger ID</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="logger_id" value="" /></span></div>';
+			newField += '<div class="sub-field"><span class="field-label"><label>Configuration File (File Path)</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="configuration_file" value="" /></span></div>';
+			newField += '<div class="sub-field"><span class="field-label"><label>Archived Log Filename Format</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="archived_log_filename" value=""  placeholder="[default]" /></span></div>';
+			newField += '<div class="sub-field"><span class="field-label"><label>Compressed Archived Log Filename Format</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="archived_log_compressed_filename" value=""  placeholder="[default]" /></span></div>';
+			newField += '<div class="sub-field"><span class="field-label"><label>Archived Log Directory Format</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="archived_log_directory" value=""  placeholder="[default]" /></span></div>';
+			newField += '<div class="sub-field"><span class="field-label"><label>Rotation Frequency</label></span>';
 			newField += '<span class="field-value2"><select class="rotation_freq">';
 			newField += '<option value="NEVER" selected>NEVER</option>';
 			newField += '<option value="HOURLY">HOURLY</option>';
@@ -190,11 +200,11 @@ input[type=number] {
 			newField += '<option value="MONTHLY">MONTHLY</option>';
 			newField += '<option value="QUARTERLY">QUARTERLY</option>';
 			newField += '<option value="YEARLY">YEARLY</option>';
-			newField += '</select></span><br/>';
-			newField += '<span class="field-label"><label>allow_plain_log_request</label></span>';
-			newField += '<span class="field-value2"><input type="checkbox" class="allow_plain_log_request" /></span><br/>';
-			newField += '<span class="field-label"><label>Access Codes</label></span>';
-			newField += '<span class="field-value2"><button class="add_access_code" idx=\"' + count + '\" class="big-button">Add Access Code</button><div class="access_codes_list"></div></span></span>';
+			newField += '</select></span></div>';
+			newField += '<div class="sub-field"><span class="field-label"><label>allow_plain_log_request</label></span>';
+			newField += '<span class="field-value2"><input type="checkbox" class="allow_plain_log_request" /></span></div>';
+			newField += '<div class="sub-field"><span class="field-label"><label>Access Codes</label></span>';
+			newField += '<span class="field-value2"><button class="add_access_code" idx=\"' + count + '\" class="big-button">Add Access Code</button><div class="access_codes_list"></div></span></div></span>';
 			newField += '<button class="remove_logger" idx=\"' + count + '\" class="big-button">&times;</button>';
 			newField += '</div>';
 			newDiv.append(newField);
