@@ -8,8 +8,17 @@
 <style>
 body { padding: 10px; }
 h4 { color: #666;}
+.field:nth-child(even) {
+	background-color: rgb(247, 247, 235);
+}
+.field:nth-child(odd) {
+	background-color: rgb(224, 241, 221);
+}
 .field-label {
+	display: inline-block;
+	width: 40%;
 	margin-right: 10px;
+	vertical-align: top;
 }
 .field-label::after {
 	content: ':';
@@ -22,18 +31,46 @@ h4 { color: #666;}
 }
 .field,
 .field2 {
+	position: relative;
 	margin-top: 10px;
-        display: inline-block;
-        width: 49%;
-		clear: both;
 }
-.field-value {
-        float: right;
-        margin-right: 10px;
+.field-value,
+.field-value2 {
+	display: inline-block;
+    margin-right: 10px;
+    width: 50%;
+    top: 1px;
+    position: relative;
 }
 .big-button {
 	height: 30px;
-	
+}
+input[type=text] {
+	width: 100%;
+}
+input[type=number] {
+	width: 100px;
+}
+.remove_logger,
+.remove_client {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.field2.access_code {
+	border: 1px solid #ccc;
+	padding: 3px;
+	margin-bottom: 10px;
+}
+
+.remove_access_code {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+.client-item > .field,
+.logger-item > .field {
+	padding: 6px;
 }
 </style>
 <script src="assets/jquery.min.js"></script>
@@ -107,7 +144,7 @@ h4 { color: #666;}
 	    });
 		
 		$('#add_client').click(function() {
-			var newDiv = $('<div></div>');
+			var newDiv = $('<div class="client-item"></div>');
 			var count = parseInt($('#clients_list .field:last').attr("idx"));
 			if (isNaN(count)) {
 				count = 0;
@@ -119,15 +156,15 @@ h4 { color: #666;}
 			newField += '<span class="field-label"><label>Public Key (File Path)</label></span>';
 			newField += '<span class="field-value2"><input type="text" class="public_key" value="" /></span><br/>';
 			newField += '<span class="field-label"><label>Key Size</label></span>';
-			newField += '<span class="field-value2"><input type="number" class="key_size" value="256" step="64" min="128" max="256" /></span>';
-			newField += '<br/><span class="field-value2"><button class="remove_client" idx=\"' + count + '\" class="big-button">Remove Client</button></span><br/>';
-			newField += '</div><hr/>';
+			newField += '<span class="field-value2"><input type="number" class="key_size" value="256" step="64" min="128" max="256" /></span></span>';
+			newField += '<button class="remove_client" idx=\"' + count + '\" class="big-button">&times;</button>';
+			newField += '</div>';
 			newDiv.append(newField);
 			$('#clients_list').append(newDiv);
 		});
 		
 		$('#add_logger').click(function() {
-			var newDiv = $('<div></div>');
+			var newDiv = $('<div class="logger-item"></div>');
 			var count = parseInt($('#loggers_list .field:last').attr("idx"));
 			if (isNaN(count)) {
 				count = 0;
@@ -157,9 +194,9 @@ h4 { color: #666;}
 			newField += '<span class="field-label"><label>allow_plain_log_request</label></span>';
 			newField += '<span class="field-value2"><input type="checkbox" class="allow_plain_log_request" /></span><br/>';
 			newField += '<span class="field-label"><label>Access Codes</label></span>';
-			newField += '<span class="field-value2"><button class="add_access_code" idx=\"' + count + '\" class="big-button">Add Access Code</button><div class="access_codes_list"></div></span><br/>';
-			newField += '<br/><span class="field-value2"><button class="remove_logger" idx=\"' + count + '\" class="big-button">Remove Logger</button></span><br/>';
-			newField += '</div><hr/>';
+			newField += '<span class="field-value2"><button class="add_access_code" idx=\"' + count + '\" class="big-button">Add Access Code</button><div class="access_codes_list"></div></span></span>';
+			newField += '<button class="remove_logger" idx=\"' + count + '\" class="big-button">&times;</button>';
+			newField += '</div>';
 			newDiv.append(newField);
 			$('#loggers_list').append(newDiv);
 		});
@@ -179,8 +216,8 @@ h4 { color: #666;}
 			newField += '<span class="field-label"><label>Code</label></span>';
 			newField += '<span class="field-value2"><input type="text" class="code" value="" /></span><br/>';
 			newField += '<span class="field-label"><label>Token Age</label></span>';
-			newField += '<span class="field-value2"><input type="number" class="token_age" value="3600" /></span><br/>';
-			newField += '<br/><span class="field-value2"><button class="remove_access_code" idx=\"' + count + '\" class="big-button">Remove Access Code</button></span><br/>';
+			newField += '<span class="field-value2"><input type="number" class="token_age" value="3600" /></span>';
+			newField += '<button class="remove_access_code" idx=\"' + count + '\" class="big-button">&times;</button>';
 			newField += '</div>';
 			newDiv.append(newField);
 			list.append(newDiv);
