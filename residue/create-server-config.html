@@ -299,6 +299,9 @@ input[type=number] {
 							if (typeof obj.archived_log_compressed_filename !== 'undefined') {
 								field.find('.archived_log_compressed_filename').val(obj.archived_log_compressed_filename);
 							}
+							if (typeof obj.allow_plain_log_request !== 'undefined') {
+								field.find('.allow_plain_log_request').prop('checked', obj.allow_plain_log_request);
+							}
 							if (typeof obj.rotation_freq !== 'undefined') {
 								field.find('.rotation_freq').val(obj.rotation_freq.toUpperCase());
 							}
