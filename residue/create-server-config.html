@@ -111,6 +111,10 @@ input[type=number] {
 				if (keySizeElem.val().trim().length !== 0) {
 					client.key_size = keySizeElem.val();
 				}
+				var loggersElem = $(this).find('.loggers');
+				if (loggersElem.val().trim().length !== 0) {
+					client.loggers = loggersElem.val().split(',');
+				}
 				conf.known_clients.push(client);
 			});
 			// known loggers
@@ -167,6 +171,9 @@ input[type=number] {
 			newField += '<span class="field-value2"><input type="text" class="public_key" value="" /></span></div>';
 			newField += '<div class="sub-field"><span class="field-label"><label>Key Size</label></span>';
 			newField += '<span class="field-value2"><input type="number" class="key_size" value="256" step="64" min="128" max="256" /></span></div></span>';
+			newField += '<div class="sub-field"><span class="field-label"><label>Loggers (CSV)</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="loggers" value="" /></span></div>';
+			
 			newField += '<button class="remove_client" idx=\"' + count + '\" class="big-button">&times;</button>';
 			newField += '</div>';
 			newDiv.append(newField);
@@ -280,6 +287,14 @@ input[type=number] {
 							field.find('.public_key').val(obj.public_key);
 							if (typeof obj.key_size !== 'undefined') {
 								field.find('.key_size').val(obj.key_size);
+							}
+							if (typeof obj.loggers !== 'undefined') {
+								var list = [];
+								for (var idx2 = 1; idx2 <= obj.loggers.length; ++idx2) {
+									var logger = obj.loggers[idx - 1];
+									list.push(obj.loggers[idx - 1]);
+								}
+								field.find('.loggers').val(list.join(","));
 							}
 		            	}
 		            }
