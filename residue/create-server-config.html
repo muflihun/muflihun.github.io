@@ -115,6 +115,10 @@ input[type=number] {
 				$($(this).find('.client_logger_item_val')).each(function (idx, item) {
 					client.loggers.push($(this).text());
 				});
+				client.default_logger = $(this).find('.default_logger').val();
+				if (client.default_logger.length === 0) {
+					delete client.default_logger;
+				}
 				client.user = $(this).find('.user').val();
 				if (client.user.length === 0) {
 					delete client.user;
@@ -181,6 +185,8 @@ input[type=number] {
 			newField += '<span class="field-value2"><input type="number" class="key_size" value="256" step="64" min="128" max="256" /></span></div></span>';
 			newField += '<div class="sub-field"><span class="field-label"><label>Loggers</label></span>';
 			newField += '<span class="field-value2"><div class="client_loggers_list"></div><input type="text" placeholder="Type and press ENTER to add" class="client_logger_name" value="" idx=\"' + count + '\" /></span></div>';
+			newField += '<div class="sub-field"><span class="field-label"><label>Default Logger</label></span>';
+			newField += '<span class="field-value2"><input type="text" class="default_logger" value="" placeholder="[default]" /></span></div>';
 			newField += '<div class="sub-field"><span class="field-label"><label>Linux / macOS User</label></span>';
 			newField += '<span class="field-value2"><input type="text" class="user" value="" placeholder="[default]" /></span></div>';
 			
@@ -318,6 +324,7 @@ input[type=number] {
 								field.find('.key_size').val(obj.key_size);
 							}
 							field.find('.user').val(obj.user);
+							field.find('.default_logger').val(obj.default_logger);
 							if (typeof obj.loggers !== 'undefined') {
 								var list = [];
 								for (var idx2 = 1; idx2 <= obj.loggers.length; ++idx2) {
@@ -497,8 +504,8 @@ input[type=number] {
 		<span class="field-value"><input type='checkbox' id='allow_plain_connection' /></span>
 	</div>
 	<div class="field">
-		<span class="field-label"><label>check_tokens</label></span>
-		<span class="field-value"><input type='checkbox' id='check_tokens' checked /></span>
+		<span class="field-label"><label>requires_token</label></span>
+		<span class="field-value"><input type='checkbox' id='requires_token' checked /></span>
 	</div>
 	<div class="field">
 		<span class="field-label"><label>allow_plain_log_request</label></span>
