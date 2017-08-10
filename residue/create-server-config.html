@@ -102,55 +102,39 @@ input[type=number] {
 			// known clients
 			$('#clients_list .field').each(function (idx, item) {
 				var client = {};
-				client.client_id = $(this).find('.client_id').val();
-				if (client.client_id.trim().length === 0) {
-					return;
-				}
-				client.public_key = $(this).find('.public_key').val();
-				var keySizeElem = $(this).find('.key_size');
-				if (keySizeElem.val().trim().length !== 0) {
-					client.key_size = keySizeElem.val();
-				}
-				client.loggers = [];
-				$($(this).find('.client_logger_item_val')).each(function (idx, item) {
-					client.loggers.push($(this).text());
+				$(this).find('input').each(function (idx, item) {
+					var val = $(item).val();
+		            if ($(this).attr('type') === 'number') {
+		                val = parseInt(val);
+		            } else if ($(item).attr('type') === 'checkbox') {
+		                val = $(item).is(':checked');
+		            }
+					if (val !== '') {
+						client[$(this).attr('class')] = val;
+					}
 				});
-				client.default_logger = $(this).find('.default_logger').val();
-				if (client.default_logger.length === 0) {
-					delete client.default_logger;
-				}
-				client.user = $(this).find('.user').val();
-				if (client.user.length === 0) {
-					delete client.user;
-				}
 				conf.known_clients.push(client);
 			});
 			// known loggers
 			$('#loggers_list .field').each(function (idx, item) {
 				var logger = {};
-				logger.logger_id = $(this).find('.logger_id').val();
-				logger.configuration_file = $(this).find('.configuration_file').val();
-				if (logger.logger_id.trim().length === 0 || logger.configuration_file.trim().length === 0) {
+				$(this).find('input,select').each(function (idx, item) {
+					var val = $(item).val();
+		            if ($(this).attr('type') === 'number') {
+		                val = parseInt(val);
+		            } else if ($(item).attr('type') === 'checkbox') {
+		                val = $(item).is(':checked');
+		            }
+					if (val !== '') {
+						logger[$(this).attr('class')] = val;
+					}
+				});
+
+				if ((typeof logger.logger_id === 'undefined' || logger.logger_id.trim().length === 0) || (typeof logger.configuration_file === 'undefined' || logger.configuration_file.trim().length === 0)) {
+					// do not add to the list of loggers
 					return;
 				}
-				logger.archived_log_filename = $(this).find('.archived_log_filename').val();
-				if (logger.archived_log_filename.length === 0) {
-					delete logger.archived_log_filename;
-				}
-				logger.archived_log_compressed_filename = $(this).find('.archived_log_compressed_filename').val();
-				if (logger.archived_log_compressed_filename.length === 0) {
-					delete logger.archived_log_compressed_filename;
-				}
-				logger.archived_log_directory = $(this).find('.archived_log_directory').val();
-				if (logger.archived_log_directory.length === 0) {
-					delete logger.archived_log_directory;
-				}
-				logger.user = $(this).find('.user').val();
-				if (logger.user.length === 0) {
-					delete logger.user;
-				}
-				logger.rotation_freq = $(this).find('.rotation_freq').val();
-				logger.allow_plain_log_request = $(this).find('.allow_plain_log_request').is(':checked');
+				
 				logger.access_codes = [];
 				$(this).find('.access_code').each(function (idx, item) {
 					var accessCode = {};
