@@ -143,7 +143,7 @@ input[type=number] {
 						return;
 					}
 					var age = parseInt($(this).find('.token_age').val());
-					if (age !== null) {
+					if (!isNaN(age)) {
 						accessCode.token_age = age;
 					}
 					logger.access_codes.push(accessCode);
