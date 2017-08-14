@@ -82,6 +82,14 @@ input[type=number] {
 .logger-item > .field {
     padding: 6px;
 }
+.file_mode_label {
+	margin-left: 3px;
+	margin-right: 5px;
+}
+
+.file-mode-chk {
+	margin-left:10px !important;
+}
 </style>
 <script src="assets/jquery.min.js"></script>
 <script>
@@ -457,29 +465,23 @@ input[type=number] {
         <span class="field-label"><label>File Mode</label></span>
         <span class="field-value">
             <input type='number' id='file_mode' value='416' min='256' style='display: none' />
-			User:
-			 &nbsp;&nbsp;&nbsp;
-			 <input type='checkbox' class='file-mode-chk ignore-json' value='256' id='file_mode_ur' name='file_mode_ur' />&nbsp;<label for='file_mode_ur'>R</label>
-			 &nbsp;&nbsp;&nbsp;
-			 <input type='checkbox' class='file-mode-chk ignore-json' value='128' id='file_mode_uw' name='file_mode_uw' />&nbsp;<label for='file_mode_ur'>W</label>
-			 &nbsp;&nbsp;&nbsp;
-			 <input type='checkbox' class='file-mode-chk ignore-json' value='64' id='file_mode_ux' name='file_mode_ux' />&nbsp;<label for='file_mode_ur'>X</label>
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='256' id='file_mode_ur' name='file_mode_ur' /><label class='file_mode_label' for='file_mode_ur'>R</label>
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='128' id='file_mode_uw' name='file_mode_uw' /><label class='file_mode_label' for='file_mode_ur'>W</label>
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='64' id='file_mode_ux' name='file_mode_ux' /><label class='file_mode_label' for='file_mode_ur'>X</label>
+			 
+			 (User)
 			 <br/>
-			Group:
-			 &nbsp;&nbsp;&nbsp;
-			 <input type='checkbox' class='file-mode-chk ignore-json' value='32' id='file_mode_gr' name='file_mode_gr' />&nbsp;<label for='file_mode_gr'>R</label>
-			 &nbsp;&nbsp;&nbsp;
-			 <input type='checkbox' class='file-mode-chk ignore-json' value='16' id='file_mode_gw' name='file_mode_gw' />&nbsp;<label for='file_mode_gw'>W</label>
-			 &nbsp;&nbsp;&nbsp;
-			 <input type='checkbox' class='file-mode-chk ignore-json' value='8' id='file_mode_gx' name='file_mode_gx' />&nbsp;<label for='file_mode_gx'>X</label>
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='32' id='file_mode_gr' name='file_mode_gr' /><label class='file_mode_label' for='file_mode_gr'>R</label>
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='16' id='file_mode_gw' name='file_mode_gw' /><label class='file_mode_label' for='file_mode_gw'>W</label>
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='8' id='file_mode_gx' name='file_mode_gx' /><label class='file_mode_label' for='file_mode_gx'>X</label>
+			 
+			 (Group)
 			 <br/>
-			Others:
-			 &nbsp;&nbsp;&nbsp;
-			 <input type='checkbox' class='file-mode-chk ignore-json' value='4' id='file_mode_or' name='file_mode_or' />&nbsp;<label for='file_mode_or'>R</label>
-			 &nbsp;&nbsp;&nbsp;
-			 <input type='checkbox' class='file-mode-chk ignore-json' value='2' id='file_mode_ow' name='file_mode_ow' />&nbsp;<label for='file_mode_ow'>W</label>
-			 &nbsp;&nbsp;&nbsp;
-			 <input type='checkbox' class='file-mode-chk ignore-json' value='1' id='file_mode_ox' name='file_mode_ox' />&nbsp;<label for='file_mode_ox'>X</label>
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='4' id='file_mode_or' name='file_mode_or' /><label class='file_mode_label' for='file_mode_or'>R</label>
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='2' id='file_mode_ow' name='file_mode_ow' /><label class='file_mode_label' for='file_mode_ow'>W</label>
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='1' id='file_mode_ox' name='file_mode_ox' /><label class='file_mode_label' for='file_mode_ox'>X</label>
+			 
+			 (Other)
 		</span>
     </div>
     <div class="field">
