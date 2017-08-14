@@ -85,12 +85,35 @@ input[type=number] {
 </style>
 <script src="assets/jquery.min.js"></script>
 <script>
+	
+	function updateFileModeChecks() {
+		var val = parseInt($('.field-value > #file_mode').val());
+		$('.file-mode-chk').each(function(idx, item) {
+			var r = (val | parseInt($(this).val()));
+            if (r === val) {
+            	$(this).prop('checked', true);
+            } else {
+            	$(this).prop('checked', false);
+            }
+		});
+	}
+	function getFileMode() {
+		var mode = 0;
+		$('.file-mode-chk:checked').each(function(idx, item) {
+			mode |= parseInt($(this).val());
+		});
+		return mode;
+	}
     $(document).ready(function() {
+		updateFileModeChecks();
+        $('.file-mode-chk').click(function() {
+			$('.field-value > #file_mode').val(getFileMode());
+		});
         $('#generate').click(function() {
             var conf = {};
             conf.known_clients = [];
             conf.known_loggers = [];
-            $('.field-value > input').each(function(idx, item) {
+            $('.field-value > input:not(.ignore-json)').each(function(idx, item) {
                 var val = $(item).val();
                 if ($(item).attr('type') === 'number') {
                     val = parseInt(val);
@@ -102,7 +125,7 @@ input[type=number] {
             // known clients
             $('#clients_list .field').each(function (idx, item) {
                 var client = {};
-                $(this).find('input').each(function (idx, item) {
+                $(this).find('input:not(.ignore-json').each(function (idx, item) {
                     var val = $(item).val();
                     if ($(this).attr('type') === 'number') {
                         val = parseInt(val);
@@ -118,7 +141,7 @@ input[type=number] {
             // known loggers
             $('#loggers_list .field').each(function (idx, item) {
                 var logger = {};
-                $(this).find('input,select').each(function (idx, item) {
+                $(this).find('input:not(.ignore-json,select:not(.ignore-json').each(function (idx, item) {
                     var val = $(item).val();
                     if ($(this).attr('type') === 'number') {
                         val = parseInt(val);
@@ -136,7 +159,7 @@ input[type=number] {
                 }
                 
                 logger.access_codes = [];
-                $(this).find('.access_code').each(function (idx, item) {
+                $(this).find('.access_code:not(.ignore-json').each(function (idx, item) {
                     var accessCode = {};
                     accessCode.code = $(this).find('.code').val();
                     if (accessCode.code.trim().length === 0) {
@@ -297,6 +320,7 @@ input[type=number] {
                     if ($('#' + key).attr('type') === 'checkbox') {
                         $('#' + key).prop('checked', conf[key]);
                     } else {
+						console.log(key);
                         $('#' + key).val(conf[key]);
                     }
                     if (key === 'known_clients') {
@@ -359,6 +383,8 @@ input[type=number] {
                     }
                 }
             }
+
+			updateFileModeChecks();
         });
     });
 </script>
@@ -396,7 +422,7 @@ input[type=number] {
         <span class="field-label"><label>Logging Port</label></span>
         <span class="field-value"><input type='number' id='logging_port' value='8779' /></span>
     </div>
-    <h3>Server</h3>
+    <h3>Security</h3>
     <div class="field">
         <span class="field-label"><label>Server Admin Key</label></span>
         <span class="field-value"><input type='text' id='server_key' value='' /></span>
@@ -414,18 +440,10 @@ input[type=number] {
         <span class="field-value"><input type='text' id='server_rsa_public_key' value='' /></span>
     </div>
     <div class="field">
-        <span class="field-label"><label>Dispatch Delay (ms)</label></span>
-        <span class="field-value"><input type='number' id='dispatch_delay' value='1' /></span>
-    </div>
-    <div class="field">
-        <span class="field-label"><label>allow_plain_connection</label></span>
-        <span class="field-value"><input type='checkbox' id='allow_plain_connection' checked /></span>
-    </div>
-    <h3>Client</h3>
-    <div class="field">
         <span class="field-label"><label>Default Key Size</label></span>
         <span class="field-value"><input type='number' id='default_key_size' value='256' step='64' min='128' max='256' /></span>
     </div>
+    <h3>Client</h3>
     <div class="field">
         <span class="field-label"><label>requires_timestamp</label></span>
         <span class="field-value"><input type='checkbox' id='requires_timestamp' /></span>
@@ -448,7 +466,32 @@ input[type=number] {
     </div>
     <div class="field">
         <span class="field-label"><label>File Mode</label></span>
-        <span class="field-value"><input type='number' id='file_mode' value='416' min='256' /></span>
+        <span class="field-value">
+            <input type='number' id='file_mode' value='416' min='256' style='display: none' />
+			User:
+			 &nbsp;&nbsp;&nbsp;
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='256' id='file_mode_ur' name='file_mode_ur' />&nbsp;<label for='file_mode_ur'>R</label>
+			 &nbsp;&nbsp;&nbsp;
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='128' id='file_mode_uw' name='file_mode_uw' />&nbsp;<label for='file_mode_ur'>W</label>
+			 &nbsp;&nbsp;&nbsp;
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='64' id='file_mode_ux' name='file_mode_ux' />&nbsp;<label for='file_mode_ur'>X</label>
+			 <br/>
+			Group:
+			 &nbsp;&nbsp;&nbsp;
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='32' id='file_mode_gr' name='file_mode_gr' />&nbsp;<label for='file_mode_gr'>R</label>
+			 &nbsp;&nbsp;&nbsp;
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='16' id='file_mode_gw' name='file_mode_gw' />&nbsp;<label for='file_mode_gw'>W</label>
+			 &nbsp;&nbsp;&nbsp;
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='8' id='file_mode_gx' name='file_mode_gx' />&nbsp;<label for='file_mode_gx'>X</label>
+			 <br/>
+			Others:
+			 &nbsp;&nbsp;&nbsp;
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='4' id='file_mode_or' name='file_mode_or' />&nbsp;<label for='file_mode_or'>R</label>
+			 &nbsp;&nbsp;&nbsp;
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='2' id='file_mode_ow' name='file_mode_ow' />&nbsp;<label for='file_mode_ow'>W</label>
+			 &nbsp;&nbsp;&nbsp;
+			 <input type='checkbox' class='file-mode-chk ignore-json' value='1' id='file_mode_ox' name='file_mode_ox' />&nbsp;<label for='file_mode_ox'>X</label>
+		</span>
     </div>
     <div class="field">
         <span class="field-label"><label>Non-acknowledged Client Age</label></span>
@@ -476,7 +519,12 @@ input[type=number] {
         <span class="field-label"><label>Compressed Archived Log Filename Format</label></span>
         <span class="field-value"><input type='text' id='archived_log_compressed_filename' value='' /></span>
     </div>
+	
     <h3>Options</h3>
+    <div class="field">
+        <span class="field-label"><label>accept_input</label></span>
+        <span class="field-value"><input type='checkbox' id='accept_input' /></span>
+    </div>
     <div class="field">
         <span class="field-label"><label>allow_default_access_code</label></span>
         <span class="field-value"><input type='checkbox' id='allow_default_access_code' checked /></span>
@@ -488,10 +536,6 @@ input[type=number] {
     <div class="field">
         <span class="field-label"><label>allow_unknown_clients</label></span>
         <span class="field-value"><input type='checkbox' id='allow_unknown_clients' checked /></span>
-    </div>
-    <div class="field">
-        <span class="field-label"><label>accept_input</label></span>
-        <span class="field-value"><input type='checkbox' id='accept_input' /></span>
     </div>
     <div class="field">
         <span class="field-label"><label>requires_token</label></span>
@@ -512,6 +556,15 @@ input[type=number] {
     <div class="field">
         <span class="field-label"><label>compression</label></span>
         <span class="field-value"><input type='checkbox' id='compression' checked /></span>
+    </div>
+    <div class="field">
+        <span class="field-label"><label>allow_plain_connection</label></span>
+        <span class="field-value"><input type='checkbox' id='allow_plain_connection' checked /></span>
+    </div>
+    <h3>Performance</h3>
+    <div class="field">
+        <span class="field-label"><label>Dispatch Delay (ms)</label></span>
+        <span class="field-value"><input type='number' id='dispatch_delay' value='1' /></span>
     </div>
     <h3>Others</h3>
     <div class="field">
