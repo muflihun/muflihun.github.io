@@ -197,7 +197,7 @@ input[type=number] {
             newField += '<div class="sub-field"><span class="field-label"><label>Public Key (File Path)</label></span>';
             newField += '<span class="field-value2"><input type="text" class="public_key" value="" /></span></div>';
             newField += '<div class="sub-field"><span class="field-label"><label>Key Size</label></span>';
-            newField += '<span class="field-value2"><input type="number" class="key_size" value="256" step="64" min="128" max="256" /></span></div></span>';
+            newField += '<span class="field-value2"><input type="number" class="key_size" value="256" step="64" min="128" max="256" /> bits</span></div></span>';
             newField += '<div class="sub-field"><span class="field-label"><label>Loggers</label></span>';
             newField += '<span class="field-value2"><div class="client_loggers_list"></div><input type="text" placeholder="Type and press ENTER to add" class="client_logger_name" value="" idx=\"' + count + '\" /></span></div>';
             newField += '<div class="sub-field"><span class="field-label"><label>Default Logger</label></span>';
@@ -268,7 +268,7 @@ input[type=number] {
             newField += '<span class="field-label"><label>Code</label></span>';
             newField += '<span class="field-value2"><input type="text" class="code" value="" /></span><br/>';
             newField += '<span class="field-label"><label>Token Age</label></span>';
-            newField += '<span class="field-value2"><input type="number" class="token_age" value="3600" /></span>';
+            newField += '<span class="field-value2"><input type="number" class="token_age" value="3600" /> sec</span>';
             newField += '<button class="remove_access_code" idx=\"' + count + '\" class="big-button">&times;</button>';
             newField += '</div>';
             newDiv.append(newField);
@@ -459,7 +459,7 @@ input[type=number] {
     </div>
     <div class="field">
         <span class="field-label"><label>Default Key Size</label></span>
-        <span class="field-value"><input type='number' id='default_key_size' value='256' step='64' min='128' max='256' /></span>
+        <span class="field-value"><input type='number' id='default_key_size' value='256' step='64' min='128' max='256' /> bits</span>
     </div>
     <div class="field">
         <span class="field-label"><label>File Mode</label></span>
@@ -486,32 +486,32 @@ input[type=number] {
     </div>
     <div class="field">
         <span class="field-label"><label>Max Token Age</label></span>
-        <span class="field-value"><input type='number' id='max_token_age' value='0' /></span>
+        <span class="field-value"><input type='number' id='max_token_age' value='0' /> sec</span>
     </div>
     <div class="field">
         <span class="field-label"><label>Default Token Age</label></span>
-        <span class="field-value"><input type='number' id='token_age' value='3600' /></span>
+        <span class="field-value"><input type='number' id='token_age' value='3600' /> sec</span>
     </div>
     <div class="field">
         <span class="field-label"><label>requires_timestamp</label></span>
-        <span class="field-value"><input type='checkbox' id='requires_timestamp' /></span>
+        <span class="field-value"><input type='checkbox' id='requires_timestamp' checked /></span>
     </div>
     <div class="field">
-        <span class="field-label"><label>Timestamp Validity (sec)</label></span>
-        <span class="field-value"><input type='number' id='timestamp_validity' value='120' min='30' /></span>
+        <span class="field-label"><label>Timestamp Validity</label></span>
+        <span class="field-value"><input type='number' id='timestamp_validity' value='120' min='30' /> sec</span>
     </div>
     <h3>Client</h3>
     <div class="field">
         <span class="field-label"><label>Client Age</label></span>
-        <span class="field-value"><input type='number' id='client_age' value='3600' min='120' /></span>
+        <span class="field-value"><input type='number' id='client_age' value='3600' min='120' /> sec</span>
     </div>
     <div class="field">
         <span class="field-label"><label>Non-acknowledged Client Age</label></span>
-        <span class="field-value"><input type='number' id='non_acknowledged_client_age' value='300' min='120' /></span>
+        <span class="field-value"><input type='number' id='non_acknowledged_client_age' value='300' min='120' /> sec</span>
     </div>
     <div class="field">
         <span class="field-label"><label>Client Integrity Schedule</label></span>
-        <span class="field-value"><input type='number' id='client_integrity_task_interval' value='300' min='300' /></span>
+        <span class="field-value"><input type='number' id='client_integrity_task_interval' value='300' min='300' /> sec</span>
     </div>
 
     <h3>Log Rotation</h3>
@@ -571,12 +571,12 @@ input[type=number] {
     </div>
     <h3>Performance</h3>
     <div class="field">
-        <span class="field-label"><label>Dispatch Delay (ms)</label></span>
-        <span class="field-value"><input type='number' id='dispatch_delay' value='1' /></span>
+        <span class="field-label"><label>Dispatch Delay</label></span>
+        <span class="field-value"><input type='number' id='dispatch_delay' value='1' /> ms</span>
     </div>
     <div class="field">
-        <span class="field-label"><label>Maximum Bulk Items</label></span>
-        <span class="field-value"><input type='number' id='max_items_in_bulk' value='50' /></span>
+        <span class="field-label"><label>Maximum Bulk Size</label></span>
+        <span class="field-value"><input type='number' id='max_items_in_bulk' value='50' /> items</span>
     </div>
     <h3>Others</h3>
     <div class="field">
