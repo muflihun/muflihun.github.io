@@ -133,7 +133,7 @@ input[type=number] {
             // known clients
             $('#clients_list .field').each(function (idx, item) {
                 var client = {};
-                $(this).find('input:not(.ignore-json').each(function (idx, item) {
+                $(this).find('input:not(.ignore-json)').each(function (idx, item) {
                     var val = $(item).val();
                     if ($(this).attr('type') === 'number') {
                         val = parseInt(val);
@@ -149,7 +149,7 @@ input[type=number] {
             // known loggers
             $('#loggers_list .field').each(function (idx, item) {
                 var logger = {};
-                $(this).find('input:not(.ignore-json,select:not(.ignore-json').each(function (idx, item) {
+                $(this).find('input:not(.ignore-json),select:not(.ignore-json)').each(function (idx, item) {
                     var val = $(item).val();
                     if ($(this).attr('type') === 'number') {
                         val = parseInt(val);
@@ -167,7 +167,7 @@ input[type=number] {
                 }
                 
                 logger.access_codes = [];
-                $(this).find('.access_code:not(.ignore-json').each(function (idx, item) {
+                $(this).find('.access_code:not(.ignore-json)').each(function (idx, item) {
                     var accessCode = {};
                     accessCode.code = $(this).find('.code').val();
                     if (accessCode.code.trim().length === 0) {
