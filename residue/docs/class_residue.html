@@ -83,10 +83,11 @@ Public Types</h2></td></tr>
 <tr class="memitem:aec68ee5347d85c3d3c50e4b8b7452fb6"><td class="memItemLeft" align="right" valign="top"><a id="aec68ee5347d85c3d3c50e4b8b7452fb6"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#aec68ee5347d85c3d3c50e4b8b7452fb6">Flag</a> : unsigned int { <br />
 &#160;&#160;<b>NONE</b> = 0, 
 <b>ALLOW_UNKNOWN_LOGGERS</b> = 1, 
+<b>REQUIRES_TOKEN</b> = 2, 
 <b>ALLOW_DEFAULT_ACCESS_CODE</b> = 4, 
-<b>ALLOW_PLAIN_LOG_REQUEST</b> = 8, 
 <br />
-&#160;&#160;<b>ALLOW_BULK_LOG_REQUEST</b> = 16, 
+&#160;&#160;<b>ALLOW_PLAIN_LOG_REQUEST</b> = 8, 
+<b>ALLOW_BULK_LOG_REQUEST</b> = 16, 
 <b>COMPRESSION</b> = 256
 <br />
  }<tr class="memdesc:aec68ee5347d85c3d3c50e4b8b7452fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server flags enum that are relavant to the client. <br /></td></tr>
@@ -127,6 +128,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a48617eddaee9eaa6f744383b751884a6">getTimestamp</a> () const noexcept</td></tr>
 <tr class="memdesc:a48617eddaee9eaa6f744383b751884a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets timestamp for replay attack prevention. This function always uses unix-time for comparison. <br /></td></tr>
 <tr class="separator:a48617eddaee9eaa6f744383b751884a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7faf65c76e10f327940e4f2267166e1a"><td class="memItemLeft" align="right" valign="top"><a id="a7faf65c76e10f327940e4f2267166e1a"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>licensee</b> () const noexcept</td></tr>
+<tr class="separator:a7faf65c76e10f327940e4f2267166e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -219,7 +223,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="memdesc:aa1ecad58f492dd91f273305aefc2883a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delay between dispatching log messages (in milliseconds) [Default: 1ms].  <a href="#aa1ecad58f492dd91f273305aefc2883a">More...</a><br /></td></tr>
 <tr class="separator:aa1ecad58f492dd91f273305aefc2883a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad60371fcd069f78079bf856fef5fe307"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ad60371fcd069f78079bf856fef5fe307">setBulkSize</a> (unsigned int bulkSize)</td></tr>
-<tr class="memdesc:ad60371fcd069f78079bf856fef5fe307"><td class="mdescLeft">&#160;</td><td class="mdescRight">setBulkSize number of log messages to be bulked together  <a href="#ad60371fcd069f78079bf856fef5fe307">More...</a><br /></td></tr>
+<tr class="memdesc:ad60371fcd069f78079bf856fef5fe307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets number of log messages to be bulked together.  <a href="#ad60371fcd069f78079bf856fef5fe307">More...</a><br /></td></tr>
 <tr class="separator:ad60371fcd069f78079bf856fef5fe307"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aceef85d15506552784ab8f87d0b075e9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#aceef85d15506552784ab8f87d0b075e9">enableAutoBulkParams</a> () noexcept</td></tr>
 <tr class="memdesc:aceef85d15506552784ab8f87d0b075e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables automatic setting of bulk parameters depending on what's most efficient. It essentially enables bulk if server supports it and sets bulk size and dispatch delay accordingly.  <a href="#aceef85d15506552784ab8f87d0b075e9">More...</a><br /></td></tr>
@@ -286,10 +290,10 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#afb629104e2f73fd1b1125cfcbcfbc9b4">LOCALHOST</a></td></tr>
 <tr class="memdesc:afb629104e2f73fd1b1125cfcbcfbc9b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">127.0.0.1 <br /></td></tr>
 <tr class="separator:afb629104e2f73fd1b1125cfcbcfbc9b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6c33b99af70312d46d02a5276200c79"><td class="memItemLeft" align="right" valign="top"><a id="ab6c33b99af70312d46d02a5276200c79"></a>
-static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ab6c33b99af70312d46d02a5276200c79">PING_THRESHOLD</a></td></tr>
-<tr class="memdesc:ab6c33b99af70312d46d02a5276200c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threshold (seconds) to check against client age and whether we should send ping request or not. <br /></td></tr>
-<tr class="separator:ab6c33b99af70312d46d02a5276200c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2519d15dcfdddf5f844a6b2fc0dbe834"><td class="memItemLeft" align="right" valign="top"><a id="a2519d15dcfdddf5f844a6b2fc0dbe834"></a>
+static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a2519d15dcfdddf5f844a6b2fc0dbe834">TOUCH_THRESHOLD</a></td></tr>
+<tr class="memdesc:a2519d15dcfdddf5f844a6b2fc0dbe834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threshold (seconds) to check against client age and whether we should send touch request or not. <br /></td></tr>
+<tr class="separator:a2519d15dcfdddf5f844a6b2fc0dbe834"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad723ef1fad99fe73b817de98abd8278c"><td class="memItemLeft" align="right" valign="top"><a id="ad723ef1fad99fe73b817de98abd8278c"></a>
 static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#ad723ef1fad99fe73b817de98abd8278c">DEFAULT_ACCESS_CODE</a></td></tr>
 <tr class="memdesc:ad723ef1fad99fe73b817de98abd8278c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default access code value if allowed. <br /></td></tr>
@@ -1026,7 +1030,7 @@ By default it is enabled </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>setBulkSize number of log messages to be bulked together </p>
+<p>Sets number of log messages to be bulked together. </p>
 <dl class="section note"><dt>Note</dt><dd>This depends on what server accepts. The configuration value on the server is <code>max_items_in_bulk</code>. Please contact your log server hosting to get this number. Failing to select correct number can fail. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">

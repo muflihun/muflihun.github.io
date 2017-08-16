@@ -23,6 +23,10 @@ body { padding: 10px; }
 pre {
     white-space: pre-wrap;
 }
+.gen {
+	color: red;
+	font-weight: bold;
+}
 #copy { float: right; }
 </style>
 <script type="text/javascript" src="jsencrypt.js"></script>
@@ -155,7 +159,7 @@ You can use this page to encrypt/decrypt a message using key pair.
 <p>Note: This decryption tool does not support passpharase. Please use ripe CLI tool to decrypt using encrypted private RSA keys</p>
 <p>Note: No data is sent across the wire.</p>
 <hr/>
-<h3>Generate A Key Pair</h3>
+<h3 id="gen">Generate A Key Pair</h3>
 <input type='button' id='generate' value='Generate' />
 <pre id='gen-pub' class='genk'></pre>
 <pre id='gen-pri' class='genk'></pre>

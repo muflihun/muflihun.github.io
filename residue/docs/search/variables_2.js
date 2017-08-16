@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ping_5fthreshold',['PING_THRESHOLD',['../class_residue.html#ab6c33b99af70312d46d02a5276200c79',1,'Residue']]]
+  ['s_5finternallogginglevel',['s_internalLoggingLevel',['../class_residue.html#a08af58bb017f1d485e74d849de6b02e6',1,'Residue']]]
 ];
