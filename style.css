@@ -5,11 +5,20 @@
 .project {
     display: inline-block;
     width: 49%;
-    height: 200px;
+    min-height: 250px;
+    border: 1px solid rgba(204, 204, 204, 0.54);
+    vertical-align: top;
+    margin-top: 10px;
+    padding: 20px 3px;
 }
 
 .project:nth-child(2) {
     margin-left: 10px;
+}
+
+.project > a {
+    display: block;
+    text-align: center;
 }
 
 .project > a > img {
