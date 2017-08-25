@@ -12,6 +12,14 @@
     padding: 20px 3px;
 }
 
+@media (max-width:480px)  {
+    .project {
+        display: block;
+        width: 100%;
+        min-height: auto;
+    }
+}
+
 .project:nth-child(2) {
     margin-left: 10px;
 }
