@@ -8,7 +8,13 @@
     height: 200px;
 }
 
-.project img {
-    width:256px;
-    max-width:75%
+.project:nth-child(2) {
+    margin-left: 10px;
 }
+
+.project > a > img {
+    width:256px;
+    max-width:50%
+}
+
+
