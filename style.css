@@ -4,6 +4,11 @@
 
 .project {
     display: inline-block;
-    width: 50%;
-    height: 300px;
+    width: 49%;
+    height: 200px;
+}
+
+.project img {
+    width:256px;
+    max-width:75%
 }
