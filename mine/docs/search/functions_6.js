@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hextobiginteger',['hexToBigInteger',['../classmine_1_1_big_integer_helper.html#af9a8ca8268940a45b0567940577e6cbf',1,'mine::BigIntegerHelper']]]
+  ['hextobiginteger',['hexToBigInteger',['../classmine_1_1_math_helper.html#a04f4c012b91bd182f5c1befd4ba2b1b3',1,'mine::MathHelper']]]
 ];

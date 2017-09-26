@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['bigintegertobyte',['bigIntegerToByte',['../classmine_1_1_big_integer_helper.html#a868e02ec75e50f9727849701ebc31bd9',1,'mine::BigIntegerHelper']]],
-  ['bigintegertohex',['bigIntegerToHex',['../classmine_1_1_big_integer_helper.html#a8d9a7ffed0936b9aae306569a549926b',1,'mine::BigIntegerHelper']]],
-  ['bigintegertostring',['bigIntegerToString',['../classmine_1_1_big_integer_helper.html#a13bc35c370f59c18562b95b072075328',1,'mine::BigIntegerHelper']]]
+  ['bigintegertobyte',['bigIntegerToByte',['../classmine_1_1_math_helper.html#a845d4a7db6bfe50f9866f5b0ad8642be',1,'mine::MathHelper']]],
+  ['bigintegertohex',['bigIntegerToHex',['../classmine_1_1_math_helper.html#a3da8e257f0a59c099b79a3b2e2d33fc9',1,'mine::MathHelper']]],
+  ['bigintegertostring',['bigIntegerToString',['../classmine_1_1_math_helper.html#aab13cab1d9a93751ebe608085be2167d',1,'mine::MathHelper']]],
+  ['bytearraytorawstring',['byteArrayToRawString',['../classmine_1_1_mine_common.html#a1b25e1c40b021bfbd7c58ea5eca0389c',1,'mine::MineCommon']]]
 ];

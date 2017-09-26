@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['kbiginteger256',['kBigInteger256',['../classmine_1_1_big_integer_helper.html#ad5d50797ab1a095d50eca0f3418c5932',1,'mine::BigIntegerHelper']]],
+  ['kbigintegert256',['kBigIntegerT256',['../classmine_1_1_math_helper.html#a9b1a6b17e72b0cf9b3aa9e07e3b0d67d',1,'mine::MathHelper']]],
   ['kbuffersize',['kBufferSize',['../classmine_1_1_z_lib.html#ae498ce7c442c8c7321be313e65f3a4a4',1,'mine::ZLib']]],
   ['kdecodemap',['kDecodeMap',['../classmine_1_1_base16.html#a59218aa4bd0b750b0549d0a909e725bc',1,'mine::Base16']]],
   ['key',['Key',['../classmine_1_1_a_e_s.html#ac9b4d8b41d0a91b996d1e1d5e9ab48e2',1,'mine::AES']]],

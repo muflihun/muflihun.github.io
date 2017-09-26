@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['maxrsablocksize',['maxRSABlockSize',['../classmine_1_1_generic_r_s_a.html#abf9ea6d6260bc8b40bd5a51c709de6d7',1,'mine::GenericRSA']]],
-  ['minrsakeysize',['minRSAKeySize',['../classmine_1_1_generic_r_s_a.html#ae079a622a3f3f87836ac3fc20e762550',1,'mine::GenericRSA']]],
-  ['modinverse',['modInverse',['../classmine_1_1_big_integer_helper.html#aa38dba3c0b246d132fe380342c758a32',1,'mine::BigIntegerHelper']]]
+  ['maxrsablocksize',['maxRSABlockSize',['../classmine_1_1_generic_r_s_a.html#a811612e8889956cb8f9b1c6ff7174571',1,'mine::GenericRSA']]],
+  ['minrsakeysize',['minRSAKeySize',['../classmine_1_1_generic_r_s_a.html#abdfbd313aba6023150e56c834998bd16',1,'mine::GenericRSA']]],
+  ['modinverse',['modInverse',['../classmine_1_1_math_helper.html#a9299f9dda2cd47055fcb07d2f93f97ae',1,'mine::MathHelper']]]
 ];
