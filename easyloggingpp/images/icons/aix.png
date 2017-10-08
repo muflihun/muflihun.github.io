@@ -1,0 +1,11 @@
+--2017-10-09 10:52:20--  https://www.midrange.ca/wp-content/uploads/2017/06/systems_power_software_aix_logo_110x110.png
+Resolving www.midrange.ca... 50.63.217.135
+Connecting to www.midrange.ca|50.63.217.135|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 7676 (7.5K) [image/png]
+Saving to: 'systems_power_software_aix_logo_110x110.png'
+
+     0K .......                                               100% 25.5M=0s
+
+2017-10-09 10:52:21 (25.5 MB/s) - 'systems_power_software_aix_logo_110x110.png' saved [7676/7676]
+
