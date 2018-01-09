@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['license',['License',['../classlicensepp_1_1_license.html',1,'licensepp']]],
-  ['licenseexception',['LicenseException',['../classlicensepp_1_1_license_exception.html',1,'licensepp::LicenseException'],['../classlicensepp_1_1_license_exception.html#a9cb0fd03b86a8a4adb04253678bc566a',1,'licensepp::LicenseException::LicenseException()']]],
-  ['load',['load',['../classlicensepp_1_1_license.html#a4eb43d050b26bd571e3ef4fc19842ef7',1,'licensepp::License']]]
+  ['issue',['issue',['../classlicensepp_1_1_base_license_manager.html#aac69c8168d0d9e075cdf0f0104814afa',1,'licensepp::BaseLicenseManager::issue()'],['../classlicensepp_1_1_issuing_authority.html#ad72f4033cec7fe64e6495ff8a1676ef6',1,'licensepp::IssuingAuthority::issue()']]],
+  ['issuingauthority',['IssuingAuthority',['../classlicensepp_1_1_issuing_authority.html',1,'licensepp']]]
 ];

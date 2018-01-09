@@ -100,16 +100,130 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>active</b> () const</
 <tr class="memitem:a352fe61e216459e1dbc83fb89e59ec46"><td class="memItemLeft" align="right" valign="top"><a id="a352fe61e216459e1dbc83fb89e59ec46"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>maxValidity</b> () const</td></tr>
 <tr class="separator:a352fe61e216459e1dbc83fb89e59ec46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad72f4033cec7fe64e6495ff8a1676ef6"><td class="memItemLeft" align="right" valign="top"><a id="ad72f4033cec7fe64e6495ff8a1676ef6"></a>
-<a class="el" href="classlicensepp_1_1_license.html">License</a>&#160;</td><td class="memItemRight" valign="bottom"><b>issue</b> (const std::string &amp;licensee, unsigned int validityPeriod, const std::string &amp;masterKey, const std::string &amp;secret=&quot;&quot;, const std::string &amp;licenseeSignature=&quot;&quot;) const</td></tr>
+<tr class="memitem:ad72f4033cec7fe64e6495ff8a1676ef6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlicensepp_1_1_license.html">License</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlicensepp_1_1_issuing_authority.html#ad72f4033cec7fe64e6495ff8a1676ef6">issue</a> (const std::string &amp;licensee, unsigned int validityPeriod, const std::string &amp;masterKey, const std::string &amp;secret=&quot;&quot;, const std::string &amp;licenseeSignature=&quot;&quot;) const</td></tr>
+<tr class="memdesc:ad72f4033cec7fe64e6495ff8a1676ef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Issue a new license.  <a href="#ad72f4033cec7fe64e6495ff8a1676ef6">More...</a><br /></td></tr>
 <tr class="separator:ad72f4033cec7fe64e6495ff8a1676ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a35455a484dce272f9022d82ae4d62b"><td class="memItemLeft" align="right" valign="top"><a id="a9a35455a484dce272f9022d82ae4d62b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>validate</b> (const <a class="el" href="classlicensepp_1_1_license.html">License</a> *license, const std::string &amp;masterKey, bool validateSignature, const std::string &amp;licenseeSignature=&quot;&quot;) const</td></tr>
+<tr class="memitem:a9a35455a484dce272f9022d82ae4d62b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlicensepp_1_1_issuing_authority.html#a9a35455a484dce272f9022d82ae4d62b">validate</a> (const <a class="el" href="classlicensepp_1_1_license.html">License</a> *license, const std::string &amp;masterKey, bool validateSignature, const std::string &amp;licenseeSignature=&quot;&quot;) const</td></tr>
+<tr class="memdesc:a9a35455a484dce272f9022d82ae4d62b"><td class="mdescLeft">&#160;</td><td class="mdescRight">validate Validates license  <a href="#a9a35455a484dce272f9022d82ae4d62b">More...</a><br /></td></tr>
 <tr class="separator:a9a35455a484dce272f9022d82ae4d62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classlicensepp_1_1_license.html" title="License model. ">License</a> issuing authority. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad72f4033cec7fe64e6495ff8a1676ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad72f4033cec7fe64e6495ff8a1676ef6">&#9670;&nbsp;</a></span>issue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlicensepp_1_1_license.html">License</a> licensepp::IssuingAuthority::issue </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>licensee</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>validityPeriod</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>masterKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>secret</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>licenseeSignature</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Issue a new license. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">licensee</td><td>Name of license holder </td></tr>
+    <tr><td class="paramname">validityPeriod</td><td><a class="el" href="classlicensepp_1_1_license.html" title="License model. ">License</a> validity in seconds. This must be &lt;= issuing authority's max validity </td></tr>
+    <tr><td class="paramname">masterKey</td><td>The decrypted master key </td></tr>
+    <tr><td class="paramname">secret</td><td>Secret for issuing authority RSA keypair </td></tr>
+    <tr><td class="paramname">licenseeSignature</td><td>Licensee signature to make license even more secure </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New license object </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Do not use this function directly. Use <a class="el" href="classlicensepp_1_1_base_license_manager.html#aac69c8168d0d9e075cdf0f0104814afa" title="Generates new license. ">BaseLicenseManager::issue()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a9a35455a484dce272f9022d82ae4d62b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a35455a484dce272f9022d82ae4d62b">&#9670;&nbsp;</a></span>validate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool licensepp::IssuingAuthority::validate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlicensepp_1_1_license.html">License</a> *&#160;</td>
+          <td class="paramname"><em>license</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>masterKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>validateSignature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>licenseeSignature</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>validate Validates license </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">license</td><td><a class="el" href="classlicensepp_1_1_license.html" title="License model. ">License</a> to validate </td></tr>
+    <tr><td class="paramname">masterKey</td><td>The decrypted master key </td></tr>
+    <tr><td class="paramname">validateSignature</td><td>Should signature be validated </td></tr>
+    <tr><td class="paramname">licenseeSignature</td><td>If validateSignature what is the licensee signature </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if license is valid and false if license is expired </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Do not use this function directly. Use <a class="el" href="classlicensepp_1_1_base_license_manager.html#a56ef47c79926e82557e73a30245481f4" title="Validates the license with current date. ">BaseLicenseManager::validate()</a> </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>license++/<a class="el" href="issuing-authority_8h_source.html">issuing-authority.h</a></li>
 </ul>
 </div><!-- contents -->

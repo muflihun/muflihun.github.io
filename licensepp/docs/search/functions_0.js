@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getissuingauthority',['getIssuingAuthority',['../classlicensepp_1_1_base_license_manager.html#adc118c5f141d1ccb386ac0dfbdc8e023',1,'licensepp::BaseLicenseManager']]]
+  ['formattedexpiry',['formattedExpiry',['../classlicensepp_1_1_license.html#aadb4b3994826441c1ca28a1eaad451f4',1,'licensepp::License']]]
 ];
