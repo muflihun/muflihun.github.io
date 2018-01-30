@@ -132,10 +132,12 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="memitem:aadb4b3994826441c1ca28a1eaad451f4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlicensepp_1_1_license.html#aadb4b3994826441c1ca28a1eaad451f4">formattedExpiry</a> () const</td></tr>
 <tr class="memdesc:aadb4b3994826441c1ca28a1eaad451f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns expiry date in.  <a href="#aadb4b3994826441c1ca28a1eaad451f4">More...</a><br /></td></tr>
 <tr class="separator:aadb4b3994826441c1ca28a1eaad451f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4eb43d050b26bd571e3ef4fc19842ef7"><td class="memItemLeft" align="right" valign="top"><a id="a4eb43d050b26bd571e3ef4fc19842ef7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlicensepp_1_1_license.html#a4eb43d050b26bd571e3ef4fc19842ef7">load</a> (const std::string &amp;licenseBase64)</td></tr>
-<tr class="memdesc:a4eb43d050b26bd571e3ef4fc19842ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads itself from base64 input. <br /></td></tr>
+<tr class="memitem:a4eb43d050b26bd571e3ef4fc19842ef7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlicensepp_1_1_license.html#a4eb43d050b26bd571e3ef4fc19842ef7">load</a> (const std::string &amp;licenseBase64)</td></tr>
+<tr class="memdesc:a4eb43d050b26bd571e3ef4fc19842ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads itself from base64 input.  <a href="#a4eb43d050b26bd571e3ef4fc19842ef7">More...</a><br /></td></tr>
 <tr class="separator:a4eb43d050b26bd571e3ef4fc19842ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca796ad7e13de3e813e20b8dc2b0d5f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlicensepp_1_1_license.html#aca796ad7e13de3e813e20b8dc2b0d5f9">loadFromFile</a> (const std::string &amp;licensefile)</td></tr>
+<tr class="memdesc:aca796ad7e13de3e813e20b8dc2b0d5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads itself from license file containing base64 license.  <a href="#aca796ad7e13de3e813e20b8dc2b0d5f9">More...</a><br /></td></tr>
+<tr class="separator:aca796ad7e13de3e813e20b8dc2b0d5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -178,6 +180,58 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_authoritySig
 
 <p>Returns expiry date in. </p>
 <pre>d b, Y H:m UTC</pre><p> format </p>
+
+</div>
+</div>
+<a id="a4eb43d050b26bd571e3ef4fc19842ef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eb43d050b26bd571e3ef4fc19842ef7">&#9670;&nbsp;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool licensepp::License::load </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>licenseBase64</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads itself from base64 input. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classlicensepp_1_1_license_exception.html" title="Exception thrown by all the license++ functions. ">LicenseException</a></td><td>if license is invalid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aca796ad7e13de3e813e20b8dc2b0d5f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca796ad7e13de3e813e20b8dc2b0d5f9">&#9670;&nbsp;</a></span>loadFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool licensepp::License::loadFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>licensefile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads itself from license file containing base64 license. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classlicensepp_1_1_license_exception.html" title="Exception thrown by all the license++ functions. ">LicenseException</a></td><td>if license is invalid </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
