@@ -184,21 +184,27 @@ input[type=number] {
             // known clients
             $('#clients_list .field').each(function (idx, item) {
                 var client = {};
-                $(this).find('input:not(.ignore-json),.client_logger_item_val').each(function (idx, item) {
+                $(this).find('input:not(.ignore-json)').each(function (idx, item) {
                     var val = null;
+                    var key = $(this).attr('class');
                     if ($(this).attr('type') === 'number') {
                         val = parseInt($(item).val());
                     } else if ($(item).attr('type') === 'checkbox') {
                         val = $(item).is(':checked');
-                    } else if ($(item).hasClass("client_logger_item_val")) {
-                        val = $(item).text();
                     } else {
                         val = $(item).val();
                     }
                     if (val !== null && val !== '') {
-                        client[$(this).attr('class')] = val;
+                        client[key] = val;
                     }
                 });
+                var loggers = [];
+                $(this).find('.client_logger_item_val').each(function (idx, item) {
+                    loggers.push($(item).text());
+                });
+                if (loggers.length > 0) {
+                    client.loggers = loggers;
+                }
                 conf.known_clients.push(client);
             });
             // known loggers
