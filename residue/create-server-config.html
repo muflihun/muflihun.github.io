@@ -346,8 +346,8 @@ input[type=number] {
                             if (typeof obj.loggers !== 'undefined') {
                                 var list = [];
                                 for (var idx2 = 1; idx2 <= obj.loggers.length; ++idx2) {
-                                    var logger = obj.loggers[idx - 1];
-                                    list.push(obj.loggers[idx - 1]);
+                                    var logger = obj.loggers[idx2 - 1];
+                                    list.push(obj.loggers[idx2 - 1]);
                                     field.find('.client_loggers_list').append('<div class="client_logger_item" idx="' + idx2 + '"><span class="client_logger_item_val">' + logger + '</span> <button class="remove_client_logger" parentIdx=\"' + idx + '\" idx=\"' + idx2 + '\" class="big-button">&times;</button></div>');
                                 }
                             }
