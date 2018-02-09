@@ -93,6 +93,57 @@ input[type=number] {
 </style>
 <script src="assets/jquery.min.js"></script>
 <script>
+    
+    var default_config = {
+        "admin_port": 8776,
+        "connect_port": 8777,
+        "token_port": 8778,
+        "logging_port": 8779,
+        "server_key": "",
+        "server_rsa_private_key": "",
+        "server_rsa_public_key": "",
+        "server_rsa_secret": "",
+        "default_key_size": 256,
+        "accept_input": true,
+        "allow_default_access_code": true,
+        "allow_plain_connection": true,
+        "allow_unknown_loggers": true,
+        "allow_unknown_clients": true,
+        "requires_token": true,
+        "allow_plain_log_request": true,
+        "immediate_flush": false,
+        "compression": true,
+        "allow_bulk_log_request": true,
+        "max_items_in_bulk": 50,
+        "token_age": 600,
+        "client_age": 3600,
+        "timestamp_validity": 120,
+        "requires_timestamp": false,
+        "non_acknowledged_client_age": 300,
+        "client_integrity_task_interval": 300,
+        "dispatch_delay": 1,
+        "archived_log_directory": "%original/backups/%logger/",
+        "archived_log_filename": "%level-%hour-%min-%day-%month-%year.log",
+        "archived_log_compressed_filename": "%hour-%min-%day-%month-%year.tar.gz",
+        "known_clients": [
+        ],
+        "known_loggers": [
+            {
+                "logger_id": "residue",
+                "configuration_file": "<specify>",
+                "rotation_freq": "never"
+            },
+            {
+                "logger_id": "default",
+                "configuration_file": "<specify>",
+                "allow_plain_log_request": false
+            }
+        ],
+        "loggers_blacklist": [
+            "bracket",
+            "truli"
+        ]
+    };
 	
 	function updateFileModeChecks() {
 		var val = parseInt($('.field-value > #file_mode').val());
@@ -149,7 +200,7 @@ input[type=number] {
             // known loggers
             $('#loggers_list .field').each(function (idx, item) {
                 var logger = {};
-                $(this).find('input:not(.ignore-json,.access_code),select:not(.ignore-json)').each(function (idx, item) {
+                $(this).find('input:not(.ignore-json,.code,.token_age),select:not(.ignore-json)').each(function (idx, item) {
                     var val = $(item).val();
                     if ($(this).attr('type') === 'number') {
                         val = parseInt(val);
@@ -404,6 +455,8 @@ input[type=number] {
             $('#gen-pri').text(new_crypt.getPrivateKey());
             $('#gen-pub').text(new_crypt.getPublicKey()); 
         });
+        
+        $('#output').val(JSON.stringify(default_config));
     });
 </script>
 </head>
@@ -417,19 +470,19 @@ input[type=number] {
     <h3>Ports</h3>
     <div class="field">
         <span class="field-label"><label>Admin Port</label></span>
-        <span class="field-value"><input type='number' id='admin_port' value='8776' /></span>
+        <span class="field-value"><input type='number' id='admin_port' value='' /></span>
     </div>
     <div class="field">
         <span class="field-label"><label>Connect Port</label></span>
-        <span class="field-value"><input type='number' id='connect_port' value='8777' /></span>
+        <span class="field-value"><input type='number' id='connect_port' value='' /></span>
     </div>
     <div class="field">
         <span class="field-label"><label>Token Port</label></span>
-        <span class="field-value"><input type='number' id='token_port' value='8778' /></span>
+        <span class="field-value"><input type='number' id='token_port' value='' /></span>
     </div>
     <div class="field">
         <span class="field-label"><label>Logging Port</label></span>
-        <span class="field-value"><input type='number' id='logging_port' value='8779' /></span>
+        <span class="field-value"><input type='number' id='logging_port' value='' /></span>
     </div>
     <h3>Security</h3>
     <div class="field">
