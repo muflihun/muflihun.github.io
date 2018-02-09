@@ -184,7 +184,7 @@ input[type=number] {
             // known clients
             $('#clients_list .field').each(function (idx, item) {
                 var client = {};
-                $(this).find('input:not(.ignore-json)').each(function (idx, item) {
+                $(this).find('input:not(.ignore-json),.client_logger_item_val').each(function (idx, item) {
                     var val = $(item).val();
                     if ($(this).attr('type') === 'number') {
                         val = parseInt(val);
