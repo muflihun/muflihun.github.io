@@ -456,7 +456,8 @@ input[type=number] {
             $('#gen-pub').text(new_crypt.getPublicKey()); 
         });
         
-        $('#output').val(JSON.stringify(default_config));
+        $('#output').val(JSON.stringify(default_config, null, 2));
+        $('#load').click();
     });
 </script>
 </head>
