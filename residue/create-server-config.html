@@ -149,7 +149,7 @@ input[type=number] {
             // known loggers
             $('#loggers_list .field').each(function (idx, item) {
                 var logger = {};
-                $(this).find('input:not(.ignore-json),select:not(.ignore-json)').each(function (idx, item) {
+                $(this).find('input:not(.ignore-json,.access_code),select:not(.ignore-json)').each(function (idx, item) {
                     var val = $(item).val();
                     if ($(this).attr('type') === 'number') {
                         val = parseInt(val);
