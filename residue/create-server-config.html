@@ -185,13 +185,17 @@ input[type=number] {
             $('#clients_list .field').each(function (idx, item) {
                 var client = {};
                 $(this).find('input:not(.ignore-json),.client_logger_item_val').each(function (idx, item) {
-                    var val = $(item).val();
+                    var val = null;
                     if ($(this).attr('type') === 'number') {
-                        val = parseInt(val);
+                        val = parseInt($(item).val());
                     } else if ($(item).attr('type') === 'checkbox') {
                         val = $(item).is(':checked');
+                    } else if ($(item).hasClass("client_logger_item_val")) {
+                        val = $(item).text();
+                    } else {
+                        val = $(item).val();
                     }
-                    if (val !== '') {
+                    if (val !== null && val !== '') {
                         client[$(this).attr('class')] = val;
                     }
                 });
