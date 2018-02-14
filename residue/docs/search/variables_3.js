@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['touch_5fthreshold',['TOUCH_THRESHOLD',['../class_residue.html#a2519d15dcfdddf5f844a6b2fc0dbe834',1,'Residue']]]
+  ['s_5finternallogginglevel',['s_internalLoggingLevel',['../class_residue.html#a08af58bb017f1d485e74d849de6b02e6',1,'Residue']]]
 ];

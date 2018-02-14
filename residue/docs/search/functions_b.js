@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wait',['wait',['../class_residue.html#aa3f2e619424aece74ecd6586c0539eb0',1,'Residue']]]
+  ['newfilestream',['newFileStream',['../classel_1_1base_1_1utils_1_1_file.html#aa4bef1f2e00269d75c1c1eabb0ce4563',1,'el::base::utils::File']]]
 ];
