@@ -1,10 +1,5 @@
 var searchData=
 [
-  ['info',['info',['../class_residue.html#a4e6f9382fe3cb3ad672e1ca0b94023b5',1,'Residue']]],
-  ['installcustomformatspecifier',['installCustomFormatSpecifier',['../classel_1_1_helpers.html#aa6de15a09db4f2a6763a6652c0ea12b1',1,'el::Helpers']]],
-  ['installlogdispatchcallback',['installLogDispatchCallback',['../classel_1_1_helpers.html#a3f3e84057567a8ac568a35899318544a',1,'el::Helpers']]],
-  ['installloggerregistrationcallback',['installLoggerRegistrationCallback',['../classel_1_1_loggers.html#a8df040fad4898c2682be34ba5128b61d',1,'el::Loggers']]],
-  ['installprerolloutcallback',['installPreRollOutCallback',['../classel_1_1_helpers.html#a5fd7ad6d636c28d2e706203d0c43cf8c',1,'el::Helpers']]],
-  ['instance',['instance',['../class_residue.html#a55e6890db940083cbe5579006d4c0cb9',1,'Residue']]],
-  ['isdigit',['isDigit',['../classel_1_1base_1_1utils_1_1_str.html#a4caae91dfe0310d9f182bd9b7e99103c',1,'el::base::utils::Str']]]
+  ['reconnect',['reconnect',['../class_residue.html#a577711d27045b804cff65505fc506382',1,'Residue']]],
+  ['residueexception',['ResidueException',['../class_residue_exception.html#a19e34815839bc780d1bd8eddd97b5698',1,'ResidueException']]]
 ];

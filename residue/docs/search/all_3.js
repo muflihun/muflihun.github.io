@@ -1,22 +1,9 @@
 var searchData=
 [
-  ['datetime',['DateTime',['../classel_1_1base_1_1utils_1_1_date_time.html',1,'el::base::utils']]],
-  ['debug',['Debug',['../namespaceel.html#ab0ac6091262344c52dd2d3ad099e8e36aa603905470e2a5b8c13e96b579ef0dba',1,'el']]],
-  ['default_5faccess_5fcode',['DEFAULT_ACCESS_CODE',['../class_residue.html#ad723ef1fad99fe73b817de98abd8278c',1,'Residue']]],
-  ['default_5fkey_5fsize',['DEFAULT_KEY_SIZE',['../class_residue.html#a6623a209cec1ab12c2b4a6a9fdda6446',1,'Residue']]],
-  ['default_5fport',['DEFAULT_PORT',['../class_residue.html#ae42ec88dc891703a274c4876fa3e520f',1,'Residue']]],
-  ['defaultconfigurations',['defaultConfigurations',['../classel_1_1_loggers.html#a96f2336fafdc3ef2c4df01a73ae5ffb7',1,'el::Loggers']]],
-  ['defaultlogbuilder',['DefaultLogBuilder',['../classel_1_1base_1_1_default_log_builder.html',1,'el::base']]],
-  ['defaultlogdispatchcallback',['DefaultLogDispatchCallback',['../classel_1_1base_1_1_default_log_dispatch_callback.html',1,'el::base']]],
-  ['defaulttypedconfigurations',['defaultTypedConfigurations',['../classel_1_1_loggers.html#af296007c3eb3b71602ec80ff59875b46',1,'el::Loggers']]],
-  ['disableapplicationabortonfatallog',['DisableApplicationAbortOnFatalLog',['../namespaceel.html#a2784aacd04cb7816ac1c0b20fcbf83cba8dd9782f8a19cf7a41e4ec38d1c6a4ae',1,'el']]],
-  ['disableautobulkparams',['disableAutoBulkParams',['../class_residue.html#a262f73f8f6c4d749f4a7fd4bccce8fbf',1,'Residue']]],
-  ['disablebulkdispatch',['disableBulkDispatch',['../class_residue.html#affc470c515fabf8b9bcc7a63965a57dc',1,'Residue']]],
-  ['disableperformancetrackingcheckpointcomparison',['DisablePerformanceTrackingCheckpointComparison',['../namespaceel.html#a2784aacd04cb7816ac1c0b20fcbf83cba18ea5964e8caa7c476dd5eee8e4f74a0',1,'el']]],
-  ['disableplainrequest',['disablePlainRequest',['../class_residue.html#abfea282f667ce19acc58d50922ce36be',1,'Residue']]],
-  ['disableutc',['disableUtc',['../class_residue.html#acc949f1c8b0530d79b11f60c31bfe5b0',1,'Residue']]],
-  ['disablevmodules',['DisableVModules',['../namespaceel.html#a2784aacd04cb7816ac1c0b20fcbf83cba22cae5066e8e0623cb90e20a18abb631',1,'el']]],
-  ['disablevmodulesextensions',['DisableVModulesExtensions',['../namespaceel.html#a2784aacd04cb7816ac1c0b20fcbf83cba18a8e65b84ca0cc82451b5e155d7aeb4',1,'el']]],
-  ['disconnect',['disconnect',['../class_residue.html#ab1a642f4428bb02e82a52bcbcab9df3f',1,'Residue']]],
-  ['dispatchaction',['DispatchAction',['../namespaceel_1_1base.html#a3aa2563d38e47388ba242a1694fc2839',1,'el::base']]]
+  ['enableautobulkparams',['enableAutoBulkParams',['../class_residue.html#aceef85d15506552784ab8f87d0b075e9',1,'Residue']]],
+  ['enablebulkdispatch',['enableBulkDispatch',['../class_residue.html#a5521146d9286ff7488868e3579751130',1,'Residue']]],
+  ['enablecrashhandler',['enableCrashHandler',['../class_residue.html#aa09447e36d17fe8476e6e6373a108527',1,'Residue']]],
+  ['enableplainrequest',['enablePlainRequest',['../class_residue.html#acd477bb677ccc6bcb9aea2473f90b697',1,'Residue']]],
+  ['enableutc',['enableUtc',['../class_residue.html#a9327141f313dbc26636dff96802a8f13',1,'Residue']]],
+  ['errors',['errors',['../class_residue.html#aadaafabd646e1965cb7d94a9a0a1cbb7',1,'Residue']]]
 ];

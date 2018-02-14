@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['configurationtype',['ConfigurationType',['../namespaceel.html#a281f5db6d6163678bc68a8b23b59e124',1,'el']]]
+  ['flag',['Flag',['../class_residue.html#aec68ee5347d85c3d3c50e4b8b7452fb6',1,'Residue']]]
 ];
