@@ -89,8 +89,7 @@ Public Types</h2></td></tr>
 <b>REQUIRES_TOKEN</b> = 2, 
 <b>ALLOW_DEFAULT_ACCESS_CODE</b> = 4, 
 <br />
-&#160;&#160;<b>ALLOW_PLAIN_LOG_REQUEST</b> = 8, 
-<b>ALLOW_BULK_LOG_REQUEST</b> = 16, 
+&#160;&#160;<b>ALLOW_BULK_LOG_REQUEST</b> = 16, 
 <b>COMPRESSION</b> = 256
 <br />
  }</td></tr>
@@ -258,13 +257,6 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a6844f7ce57571fb59d2d7cf66c3a6739">hasFlag</a> (<a class="el" href="class_residue.html#aec68ee5347d85c3d3c50e4b8b7452fb6">Flag</a> flag) noexcept</td></tr>
 <tr class="memdesc:a6844f7ce57571fb59d2d7cf66c3a6739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for server flag and returns true if flag set otherwise not. <br /></td></tr>
 <tr class="separator:a6844f7ce57571fb59d2d7cf66c3a6739"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd477bb677ccc6bcb9aea2473f90b697"><td class="memItemLeft" align="right" valign="top"><a id="acd477bb677ccc6bcb9aea2473f90b697"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#acd477bb677ccc6bcb9aea2473f90b697">enablePlainRequest</a> () noexcept</td></tr>
-<tr class="memdesc:acd477bb677ccc6bcb9aea2473f90b697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send plain log request when possible (i.e, when server allows it) <br /></td></tr>
-<tr class="separator:acd477bb677ccc6bcb9aea2473f90b697"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfea282f667ce19acc58d50922ce36be"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#abfea282f667ce19acc58d50922ce36be">disablePlainRequest</a> () noexcept</td></tr>
-<tr class="memdesc:abfea282f667ce19acc58d50922ce36be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable plain log request.  <a href="#abfea282f667ce19acc58d50922ce36be">More...</a><br /></td></tr>
-<tr class="separator:abfea282f667ce19acc58d50922ce36be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a326aa44852cd2d5c30ed9809030bd2bb"><td class="memItemLeft" align="right" valign="top"><a id="a326aa44852cd2d5c30ed9809030bd2bb"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_residue.html#a326aa44852cd2d5c30ed9809030bd2bb">setThreadName</a> (const std::string &amp;threadName) noexcept</td></tr>
 <tr class="memdesc:a326aa44852cd2d5c30ed9809030bd2bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets current thread name. <br /></td></tr>
@@ -671,34 +663,6 @@ setParams(const std::string&amp;, const std::string&amp;) </dd></dl>
 
 </div>
 </div>
-<a id="abfea282f667ce19acc58d50922ce36be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfea282f667ce19acc58d50922ce36be">&#9670;&nbsp;</a></span>disablePlainRequest()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void Residue::disablePlainRequest </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Disable plain log request. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_residue.html#acd477bb677ccc6bcb9aea2473f90b697" title="Send plain log request when possible (i.e, when server allows it) ">enablePlainRequest()</a> </dd></dl>
-
-</div>
-</div>
 <a id="ab1a642f4428bb02e82a52bcbcab9df3f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1a642f4428bb02e82a52bcbcab9df3f">&#9670;&nbsp;</a></span>disconnect()</h2>
 
@@ -861,7 +825,6 @@ By default it is enabled </dd></dl>
     ],
     "application_id": "com.muflihun.sampleapp",
     "rsa_key_size": 2048,
-    "plain_request": false,
     "utc_time": false,
     "time_offset": -3600,
     "dispatch_delay": 1,
