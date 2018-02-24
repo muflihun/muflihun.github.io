@@ -67,7 +67,7 @@ pre {
      $('#generate').click(function() {
          $('.gen,.genk').show();
          $('.genk').text('Generating...');
-         var new_crypt = new JSEncrypt({default_key_size: 1024});
+         var new_crypt = new JSEncrypt({default_key_size: 2048});
          new_crypt.getKey();
          $('#gen-pri').text(new_crypt.getPrivateKey());
          $('#gen-pub').text(new_crypt.getPublicKey()); 
