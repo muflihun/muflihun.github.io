@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gettimestamp',['getTimestamp',['../class_residue.html#a48617eddaee9eaa6f744383b751884a6',1,'Residue']]]
+  ['hasflag',['hasFlag',['../class_residue.html#a6844f7ce57571fb59d2d7cf66c3a6739',1,'Residue']]]
 ];

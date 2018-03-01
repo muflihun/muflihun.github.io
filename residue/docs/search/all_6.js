@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['hasflag',['hasFlag',['../class_residue.html#a6844f7ce57571fb59d2d7cf66c3a6739',1,'Residue']]]
+  ['info',['info',['../class_residue.html#a4e6f9382fe3cb3ad672e1ca0b94023b5',1,'Residue']]],
+  ['instance',['instance',['../class_residue.html#a55e6890db940083cbe5579006d4c0cb9',1,'Residue']]]
 ];
