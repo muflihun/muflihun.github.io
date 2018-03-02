@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['signrsa',['signRSA',['../class_ripe.html#a67c046c58f4c81cc63e3d7013ef339e3',1,'Ripe']]],
-  ['stringtohex',['stringToHex',['../class_ripe.html#a303778523016b58ada78a364933c83ef',1,'Ripe']]]
+  ['ripebytetovec',['RipeByteToVec',['../class_ripe.html#a2e6f6b008c37f8f0e1ef4a9b1effeb09',1,'Ripe']]]
 ];

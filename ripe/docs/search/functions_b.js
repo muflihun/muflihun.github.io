@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['vectostring',['vecToString',['../class_ripe.html#a889ea0049d61b6e960baa6602e53f1a1',1,'Ripe']]],
-  ['verifyrsa',['verifyRSA',['../class_ripe.html#abeefe71d37bfa6ccbd6848e227251597',1,'Ripe']]],
-  ['version',['version',['../class_ripe.html#add40f72264af8364f274c7867132b642',1,'Ripe']]]
+  ['sha256hash',['sha256Hash',['../class_ripe.html#afdc4354e9d83e58349d92d4d847b9b6d',1,'Ripe']]],
+  ['sha512hash',['sha512Hash',['../class_ripe.html#a556f21adc2eb9a87dd852478e35c2ba6',1,'Ripe']]],
+  ['signrsa',['signRSA',['../class_ripe.html#a67c046c58f4c81cc63e3d7013ef339e3',1,'Ripe']]],
+  ['stringtohex',['stringToHex',['../class_ripe.html#a7c9f71f0d38e2ff541d771d0c91a5bdb',1,'Ripe']]]
 ];
