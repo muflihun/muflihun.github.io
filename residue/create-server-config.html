@@ -95,8 +95,8 @@ input[type=number] {
         "default_key_size": 256,
         "enable_cli": true,
         "allow_insecure_connection": true,
-        "allow_unknown_loggers": true,
-        "allow_unknown_clients": true,
+        "allow_unmanaged_loggers": true,
+        "allow_unmanaged_clients": true,
         "immediate_flush": false,
         "compression": true,
         "allow_bulk_log_request": true,
@@ -111,9 +111,9 @@ input[type=number] {
         "archived_log_directory": "%original/backups/%logger/",
         "archived_log_filename": "%level-%hour-%min-%day-%month-%year.log",
         "archived_log_compressed_filename": "%hour-%min-%day-%month-%year.tar.gz",
-        "known_clients": [
+        "managed_clients": [
         ],
-        "known_loggers": [
+        "managed_loggers": [
             {
                 "logger_id": "residue",
                 "configuration_file": "<specify>",
@@ -155,8 +155,8 @@ input[type=number] {
 		});
         $('#generate').click(function() {
             var conf = {};
-            conf.known_clients = [];
-            conf.known_loggers = [];
+            conf.managed_clients = [];
+            conf.managed_loggers = [];
             $('.field-value > input:not(.ignore-json)').each(function(idx, item) {
                 var val = $(item).val();
                 if ($(item).attr('type') === 'number') {
@@ -166,7 +166,7 @@ input[type=number] {
                 }
                 conf[$(item).attr('id')] = val;
             });
-            // known clients
+            // managed clients
             $('#clients_list .field').each(function (idx, item) {
                 var client = {};
                 $(this).find('input:not(.ignore-json)').each(function (idx, item) {
@@ -190,9 +190,9 @@ input[type=number] {
                 if (loggers.length > 0) {
                     client.loggers = loggers;
                 }
-                conf.known_clients.push(client);
+                conf.managed_clients.push(client);
             });
-            // known loggers
+            // managed loggers
             $('#loggers_list .field').each(function (idx, item) {
                 var logger = {};
                 $(this).find('input:not(.ignore-json),select:not(.ignore-json)').each(function (idx, item) {
@@ -211,7 +211,7 @@ input[type=number] {
                     // do not add to the list of loggers
                     return;
                 }
-                conf.known_loggers.push(logger);
+                conf.managed_loggers.push(logger);
             });
             $('#output').val(JSON.stringify(conf, null, 2));
         });
@@ -330,7 +330,7 @@ input[type=number] {
 						console.log(key);
                         $('#' + key).val(conf[key]);
                     }
-                    if (key === 'known_clients') {
+                    if (key === 'managed_clients') {
                         for (var idx = 1; idx <= conf[key].length; ++idx) {
                             var obj = conf[key][idx - 1];
                             $('#add_client').click();
@@ -352,7 +352,7 @@ input[type=number] {
                             }
                         }
                     }
-                    if (key === 'known_loggers') {
+                    if (key === 'managed_loggers') {
                         for (var idx = 1; idx <= conf[key].length; ++idx) {
                             var obj = conf[key][idx - 1];
                             $('#add_logger').click();
@@ -507,12 +507,12 @@ input[type=number] {
         <span class="field-value"><input type='checkbox' id='enable_cli' checked /></span>
     </div>
     <div class="field">
-        <span class="field-label"><label>Allow Unknown Loggers</label></span>
-        <span class="field-value"><input type='checkbox' id='allow_unknown_loggers' checked /></span>
+        <span class="field-label"><label>Allow Unmanaged Loggers</label></span>
+        <span class="field-value"><input type='checkbox' id='allow_unmanaged_loggers' checked /></span>
     </div>
     <div class="field">
-        <span class="field-label"><label>Allow Unknown Clients</label></span>
-        <span class="field-value"><input type='checkbox' id='allow_unknown_clients' checked /></span>
+        <span class="field-label"><label>Allow Unmanaged Clients</label></span>
+        <span class="field-value"><input type='checkbox' id='allow_unmanaged_clients' checked /></span>
     </div>
     <div class="field">
         <span class="field-label"><label>Allow Bulk Log Request</label></span>
@@ -541,19 +541,19 @@ input[type=number] {
     </div>
     <h3>Others</h3>
     <div class="field">
-        <span class="field-label"><label>Known Clients Endpoint</label></span>
-        <span class="field-value"><input type='text' id='known_clients_endpoint' value='' /></span>
+        <span class="field-label"><label>Managed Clients Endpoint</label></span>
+        <span class="field-value"><input type='text' id='managed_clients_endpoint' value='' /></span>
     </div>
     <div class="field">
-        <span class="field-label"><label>Known Loggers Endpoint</label></span>
-        <span class="field-value"><input type='text' id='known_loggers_endpoint' value='' /></span>
+        <span class="field-label"><label>Managed Loggers Endpoint</label></span>
+        <span class="field-value"><input type='text' id='managed_loggers_endpoint' value='' /></span>
     </div>
-    <h3>Known Clients</h3>
+    <h3>Managed Clients</h3>
     <button id='add_client' class='big-button'>+</button>
     <div id="clients_list">
     </div>
     
-    <h3>Known Loggers</h3>
+    <h3>Managed Loggers</h3>
     <button id='add_logger' class='big-button'>+</button>
     <div id="loggers_list">
     </div>
