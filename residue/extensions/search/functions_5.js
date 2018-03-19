@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writelog',['writeLog',['../classresidue_1_1_extension.html#a61bfe61cbfb53ba7e35bbbaa277786f8',1,'residue::Extension']]]
+  ['isarray',['isArray',['../classresidue_1_1_json_doc.html#ab6fd53a76dab36378219f71f861fe7a6',1,'residue::JsonDoc']]]
 ];

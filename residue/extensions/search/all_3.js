@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['execute',['execute',['../classresidue_1_1_extension.html#ae5d2601635a18e45a06ee956fa3692ab',1,'residue::Extension::execute()'],['../classresidue_1_1_log_extension.html#a5ad4b613568d6ee2062295d62cdd37b7',1,'residue::LogExtension::execute()'],['../classresidue_1_1_pre_archive_extension.html#a838ade3fc8eb26a8cfeb13e351814224',1,'residue::PreArchiveExtension::execute()'],['../classresidue_1_1_post_archive_extension.html#a324bb7ba375c1df35d687cc036c50a78',1,'residue::PostArchiveExtension::execute()']]],
-  ['extension',['Extension',['../classresidue_1_1_extension.html',1,'residue']]]
+  ['errortext',['errorText',['../classresidue_1_1_json_doc.html#a69d3bbca7fcb0a70f327ccb2e345d821',1,'residue::JsonDoc']]],
+  ['execute',['execute',['../classresidue_1_1_log_extension.html#ababe77f44d237d34cbb3c1d32ccc7bad',1,'residue::LogExtension::execute()'],['../classresidue_1_1_pre_archive_extension.html#a5e83e87eccd18ea9f0eaca752d717db2',1,'residue::PreArchiveExtension::execute()'],['../classresidue_1_1_post_archive_extension.html#a05272b06c94fb522eb3ead0c4cc2e8ad',1,'residue::PostArchiveExtension::execute()']]],
+  ['extension',['Extension',['../classresidue_1_1_extension.html',1,'residue::Extension'],['../classresidue_1_1_extension.html#a00a702d674933d2dd3cbb43a440ac826',1,'residue::Extension::Extension()']]]
 ];
